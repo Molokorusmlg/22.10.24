@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Город бесов Красная линия</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
+  </head>
+  <body>
+    <section class="redline" id="line">
+      <div class="redline__bigText">
+        <h1 class="redline__bigText-title">Красная Линия</h1>
+        <label class="redline__bigText-label" for="search"
+          >Найти по слову</label
+        >
+        <input
+          class="redline__bigText-input"
+          oninput="SeeSearch()"
+          id="search"
+          type="text"
+        />
+        <div class="redline__bigText_inputbox">
+          <label class="redline__bigText-label" for="parks">Парки</label>
+          <input
+            onclick="showCheckbox('p')"
+            class="check"
+            id="parks"
+            type="checkbox"
+            value="парки"
+          />
+
+          <label class="redline__bigText-label" for="buildings">здания</label>
+          <input
+            onclick="showCheckbox('b')"
+            class="check"
+            id="buildings"
+            type="checkbox"
+            value="здания"
+          />
+
+          <label class="redline__bigText-label" for="museums">музеи</label>
+          <input
+            onclick="showCheckbox('m')"
+            class="check"
+            id="museums"
+            type="checkbox"
+            value="музеи"
+          />
+
+          <label class="redline__bigText-label" for="hrams">храмы</label>
+          <input
+            onclick="showCheckbox('h')"
+            class="check"
+            id="hrams"
+            type="checkbox"
+            value="храмы"
+          />
+        </div>
+        <button class="redline__bigText_button" onclick="viewElements()">
+          <p>Найти</p>
+        </button>
+        <div class="pagination">
+          
+        </div>
+        <div class="redline__bigText-text">
+          
+        </div>
+      </div>
+      <div class="redline__marshruts">
+        <div class="redline__marshruts_container">
+          <div class="redline__marshruts-title">
+            <h1 class="redline__marshruts-title">Маршрут</h1>
+          </div>
+          <div class="redline__marshruts__line">
+            <img
+              class="redline__marshruts__line-img"
+              src="./assets/img/Linemarshruts.svg"
+              alt=""
+            />
+            <div class="redline__marshruts-circle" id="m1">
+              <p class="number__marshrut">1</p>
+            </div>
+          </div>
+          <div class="redline__marshruts-text">
+            <p class="redline__marshruts-text">Площадь 1905 года</p>
+          </div>
+          <div class="redline__marshruts__cardBox">
+            <div class="redline__marshruts__cardBox_SmallCardBox"></div>
+            <button class="controls">
+              <img src="./assets/img/Arrow.svg" class="arrow strelka" alt="" />
+              <img
+                src="./assets/img/Arrow.svg"
+                class="arrow-reverse strelka"
+                alt=""
+              />
+            </button>
+          </div>
+        </div>
+        <a href="#" onclick="ModalMeny()" class="tour-text-link">
+          <button class="tour">
+            <p class="tour-text">Купить</p>
+          </button>
+        </a>
+      </div>
+    </section>
+    <section class="modal bbase">
+      <div class="modal__over">
+        <div class="modal__row">
+          <h1 class="modal-title">Оставте заявку на курс</h1>
+          <div class="modal__close">
+            <a href="#" onclick="ModalMeny()">
+              <img
+                class="img__close rotate"
+                src="./assets/img/minus.svg"
+                alt="minus"
+              />
+              <img
+                class="img__close"
+                src="./assets/img/minus.svg"
+                alt="minus"
+              />
+            </a>
+          </div>
+        </div>
+        <form action="" class="modal__form">
+          <label class="modal__label" for="">номер</label>
+          <input type="number" class="modal__number modal__input" />
+          <label class="modal__label" for="">фио</label>
+          <input type="text" class="modal__fio modal__input" />
+          <button class="modal__button">
+            <p onclick="ModalMeny()">Отправить</p>
+          </button>
+        </form>
+      </div>
+    </section>
+    <div class="burger" onclick="burgerMeny()">
+      <img src="./assets/img/black_burger.svg" alt="" />
+    </div>
+    <footer class="footer">
+      <div class="footer__company">
+        <h4 class="footer__company-title">ООО Урал</h4>
+        <p class="footer__company-text">Спасибо за внимание</p>
+        <p class="footer__company-text">Все права защищены</p>
+      </div>
+      <div class="footer__contacts">
+        <div class="telegram">
+          <img src="./assets/img/tg.png" alt="" />
+          <a>Телеграмм</a>
+        </div>
+        <div class="Vk">
+          <img src="./assets/img/vk.svg" alt="" />
+          <a>Вконтакте</a>
+        </div>
+        <div class="telefone">
+          <img src="./assets/img/tel.png" alt="" />
+          <a>+89961800116</a>
+        </div>
+      </div>
+      <div class="footer__button" onclick="ShowModal()">
+        <a href="#">Свзяться с нами</a>
+      </div>
+      <div class="footer__logo">
+        <a href="./index.html"><img src="./assets/img/logo.png" alt="" /></a>
+      </div>
+    </footer>
+    <div class="burgerMeny bbase">
+      <div class="burgerMeny_block">
+        <div class="burgerMeny_block_header">
+          <img
+            class="burgerMeny_block_header-img"
+            src="./assets/img/logo.png"
+            alt="logo"
+          />
+          <img
+            onclick="burgerMeny()"
+            class="burgerMeny_block_header-imgsecond"
+            src="./assets/img/close.svg"
+            alt=""
+          />
+        </div>
+        <div class="burgerMeny_block_spisok">
+          <a class="burgerMeny_block_spisok-link" href="./index.html"
+            >Главная</a
+          >
+        </div>
+      </div>
+    </div>
+    <script src="./global.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Rodchenko;
+  font-weight: 800;
+  cursor: default;
+  scroll-behavior: smooth;
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: Rodchenko;
+  src: url("../assets/fonts/ofont.ru_Rodchenko.ttf");
+  font-weight: 800;
+}

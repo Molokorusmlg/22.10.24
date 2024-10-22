@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Город бесов</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
+  </head>
+  <body>
+    <section class="aboutcitY">
+      <header class="header">
+        <div class="header__container">
+          <div class="header__logo">
+            <img src="./assets/img/logo.png" alt="ЛОГО" class="header__img" />
+          </div>
+          <div class="header__menu">
+            <div class="header__links">
+              <a href="#maps" class="header__link">Карта</a>
+              <a href="./redLine.html" class="header__link">Линия</a>
+            </div>
+          </div>
+          <div class="header__buttons">
+            <div onclick="ModalMeny()" class="header__button">
+              <a class="header__button-link" href="#">Свзяться с нами</a>
+            </div>
+            <a onclick="burgerMeny()" href="#" class="header__burger">
+              <img
+                class="header__burger-img"
+                src="./assets/img/Burger.svg"
+                alt="burder"
+              />
+            </a>
+          </div>
+        </div>
+      </header>
+      <div class="aboutcity" onclick="ShowEkb()">
+        <h1 class="aboutcity__title">Екатеринбург</h1>
+        <p class="aboutcity__text">
+          Главный кород Свердловской области. Эталон промышленного города,
+          конструктивизма и постмодернизма в одном лице
+        </p>
+      </div>
+    </section>
+    <section class="Bigmap" id="maps">
+      <div class="mapsmall" style="position: relative; overflow: hidden">
+        <a
+          href="https://yandex.ru/maps/54/yekaterinburg/?utm_medium=mapframe&utm_source=maps"
+          style="color: #eee; font-size: 12px; position: absolute; top: 0px"
+          >Екатеринбург</a
+        ><a
+          href="https://yandex.ru/maps/54/yekaterinburg/catalog/?ll=60.618456%2C56.840209&utm_medium=mapframe&utm_source=maps&z=13.4"
+          style="color: #eee; font-size: 12px; position: absolute; top: 14px"
+          >173 600 организаций Екатеринбурга — Яндекс Карты</a
+        ><iframe
+          src="https://yandex.ru/map-widget/v1/?ll=60.618456%2C56.840209&mode=catalog&z=13.4"
+          frameborder="0"
+          allowfullscreen="true"
+          style="
+            position: relative;
+            border-radius: 40px;
+            width: 100%;
+            height: 100%;
+          "
+        ></iframe>
+      </div>
+      <div class="Bigmap__hide">
+        <div class="Bigmap__text noroute">
+          <h1 class="Bigmap__text-title">
+            Посмотрите интеерсные места нашего города!
+          </h1>
+          <p class="Bigmap__text-paragraph">
+            Екатеринбург находится на границе Европы и Азии. Географические
+            координаты: 56°50′ северной широты, 60°35′ восточной долготы, 270 м
+            над уровнем моря. Расположен на восточном склоне Среднего Урала,
+            восточные предгорья которого встречаются с Зауральской складчатой
+            возвышенностью, по берегам реки Исети. На широте города полоса
+            предгорий представляет собой невысокие, но длинные вытянутые с
+            севера на юг увалы, которые чередуются с широкими понижениями.
+            Высота их колеблется в пределах от 280 до 300 м. Понижения нередко
+            заняты болотами. Долина реки Исети на территории Екатеринбурга
+            довольно широкая. Имеет пойменные террасы: низкую и высокую.
+          </p>
+        </div>
+        <div class="streka" onclick="hedeText()">
+          <img src="./assets/img/right_strelka.svg" alt="right_strelka" />
+        </div>
+      </div>
+    </section>
+    <section class="modal bbase">
+      <div class="modal__over">
+        <div class="modal__row">
+          <h1 class="modal-title">Оставте заявку на курс</h1>
+          <div class="modal__close">
+            <a href="#" onclick="ModalMeny()">
+              <img
+                class="img__close rotate"
+                src="./assets/img/minus.svg"
+                alt="minus"
+              />
+              <img
+                class="img__close"
+                src="./assets/img/minus.svg"
+                alt="minus"
+              />
+            </a>
+          </div>
+        </div>
+        <form action="" class="modal__form">
+          <label class="modal__label" for="">номер</label>
+          <input type="number" class="modal__number modal__input" />
+          <label class="modal__label" for="">фио</label>
+          <input type="text" class="modal__fio modal__input" />
+          <button class="modal__button">
+            <p onclick="ModalMeny()">Отправить</p>
+          </button>
+        </form>
+      </div>
+    </section>
+    <footer class="footer" id="foot">
+      <div class="footer__company">
+        <h4 class="footer__company-title">ООО Урал</h4>
+        <p class="footer__company-text">Спасибо за внимание</p>
+        <p class="footer__company-text">Все права защищены</p>
+      </div>
+      <div class="footer__contacts">
+        <div class="telegram">
+          <img src="./assets/img/tg.png" alt="" />
+          <a>Телеграмм</a>
+        </div>
+        <div class="Vk">
+          <img src="./assets/img/vk.svg" alt="" />
+          <a>Вконтакте</a>
+        </div>
+        <div class="telefone">
+          <img src="./assets/img/tel.png" alt="" />
+          <a>+89961800116</a>
+        </div>
+      </div>
+      <div class="footer__button" onclick="ModalMeny()">
+        <a href="#">Свзяться с нами</a>
+      </div>
+      <div class="footer__logo">
+        <img src="./assets/img/logo.png" alt="" />
+      </div>
+    </footer>
+    <div class="burgerMeny bbase">
+      <div class="burgerMeny_block">
+        <div class="burgerMeny_block_header">
+          <img
+            class="burgerMeny_block_header-img"
+            src="./assets/img/logo.png"
+            alt="logo"
+          />
+          <img
+            onclick="burgerMeny()"
+            class="burgerMeny_block_header-imgsecond"
+            src="./assets/img/close.svg"
+            alt=""
+          />
+        </div>
+        <div class="burgerMeny_block_spisok">
+          <a class="burgerMeny_block_spisok-link" href="#maps">Карта</a>
+          <a class="burgerMeny_block_spisok-link" href="./redLine.html">Линия</a>
+          <a class="burgerMeny_block_spisok-link" href="#foot">О нас</a>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
