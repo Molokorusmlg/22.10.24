@@ -1,3 +1,5 @@
+
+// Бургер меню
 function burgerMeny() {
   const burger = document.querySelector(".burgerMeny");
   if (!burger.classList.contains("bbase")) {
@@ -17,6 +19,7 @@ const TitleEKB = document.querySelector(".aboutcity__title");
 const TextEKB = document.querySelector(".aboutcity__text");
 const Mainpage = document.querySelector(".aboutcitY");
 
+// Смена заднего фона и текста на главной странице
 function ShowEkb() {
   if (Mainpage.className == "aboutcitY") {
     TitleEKB.innerHTML = `<h1 class="aboutcity__title">город бесов😈</h1>`;
@@ -40,6 +43,7 @@ const Strelka = document.querySelector(".streka");
 const MapText = document.querySelector(".Bigmap__text");
 const MapEkb = document.querySelector(".mapsmall");
 
+// Убираем текст, открываем полностью карту города
 function hedeText() {
   if (MapEkb.className == "mapsmall") {
     MapText.classList.replace("noroute", "route");
@@ -54,6 +58,7 @@ function hedeText() {
 
 const modalForm = document.querySelector(".modal");
 
+// Модальное окно
 function ModalMeny() {
   const modal = document.querySelector(".modal");
   if (!modal.classList.contains("bbase")) {

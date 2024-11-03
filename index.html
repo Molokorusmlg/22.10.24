@@ -88,33 +88,21 @@
       </div>
     </section>
     <section class="modal bbase">
-      <div class="modal__over">
-        <div class="modal__row">
-          <h1 class="modal-title">Оставте заявку на курс</h1>
-          <div class="modal__close">
-            <a href="#" onclick="ModalMeny()">
-              <img
-                class="img__close rotate"
-                src="./assets/img/minus.svg"
-                alt="minus"
-              />
-              <img
-                class="img__close"
-                src="./assets/img/minus.svg"
-                alt="minus"
-              />
-            </a>
-          </div>
-        </div>
-        <form action="" class="modal__form">
-          <label class="modal__label" for="">номер</label>
-          <input type="number" class="modal__number modal__input" />
-          <label class="modal__label" for="">фио</label>
-          <input type="text" class="modal__fio modal__input" />
-          <button class="modal__button">
-            <p onclick="ModalMeny()">Отправить</p>
-          </button>
+      <div class="modal__form">
+        <p class="modal__form-title">Подписаться</p>
+        <form class="modal__form-form" action="">
+          <input class="modal__form-input" type="email" placeholder="email" />
+          <input
+            class="modal__form-input"
+            type="password"
+            placeholder="password"
+          />
         </form>
+        <div class="modal__form-buttonBox">
+          <button onclick="ModalMeny()" class="modal__form-button">
+            <p class="modal__form-button-text">Submit</p>
+          </button>
+        </div>
       </div>
     </section>
     <footer class="footer" id="foot">
@@ -147,21 +135,21 @@
     <div class="burgerMeny bbase">
       <div class="burgerMeny_block">
         <div class="burgerMeny_block_header">
-          <img
-            class="burgerMeny_block_header-img"
-            src="./assets/img/logo.png"
-            alt="logo"
-          />
+          <p class="burgerMeny_block_header-title">Екат<br />ерин<br />бург</p>
           <img
             onclick="burgerMeny()"
             class="burgerMeny_block_header-imgsecond"
-            src="./assets/img/close.svg"
+            src="./assets/img/close_burder_red.svg"
             alt=""
           />
         </div>
         <div class="burgerMeny_block_spisok">
-          <a class="burgerMeny_block_spisok-link" href="#maps">Карта</a>
-          <a class="burgerMeny_block_spisok-link" href="./redLine.html">Линия</a>
+          <a class="burgerMeny_block_spisok-link" href="./index.html"
+            >Главная</a
+          >
+          <a class="burgerMeny_block_spisok-link" href="./redLine.html"
+            >Линия</a
+          >
           <a class="burgerMeny_block_spisok-link" href="#foot">О нас</a>
         </div>
       </div>

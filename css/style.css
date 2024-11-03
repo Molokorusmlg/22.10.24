@@ -20,6 +20,21 @@
   font-weight: 800;
 }
 @font-face {
+  font-family: Pt;
+  src: url("../assets/fonts/PTSans-Regular.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: Pt;
+  src: url("../assets/fonts/PTSans-Bold.ttf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: Pt;
+  src: url("../assets/fonts/PTSans-Bold.ttf");
+  font-weight: 800;
+}
+@font-face {
   font-family: Montserrat;
   src: url("../assets/fonts/MontserratAlternates-ExtraBold.ttf");
   font-weight: 800;
@@ -230,6 +245,12 @@
     border-right: #e12424 solid 4px;
   }
 }
+.redline__bigText-line {
+  height: 10px;
+  border: none;
+  background-color: #d00000;
+  margin-bottom: 20px;
+}
 .redline__bigText_button {
   transition: 0.4s ease-in-out;
   width: 50%;
@@ -241,6 +262,7 @@
   height: 30px;
   border-radius: 20px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 @media (max-width: 768px) {
   .redline__bigText_button {
@@ -256,20 +278,44 @@
 .redline__bigText_inputbox {
   margin: 0 auto;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: 0;
+  width: 65%;
 }
 @media (max-width: 768px) {
   .redline__bigText_inputbox {
     display: flex;
     flex-direction: column;
-    justify-content: 0;
+    justify-content: space-between;
     align-items: 0;
-    gap: 5px;
+    gap: 20px;
   }
+}
+.redline__bigText_ColumCeckButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.redline__bigText_checkbuttonBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.redline__bigText-searchBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: 0;
 }
 .redline__bigText-label {
   margin: 0 auto;
   font-size: 20px;
-  margin-bottom: 10px;
   color: #e12424;
 }
 @media (max-width: 768px) {
@@ -279,16 +325,20 @@
   }
 }
 .redline__bigText-input {
-  background-color: #fff;
-  width: 80%;
-  height: 25px;
-  margin: 0 auto;
-  border: 1px solid #cfcece;
-  border-radius: 10px;
-  color: #161a1d;
-  padding-left: 10px;
-  font-size: 20px;
+  font-family: "Pt";
+  font-weight: 800;
+  color: #1d1d1d;
+  height: 40px;
+  border: 2px solid #b4b4b4;
+  border-radius: 20px;
+  width: 90%;
+  padding: 8px;
+  outline: 0;
+  transition: 0.6s ease-in-out;
   margin-bottom: 20px;
+}
+.redline__bigText-input:focus {
+  background-color: #ececec;
 }
 .redline__bigText-title {
   color: #fff;
@@ -482,6 +532,8 @@
 
 .modal {
   background-color: rgba(22, 26, 29, 0.7137254902);
+  font-family: "Pt";
+  font-weight: 600;
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -493,77 +545,73 @@
   justify-content: center;
   align-items: center;
 }
-.modal__close {
-  position: absolute;
-  right: 0px;
-  top: 0px;
+.modal__form {
+  box-shadow: -2px 0px 79px 23px rgba(251, 251, 251, 0.2);
+  border-radius: 1.5rem;
+  background-color: #fff;
+  padding: 2rem;
+  width: 350px;
+  height: 300px;
 }
-.modal__row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.modal-title {
+.modal__form-title {
   font-size: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  font-family: "Pt";
+  font-weight: 800;
+  color: #e12424;
+  text-align: center;
+  margin-bottom: 15px;
 }
-.modal__over {
-  position: relative;
-  background-color: #fdfdfd;
-  color: #d00000;
-  width: 20%;
-  height: 50%;
-  border-radius: 15px;
+.modal__form-form {
   display: flex;
   flex-direction: column;
   justify-content: 0;
-  align-items: center;
-  gap: 20%;
+  align-items: 0;
+  gap: 15px;
 }
-@media (max-width: 768px) {
-  .modal__over {
-    width: 90%;
-  }
+.modal__form-input {
+  font-family: "Pt";
+  font-weight: 800;
+  color: #1d1d1d;
+  height: 40px;
+  border: 3px solid #b4b4b4;
+  border-radius: 20px;
+  padding: 8px;
+  outline: 0;
+  transition: 0.6s ease-in-out;
 }
-.modal__form {
-  width: 250px;
-  height: 150px;
+.modal__form-input:focus {
+  background-color: #ececec;
+}
+.modal__form-buttonBox {
+  margin-top: 40px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: 0;
-  gap: 10px;
 }
-.modal__label {
-  font-size: 25px;
-}
-.modal__input {
-  border-radius: 10px;
-  border: 1px solid #cfcece;
-  padding: 5px;
+.modal__form-button {
+  border: 0;
+  width: 70%;
   color: #d00000;
-  font-size: 20px;
+  background-color: #eeeeee;
+  border-radius: 1.5rem;
+  padding: 15px 20px 15px 20px;
+  transition: 0.6s ease-in-out;
 }
-.modal__input:focus {
-  outline-width: 0;
+.modal__form-button:hover {
+  color: #fff;
+  background-color: #d00000;
 }
-.modal__button {
-  border: solid rgb(235, 235, 235) 1px;
-  border-radius: 10px;
-  padding: 10px 75px;
-  color: #d00000;
-  background-color: #fdfdfd;
-  box-shadow: 4px 5px 0px rgba(34, 60, 80, 0.2);
-  margin-top: 100px;
-  transition: 0.7s ease-in-out;
-  font-size: 20px;
+.modal__form-button-text {
+  font-family: "Pt";
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 2px;
 }
 
 .pagination {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   font-size: 20px;
   display: flex;
   flex-direction: row;
@@ -685,7 +733,7 @@
 }
 @media (max-width: 768px) {
   .controls {
-    margin-top: 575px;
+    margin-top: 510px;
   }
 }
 
@@ -728,9 +776,10 @@
   justify-content: 0;
   align-items: center;
   width: 20%;
-  height: 70%;
-  background-color: #161a1d;
-  border-radius: 20px;
+  height: 60%;
+  background-color: #fff;
+  border-left: 5px solid #d00000;
+  border-radius: 5px 0px 0px 5px;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -741,32 +790,41 @@
   }
 }
 .burgerMeny_block_header {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: 0;
+  justify-content: space-between;
   align-items: center;
 }
-.burgerMeny_block_header-img {
-  width: 100%;
-  height: 80%;
+.burgerMeny_block_header-title {
+  margin-left: 10px;
+  font-size: 30px;
+  letter-spacing: 3px;
+  font-family: "Pt";
+  font-weight: 800;
+  color: #d00000;
 }
 .burgerMeny_block_header-imgsecond {
-  width: 40%;
-  height: 40%;
+  width: 25%;
+  height: 25%;
 }
 .burgerMeny_block_spisok {
-  margin-top: 30px;
+  margin-top: 30%;
   display: flex;
   flex-direction: column;
   justify-content: 0;
   align-items: center;
-  gap: 30%;
+  gap: 25%;
   height: 80%;
 }
 .burgerMeny_block_spisok-link {
-  text-decoration: none;
-  color: #cfcece;
   font-size: 30px;
+  letter-spacing: 3px;
+  font-family: "Pt";
+  font-weight: 800;
+  text-decoration: none;
+  color: #803939;
+  font-size: 25px;
   transition: 0.4s ease-in-out;
 }
 .burgerMeny_block_spisok-link:hover {
@@ -851,7 +909,6 @@
     display: none;
   }
   1% {
-    display: flex;
     opacity: 0;
   }
   100% {
@@ -870,6 +927,7 @@
   }
   99% {
     opacity: 0;
+    display: none;
   }
   100% {
     display: none;
