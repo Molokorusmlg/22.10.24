@@ -223,7 +223,7 @@
     }
 
     &_ColumCeckButtons {
-      @include flex(column, center,center);
+      @include flex(column, center, center);
       gap: 20px;
     }
 
@@ -584,7 +584,7 @@
   background-color: #fff;
   border: none;
   @include adaptiv(table) {
-    margin-top: 510px ;
+    margin-top: 510px;
   }
 }
 
@@ -627,7 +627,7 @@
     height: 60%;
     background-color: #fff;
     border-left: 5px solid #d00000;
-    border-radius: 5px 0px 0px 5px ;
+    border-radius: 5px 0px 0px 5px;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -817,4 +817,68 @@
   position: absolute;
   top: 20px;
   right: 20px;
+}
+
+.activeLoading {
+  @include flex(row, center, center);
+}
+
+@keyframes loading-complete-animation {
+  0% {
+    opacity: 1;
+    @include flex(row, center, center);
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+.loadingComplete {
+  animation: loading-complete-animation 0.7s ease-in-out;
+  display: none;
+}
+
+.loading {
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  &__circle {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    animation: loading-animation 0.7s ease-in-out infinite;
+  }
+}
+
+@keyframes loading-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cube {
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+}
+
+.first,
+.four {
+  background-color: #d00000;
+}
+
+.second,
+.third {
+  background-color: #fff;
 }
