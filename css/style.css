@@ -496,6 +496,7 @@
   }
 }
 .redline__marshruts__cardBox_card.active {
+  animation: card_visible 0.7s ease-in-out;
   opacity: 1;
 }
 .redline__marshruts__cardBox_card-columnbox {
@@ -528,6 +529,32 @@
 .redline__marshruts__cardBox_card-img img {
   display: block;
   height: 100%;
+}
+
+@keyframes card_visible {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes card_hide {
+  0% {
+    display: flex;
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+.nonActive {
+  animation: card_hide 0.7s ease-in-out;
+  display: none;
 }
 
 .modal {

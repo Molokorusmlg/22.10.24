@@ -67,6 +67,11 @@ function CardCreate(img, map, text) {
   return cardBlock;
 }
 
+function goToNextHTML() {
+  localStorage.setItem("CurrentCard", curentCardIndex);
+  window.location.href = "unicalPage.html";
+}
+
 function cikle() {
   // Создание карточек
   const parentCards = document.querySelector(
@@ -75,16 +80,17 @@ function cikle() {
   cityList.forEach((city) => {
     const card = document.createElement("div");
     card.classList.add("redline__marshruts__cardBox_card");
+    card.classList.add("nonActive");
     const card_final = CardCreate(city.Img_scr, city.Map_scr, city.Text);
     card.innerHTML = card_final;
     parentCards.appendChild(card);
   });
 }
 
-const firstpage = document.querySelectorAll(".firstPage");
-const secondpage = document.querySelectorAll(".secondPage");
-const thirdpage = document.querySelectorAll(".thirdPage");
-const fourpage = document.querySelectorAll(".fourPage");
+let firstpage = document.querySelectorAll(".firstPage");
+let secondpage = document.querySelectorAll(".secondPage");
+let thirdpage = document.querySelectorAll(".thirdPage");
+let fourpage = document.querySelectorAll(".fourPage");
 // обработка пагинации
 function pagination(page) {
   if (page == "1") {
@@ -142,11 +148,10 @@ function showCheckbox(type) {
     }
   });
 }
-const Buildings = document.querySelectorAll(".buildings");
-const Parks = document.querySelectorAll(".parki");
-const Museums = document.querySelectorAll(".museumi");
-const Hrams = document.querySelectorAll(".hrami");
-
+let Buildings = document.querySelectorAll(".buildings");
+let Parks = document.querySelectorAll(".parki");
+let Museums = document.querySelectorAll(".museumi");
+let Hrams = document.querySelectorAll(".hrami");
 // Фильтры обработка и вывод
 function viewElement(elList, localItem) {
   elList.forEach((el) => {
@@ -224,8 +229,8 @@ function ShowCard(index) {
   cardName = document.querySelector(".redline__marshruts-text");
   Body = document.querySelector("body");
   console.log("fff");
-  cards[curentCardIndex].classList.remove("active");
-  cards[index].classList.add("active");
+  cards[curentCardIndex].classList.replace("active", "nonActive");
+  cards[index].classList.replace("nonActive", "active");
   cardName.innerHTML = `<p class="redline__marshruts-text">${cityList[index].Title}</p>`;
   curentCardIndex = index;
   number_card.innerHTML = `<p>${index + 1}</p>`;
@@ -319,6 +324,14 @@ async function loadingPage() {
   await ShowCard(curentCardIndex);
   const Loading = document.querySelector(".loading");
   Loading.classList.remove("activeLoading");
+  Buildings = document.querySelectorAll(".buildings");
+  Parks = document.querySelectorAll(".parki");
+  Museums = document.querySelectorAll(".museumi");
+  Hrams = document.querySelectorAll(".hrami");
+  firstpage = document.querySelectorAll(".firstPage");
+  secondpage = document.querySelectorAll(".secondPage");
+  thirdpage = document.querySelectorAll(".thirdPage");
+  fourpage = document.querySelectorAll(".fourPage");
   Loading.classList.add("loadingComplete");
 }
 

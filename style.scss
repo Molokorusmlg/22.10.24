@@ -378,6 +378,7 @@
           @include flex(column, center, center);
         }
         &.active {
+          animation: card_visible 0.7s ease-in-out;
           opacity: 1;
         }
         &-columnbox {
@@ -412,6 +413,37 @@
       }
     }
   }
+}
+
+@keyframes card_visible {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes card_hide {
+  0% {
+    display: flex;
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 0;
+  }
+
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+.nonActive {
+  animation: card_hide 0.7s ease-in-out;
+  display: none;
 }
 
 .modal {
