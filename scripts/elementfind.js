@@ -88,6 +88,5 @@ git pull --all
 git branch -m
 git reset HEAD~
 git add
-микро макро
-
+микро макро 
 */
