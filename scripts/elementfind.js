@@ -54,7 +54,6 @@ async function GetCardData() {
       }
     );
     const data = await response.json();
-    console.log(data);
     cardsData = data;
   } catch (error) {
     console.log(error);
@@ -62,14 +61,33 @@ async function GetCardData() {
 }
 
 async function loadingPage() {
-  await GetCardData();
-  const curentCardInexNew = localStorage.getItem("CurrentCard");
-  cardData = cardsData[curentCardInexNew];
-  console.log(cardData);
-  await innerCard();
-  const Loading = document.querySelector(".loading");
-  Loading.classList.remove("activeLoading");
-  Loading.classList.add("loadingComplete");
+  try {
+    await GetCardData();
+    const curentCardInexNew = localStorage.getItem("CurrentCard");
+    cardData = cardsData[curentCardInexNew];
+    await innerCard();
+  } catch (e) {
+    console.error(e);
+  } finally {
+    const Loading = document.querySelector(".loading");
+    Loading.classList.remove("activeLoading");
+    Loading.classList.add("loadingComplete");
+  }
 }
 
 loadingPage();
+
+/* 
+new branch
+git commit -m ""
+git push
+git fetch
+git fetch --all
+git pull 
+git pull --all 
+git branch -m
+git reset HEAD~
+git add
+микро макро
+
+*/
