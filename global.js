@@ -228,7 +228,6 @@ function ShowCard(index) {
   cards = document.querySelectorAll(".redline__marshruts__cardBox_card");
   cardName = document.querySelector(".redline__marshruts-text");
   Body = document.querySelector("body");
-  console.log("fff");
   cards[curentCardIndex].classList.replace("active", "nonActive");
   cards[index].classList.replace("nonActive", "active");
   cardName.innerHTML = `<p class="redline__marshruts-text">${cityList[index].Title}</p>`;
@@ -291,9 +290,7 @@ async function GetCards() {
       }
     );
     const data = await response.json();
-    console.log(data);
     cityList = data;
-    console.log(cityList);
   } catch (error) {
     console.log(error);
   }
@@ -308,7 +305,6 @@ async function GetLinks() {
       }
     );
     const data = await response.json();
-    console.log(data);
     linkList = data;
   } catch (error) {
     console.log(error);

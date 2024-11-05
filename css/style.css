@@ -175,7 +175,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
 }
 .Bigmap__text {
   transition: 0.4s ease-in-out;
@@ -557,6 +556,17 @@
   display: none;
 }
 
+.modal_arrow-img {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: 5px;
+  transition: 0.4s ease-in-out;
+}
+.modal_arrow-img:hover {
+  transform: translate(-9px);
+}
+
 .modal {
   background-color: rgba(22, 26, 29, 0.7137254902);
   font-family: "Pt";
@@ -578,7 +588,7 @@
   background-color: #fff;
   padding: 2rem;
   width: 350px;
-  height: 300px;
+  height: 320px;
 }
 .modal__form-title {
   font-size: 30px;
@@ -1030,8 +1040,9 @@
 }
 
 .loading {
+  overflow-x: hidden;
   background-color: #fff;
-  width: 100vw;
+  width: 99vw;
   height: 100vh;
   position: absolute;
   top: 0;

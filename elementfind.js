@@ -54,7 +54,6 @@ async function GetCardData() {
       }
     );
     const data = await response.json();
-    console.log(data);
     cardsData = data;
   } catch (error) {
     console.log(error);
@@ -65,7 +64,6 @@ async function loadingPage() {
   await GetCardData();
   const curentCardInexNew = localStorage.getItem("CurrentCard");
   cardData = cardsData[curentCardInexNew];
-  console.log(cardData);
   await innerCard();
   const Loading = document.querySelector(".loading");
   Loading.classList.remove("activeLoading");
