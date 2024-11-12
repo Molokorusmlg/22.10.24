@@ -44,7 +44,7 @@
   filter: brightness(0.4);
 }
 
-.blocktonext {
+.block_to_next {
   padding: 3%;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -236,7 +236,7 @@
   }
 }
 
-.activeLoading {
+.active__loading {
   @include flex(row, center, center);
 }
 

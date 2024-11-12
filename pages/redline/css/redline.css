@@ -103,21 +103,19 @@
   color: #d00000;
 }
 
-.aboutcitY {
+.about__city {
   height: 100vh;
-  background: url("../../../assets/img//4562a1a6-99c7-40ee-bbff-9ca955979e7e.png")
-    no-repeat center center/cover;
+  background: url("../../../assets/img//4562a1a6-99c7-40ee-bbff-9ca955979e7e.png") no-repeat center center/cover;
   transition: all 0.4s ease-in-out;
 }
 
 .zloiEKB {
   height: 100vh;
-  background: url("../../../assets/img//besov.webp") no-repeat center
-    center/cover;
+  background: url("../../../assets/img//besov.webp") no-repeat center center/cover;
   transition: all 0.4s ease-in-out;
 }
 
-.aboutcity {
+.about__city {
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 13%;
@@ -127,17 +125,17 @@
   align-items: center;
   gap: 3rem;
 }
-.aboutcity__title {
+.about__city__title {
   font-size: 100px;
   color: #e5383b;
   letter-spacing: 10px;
 }
 @media (max-width: 768px) {
-  .aboutcity__title {
+  .about__city__title {
     font-size: 60px;
   }
 }
-.aboutcity__text {
+.about__city__text {
   max-width: 500px;
   font-size: 30px;
   color: #f5f3f4;
@@ -145,12 +143,12 @@
   text-align: center;
 }
 @media (max-width: 768px) {
-  .aboutcity__text {
+  .about__city__text {
     font-size: 20px;
   }
 }
 
-.Bigmap {
+.big_map {
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -161,14 +159,14 @@
   padding-top: 5%;
   padding-bottom: 5%;
 }
-.Bigmap__hide {
+.big_map__hide {
   transition: 0.4s ease-in-out;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.Bigmap__text {
+.big_map__text {
   transition: 0.4s ease-in-out;
   display: flex;
   flex-direction: column;
@@ -179,22 +177,22 @@
   max-width: 60vw;
 }
 @media (max-width: 1080px) {
-  .Bigmap__text {
+  .big_map__text {
     max-width: 30vw;
   }
 }
-.Bigmap__text-title {
+.big_map__text-title {
   color: #e12424;
   font-family: Montserrat;
   font-size: 40px;
   font-weight: 800;
 }
 @media (max-width: 1080px) {
-  .Bigmap__text-title {
+  .big_map__text-title {
     font-size: 20px;
   }
 }
-.Bigmap__text-paragraph {
+.big_map__text-paragraph {
   max-height: 300px;
   overflow: scroll;
   color: #161a1d;
@@ -203,7 +201,7 @@
   font-weight: 800;
 }
 @media (max-width: 1080px) {
-  .Bigmap__text-paragraph {
+  .big_map__text-paragraph {
     font-size: 15px;
   }
 }
@@ -284,7 +282,7 @@
     gap: 20px;
   }
 }
-.red-line__big__text_ColumCeckButtons {
+.red-line__big__text_colum__ceck__buttons {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -298,7 +296,7 @@
   align-items: center;
   gap: 5px;
 }
-.red-line__big__text-searchBox {
+.red-line__big__text-search__box {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -451,7 +449,7 @@
   height: 50vh;
   margin-top: 50px;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
 }
 .red-line__marshruts__card-box_small-card-box {
   width: 100%;
@@ -610,7 +608,7 @@
 .modal__form-input:focus {
   background-color: #ececec;
 }
-.modal__form-buttonBox {
+.modal__form-button__box {
   margin-top: 40px;
   display: flex;
   flex-direction: row;
@@ -864,7 +862,7 @@
   transition: all 0.4s ease-in-out;
 }
 
-.mapsmall {
+.map_small {
   width: 40vw;
   height: 80vh;
 }
@@ -878,32 +876,32 @@
   transition: all 0.4s ease-in-out;
 }
 
-.noroute {
+.no-route {
   opacity: 1;
   transition: all 0.4s ease-in-out;
 }
 
-.streka_hiden {
+.arrow__map_hiden {
   position: absolute;
   right: 0px;
   transition: 0.4s ease-in-out;
   transform: rotate(180deg);
 }
-.streka_hiden:hover {
+.arrow__map_hiden:hover {
   transform: translateX(-10px) rotate(180deg);
 }
-.streka_hiden img {
+.arrow__map_hiden img {
   width: 50px;
   height: 50px;
 }
 
-.streka {
+.arrow__map {
   transition: 0.4s ease-in-out;
 }
-.streka:hover {
+.arrow__map:hover {
   transform: translateX(10px);
 }
-.streka img {
+.arrow__map img {
   width: 50px;
   height: 50px;
 }
@@ -1003,7 +1001,7 @@
   right: 20px;
 }
 
-.activeLoading {
+.active__loading {
   display: flex;
   flex-direction: row;
   justify-content: center;

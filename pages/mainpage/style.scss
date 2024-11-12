@@ -36,7 +36,7 @@
       color: #e12424;
     }
   }
-  &__ container {
+  &__container {
     height: 100%;
     @include flex(row, space-between, center);
     @include container(2%, 2%, 0, padding);
@@ -82,7 +82,7 @@
     }
   }
 }
-.aboutcitY {
+.about__background_main {
   height: 100vh;
   background: url("../../../assets/img//4562a1a6-99c7-40ee-bbff-9ca955979e7e.png")
     no-repeat center center/cover;
@@ -96,7 +96,7 @@
   transition: all 0.4s ease-in-out;
 }
 
-.aboutcity {
+.about__city {
   @include container(5%, 5%, 13%, padding);
   @include flex(column, 0, center);
   gap: 3rem;
@@ -121,7 +121,7 @@
   }
 }
 
-.Bigmap {
+.big_map {
   overflow: hidden;
   @include flex(row, space-around, 0);
   @include container(5%, 5%, 5%, padding);
@@ -216,7 +216,7 @@
       }
     }
 
-    &_ColumCeckButtons {
+    &_colum__ceck__buttons {
       @include flex(column, center, center);
       gap: 20px;
     }
@@ -226,7 +226,7 @@
       gap: 5px;
     }
 
-    &-searchBox {
+    &-search__box {
       @include flex(row, center, 0);
     }
 
@@ -495,7 +495,7 @@
         background-color: #ececec;
       }
     }
-    &-buttonBox {
+    &-button__box {
       margin-top: 40px;
       @include flex(row, center, 0);
     }
@@ -714,7 +714,7 @@
   transition: all 0.4s ease-in-out;
 }
 
-.mapsmall {
+.map_small {
   width: 40vw;
   height: 80vh;
 }
@@ -728,12 +728,12 @@
   transition: all 0.4s ease-in-out;
 }
 
-.noroute {
+.no-route {
   opacity: 1;
   transition: all 0.4s ease-in-out;
 }
 
-.streka_hiden {
+.arrow__map_hiden {
   position: absolute;
   right: 0px;
   transition: 0.4s ease-in-out;
@@ -747,7 +747,7 @@
   }
 }
 
-.streka {
+.arrow__map {
   transition: 0.4s ease-in-out;
   &:hover {
     transform: translateX(10px);
@@ -856,7 +856,7 @@
   right: 20px;
 }
 
-.activeLoading {
+.active__loading {
   @include flex(row, center, center);
 }
 

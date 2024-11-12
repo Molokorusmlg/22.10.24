@@ -1,7 +1,7 @@
 let cityList = [];
 let linkList = [];
 
-function CardCreate(img, map, text) {
+function cardCreate(img, map, text) {
   return (cardBlock = `<div class="red-line__marshruts__card-box_card-img">
                   <img src=${img} alt="" />
                   
@@ -32,7 +32,7 @@ function createAllCards() {
   cityList.forEach((city) => {
     const card = document.createElement("div");
     card.classList.add("red-line__marshruts__card-box_card");
-    const card_final = CardCreate(city.Img_scr, city.Map_scr, city.Text);
+    const card_final = cardCreate(city.Img_scr, city.Map_scr, city.Text);
     card.innerHTML = card_final;
     parentCards.appendChild(card);
   });

@@ -8,9 +8,9 @@
     <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico" />
   </head>
   <body>
-    <section class="aboutcitY">
+    <section class="about__background_main">
       <header class="header">
-        <div class="header__ container">
+        <div class="header__container">
           <div class="header__logo">
             <img
               src="../../assets/img/logo.png"
@@ -21,11 +21,11 @@
           <div class="header__menu">
             <div class="header__links">
               <a href="#maps" class="header__link">Карта</a>
-              <a href="../red-line/red-line.html" class="header__link">Линия</a>
+              <a href="../redline/redline.html" class="header__link">Линия</a>
             </div>
           </div>
           <div class="header__buttons">
-            <div onclick="ModalMeny()" class="header__button">
+            <div onclick="modalMeny()" class="header__button">
               <a class="header__button-link" href="#">Свзяться с нами</a>
             </div>
             <a onclick="burger__meny()" href="#" class="header__burger">
@@ -38,16 +38,16 @@
           </div>
         </div>
       </header>
-      <div class="aboutcity" onclick="ShowEkb()">
-        <h1 class="aboutcity__title">Екатеринбург</h1>
-        <p class="aboutcity__text">
+      <div class="about__city" onclick="showEkb()">
+        <h1 class="about__city__title">Екатеринбург</h1>
+        <p class="about__city__text">
           Главный кород Свердловской области. Эталон промышленного города,
           конструктивизма и постмодернизма в одном лице
         </p>
       </div>
     </section>
-    <section class="Bigmap" id="maps">
-      <div class="mapsmall" style="position: relative; overflow: hidden">
+    <section class="big_map" id="maps">
+      <div class="map_small" style="position: relative; overflow: hidden">
         <a
           href="https://yandex.ru/maps/54/yekaterinburg/?utm_medium=mapframe&utm_source=maps"
           style="color: #eee; font-size: 12px; position: absolute; top: 0px"
@@ -68,12 +68,12 @@
           "
         ></iframe>
       </div>
-      <div class="Bigmap__hide">
-        <div class="Bigmap__text noroute">
-          <h1 class="Bigmap__text-title">
+      <div class="big_map__hide">
+        <div class="big_map__text no-route">
+          <h1 class="big_map__text-title">
             Посмотрите интеерсные места нашего города!
           </h1>
-          <p class="Bigmap__text-paragraph">
+          <p class="big_map__text-paragraph">
             Екатеринбург находится на границе Европы и Азии. Географические
             координаты: 56°50′ северной широты, 60°35′ восточной долготы, 270 м
             над уровнем моря. Расположен на восточном склоне Среднего Урала,
@@ -86,7 +86,7 @@
             довольно широкая. Имеет пойменные террасы: низкую и высокую.
           </p>
         </div>
-        <div class="streka" onclick="hedeText()">
+        <div class="arrow__map" onclick="hedeText()">
           <img src="../../assets/img/right_strelka.svg" alt="right_strelka" />
         </div>
       </div>
@@ -102,8 +102,8 @@
             placeholder="password"
           />
         </form>
-        <div class="modal__form-buttonBox">
-          <button onclick="ModalMeny()" class="modal__form-button">
+        <div class="modal__form-button__box">
+          <button onclick="modalMeny()" class="modal__form-button">
             <p class="modal__form-button-text">Submit</p>
           </button>
         </div>
@@ -129,7 +129,7 @@
           <a>+89961800116</a>
         </div>
       </div>
-      <div class="footer__button" onclick="ModalMeny()">
+      <div class="footer__button" onclick="modalMeny()">
         <a href="#">Свзяться с нами</a>
       </div>
       <div class="footer__logo">
@@ -157,7 +157,7 @@
           >
           <a
             class="burger__meny_block_spisok-link"
-            href="../red-line/red-line.html"
+            href="../redline/redline.html"
             >Линия</a
           >
           <a class="burger__meny_block_spisok-link" href="#foot">О нас</a>

@@ -30,19 +30,19 @@ function cicleLinks() {
     const links = document.createElement("a");
     if (link.indexLink <= 10) {
       links.classList.add(link.classLink, "firstPage");
-      links.innerHTML = `<a onclick="ShowCard(${link.indexLink})" id="${link.indexLink}" data-index=${link.indexLink} class="${link.classLink} cardLink" >${link.TitleLink}</a>`;
+      links.innerHTML = `<a onclick="showCard(${link.indexLink})" id="${link.indexLink}" data-index=${link.indexLink} class="${link.classLink} cardLink" >${link.TitleLink}</a>`;
       parentBlock.appendChild(links);
     } else if (link.indexLink > 10 && link.indexLink <= 20) {
       links.classList.add(link.classLink, "secondPage", "hidePage");
-      links.innerHTML = `<a onclick="ShowCard(${link.indexLink})" id="${link.indexLink}" data-index=${link.indexLink} class="${link.classLink} cardLink">${link.TitleLink}</a>`;
+      links.innerHTML = `<a onclick="showCard(${link.indexLink})" id="${link.indexLink}" data-index=${link.indexLink} class="${link.classLink} cardLink">${link.TitleLink}</a>`;
       parentBlock.appendChild(links);
     }
   });
 }
 
 //сама карточка
-function CardCreate(img, map, text) {
-  const cardBlock = `<div class="red-line__marshruts__card-box_card-img">
+function cardCreate(img, map, text) {
+  return (cardBlock = `<div class="red-line__marshruts__card-box_card-img">
                   <img src=${img} alt="" />
                   
                  </div>
@@ -63,8 +63,7 @@ function CardCreate(img, map, text) {
                       ${text}
                     </p>
                   </div>
-              </div>`;
-  return cardBlock;
+              </div>`);
 }
 
 function goToNextHTML() {
@@ -72,7 +71,7 @@ function goToNextHTML() {
   window.location.href = "http://127.0.0.1:5500/pages/unical/unicalPage.html";
 }
 
-function cikle() {
+function cardInnerParent() {
   // Создание карточек
   const parentCards = document.querySelector(
     ".red-line__marshruts__card-box_small-card-box"
@@ -81,7 +80,7 @@ function cikle() {
     const card = document.createElement("div");
     card.classList.add("red-line__marshruts__card-box_card");
     card.classList.add("nonActive");
-    const card_final = CardCreate(city.Img_scr, city.Map_scr, city.Text);
+    const card_final = cardCreate(city.Img_scr, city.Map_scr, city.Text);
     card.innerHTML = card_final;
     parentCards.appendChild(card);
   });
@@ -183,7 +182,7 @@ function viewElements() {
   }
 }
 
-function Reset() {
+function reset() {
   const radio = document.querySelectorAll(".check");
   radio.forEach((el) => {
     el.checked = false;
@@ -200,7 +199,7 @@ function findCitiesByTitle(searchString) {
 }
 
 // Вывод совпадений
-function SeeSearch() {
+function seeSearch() {
   const request = document.getElementById("search").value;
   const searchList = findCitiesByTitle(request);
   const linksCard = document.querySelectorAll(".cardLink");
@@ -223,7 +222,7 @@ let cards = document.querySelectorAll(".red-line__marshruts__card-box_card");
 let cardName = document.querySelector(".red-line__marshruts-text");
 let Body = document.querySelector("body");
 
-function ShowCard(index) {
+function showCard(index) {
   number_card = document.querySelector(".red-line__marshruts-circle");
   cards = document.querySelectorAll(".red-line__marshruts__card-box_card");
   cardName = document.querySelector(".red-line__marshruts-text");
@@ -245,7 +244,7 @@ document.querySelectorAll(".check").forEach((el) => {
 
 const modalForm = document.querySelector(".modal");
 // Модальное окно
-function ModalMeny() {
+function modalMeny() {
   const modal = document.querySelector(".modal");
   const inputs = document.querySelectorAll(".modal__form-input");
   if (!modal.classList.contains("bbase")) {
@@ -271,17 +270,17 @@ document.querySelector(".controls").addEventListener("click", function (event) {
     if (index < 0) {
       index = cards.length - 1;
     }
-    ShowCard(index);
+    showCard(index);
   } else if (event.target.classList.contains("arrow-reverse")) {
     let index = curentCardIndex + 1;
     if (index >= cards.length) {
       index = 0;
     }
-    ShowCard(index);
+    showCard(index);
   }
 });
 
-async function GetCards() {
+async function getCards() {
   try {
     const response = await fetch(
       "https://67275558302d03037e70ad42.mockapi.io/api/redline/cardList",
@@ -296,7 +295,7 @@ async function GetCards() {
   }
 }
 
-async function GetLinks() {
+async function getLinks() {
   try {
     const response = await fetch(
       "https://67275558302d03037e70ad42.mockapi.io/api/redline/linkList",
@@ -312,14 +311,14 @@ async function GetLinks() {
 }
 
 async function loadingPage() {
-  await GetCards();
-  await GetLinks();
-  await cikle();
+  await getCards();
+  await getLinks();
+  await cardInnerParent();
   await cicleLinks();
   await circlePagination();
-  await ShowCard(curentCardIndex);
+  await showCard(curentCardIndex);
   const Loading = document.querySelector(".loading");
-  Loading.classList.remove("activeLoading");
+  Loading.classList.remove("active__loading");
   Buildings = document.querySelectorAll(".buildings");
   Parks = document.querySelectorAll(".parki");
   Museums = document.querySelectorAll(".museumi");
