@@ -2,7 +2,7 @@ let cityList = [];
 let linkList = [];
 
 function CardCreate(img, map, text) {
-  const cardBlock = `<div class="red-line__marshruts__card-box_card-img">
+  return (cardBlock = `<div class="red-line__marshruts__card-box_card-img">
                   <img src=${img} alt="" />
                   
                  </div>
@@ -23,8 +23,7 @@ function CardCreate(img, map, text) {
                       ${text}
                     </p>
                   </div>
-              </div>`;
-  return cardBlock;
+              </div>`);
 }
 
 // Создание карточек

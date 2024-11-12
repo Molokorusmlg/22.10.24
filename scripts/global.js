@@ -25,7 +25,7 @@ function circlePagination() {
 
 function cicleLinks() {
   // Создание ссылок
-  const parentBlock = document.querySelector(".red-line__bigText-text");
+  const parentBlock = document.querySelector(".red-line__big__text-text");
   linkList.forEach((link) => {
     const links = document.createElement("a");
     if (link.indexLink <= 10) {
@@ -110,8 +110,8 @@ function pagination(page) {
   }
 }
 // Бургер меню
-function burgerMeny() {
-  const burger = document.querySelector(".burgerMeny");
+function burger__meny() {
+  const burger = document.querySelector(".burger__meny");
   if (!burger.classList.contains("bbase")) {
     if (burger.classList.contains("bhide")) {
       burger.classList.remove("bhide");

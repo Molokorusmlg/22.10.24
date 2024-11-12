@@ -9,21 +9,21 @@
   </head>
   <body>
     <section class="red-line" id="line">
-      <div class="red-line__bigText">
-        <h1 class="red-line__bigText-title">Красная Линия</h1>
-        <div class="red-line__bigText-searchBox">
+      <div class="red-line__big__text">
+        <h1 class="red-line__big__text-title">Красная Линия</h1>
+        <div class="red-line__big__text-searchBox">
           <input
-            class="red-line__bigText-input"
+            class="red-line__big__text-input"
             oninput="SeeSearch()"
             id="search"
             type="text"
             placeholder="Найти по слову"
           />
         </div>
-        <div class="red-line__bigText_inputbox">
-          <div class="red-line__bigText_ColumCeckButtons">
-            <div class="red-line__bigText_checkbuttonBox">
-              <label class="red-line__bigText-label" for="parks">Парки</label>
+        <div class="red-line__big__text_inputbox">
+          <div class="red-line__big__text_ColumCeckButtons">
+            <div class="red-line__big__text_check__button__box">
+              <label class="red-line__big__text-label" for="parks">Парки</label>
               <input
                 onclick="showCheckbox('p')"
                 class="check"
@@ -33,8 +33,8 @@
               />
             </div>
 
-            <div class="red-line__bigText_checkbuttonBox">
-              <label class="red-line__bigText-label" for="buildings"
+            <div class="red-line__big__text_check__button__box">
+              <label class="red-line__big__text-label" for="buildings"
                 >здания</label
               >
               <input
@@ -47,9 +47,11 @@
             </div>
           </div>
 
-          <div class="red-line__bigText_ColumCeckButtons">
-            <div class="red-line__bigText_checkbuttonBox">
-              <label class="red-line__bigText-label" for="museums">музеи</label>
+          <div class="red-line__big__text_ColumCeckButtons">
+            <div class="red-line__big__text_check__button__box">
+              <label class="red-line__big__text-label" for="museums"
+                >музеи</label
+              >
               <input
                 onclick="showCheckbox('m')"
                 class="check"
@@ -59,8 +61,8 @@
               />
             </div>
 
-            <div class="red-line__bigText_checkbuttonBox">
-              <label class="red-line__bigText-label" for="hrams">храмы</label>
+            <div class="red-line__big__text_check__button__box">
+              <label class="red-line__big__text-label" for="hrams">храмы</label>
               <input
                 onclick="showCheckbox('h')"
                 class="check"
@@ -71,15 +73,15 @@
             </div>
           </div>
         </div>
-        <button class="red-line__bigText_button" onclick="Reset()">
+        <button class="red-line__big__text_button" onclick="Reset()">
           <p>Сбросить</p>
         </button>
         <div class="pagination"></div>
-        <hr class="red-line__bigText-line" />
-        <div class="red-line__bigText-text"></div>
+        <hr class="red-line__big__text-line" />
+        <div class="red-line__big__text-text"></div>
       </div>
       <div class="red-line__marshruts">
-        <div class="red-line__marshruts_container">
+        <div class="red-line__marshruts_ container">
           <div class="red-line__marshruts-title">
             <h1 class="red-line__marshruts-title">Маршрут</h1>
           </div>
@@ -146,7 +148,7 @@
         </div>
       </div>
     </section>
-    <div class="burger" onclick="burgerMeny()">
+    <div class="burger" onclick="burger__meny()">
       <img src="../../assets/img/black_burger.svg" alt="" />
     </div>
     <footer class="footer" id="foot">
@@ -178,22 +180,24 @@
         /></a>
       </div>
     </footer>
-    <div class="burgerMeny bbase">
-      <div class="burgerMeny_block">
-        <div class="burgerMeny_block_header">
-          <p class="burgerMeny_block_header-title">Красная линия</p>
+    <div class="burger__meny bbase">
+      <div class="burger__meny_block">
+        <div class="burger__meny_block_header">
+          <p class="burger__meny_block_header-title">Красная линия</p>
           <img
-            onclick="burgerMeny()"
-            class="burgerMeny_block_header-imgsecond"
+            onclick="burger__meny()"
+            class="burger__meny_block_header-imgsecond"
             src="../../assets/img/close_burder_red.svg"
             alt=""
           />
         </div>
-        <div class="burgerMeny_block_spisok">
-          <a class="burgerMeny_block_spisok-link" href="../mainpage/index.html"
+        <div class="burger__meny_block_spisok">
+          <a
+            class="burger__meny_block_spisok-link"
+            href="../mainpage/index.html"
             >Главная</a
           >
-          <a class="burgerMeny_block_spisok-link" href="#foot">О нас</a>
+          <a class="burger__meny_block_spisok-link" href="#foot">О нас</a>
         </div>
       </div>
     </div>

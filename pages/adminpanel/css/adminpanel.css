@@ -183,7 +183,7 @@
   height: 100%;
 }
 
-.drop-container {
+.drop- container {
   position: relative;
   display: flex;
   gap: 10px;
@@ -198,26 +198,26 @@
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
-.drop-container-title {
+.drop- container-title {
   color: #444;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
   transition: color 0.2s ease-in-out;
 }
-.drop-container:hover {
+.drop- container:hover {
   background: #eee;
   border-color: #111;
 }
-.drop-container:hover .drop-title {
+.drop- container:hover .drop-title {
   color: #222;
 }
 
-.cardbutton {
+.card__button {
   width: 100%;
   margin-top: 30px;
 }
-.cardbutton__box {
+.card__button__box {
   margin-top: 60px;
   width: 100%;
   display: flex;
@@ -225,7 +225,7 @@
   justify-content: center;
   align-items: center;
 }
-.cardbutton__box-submit {
+.card__button__box-submit {
   text-decoration: none;
   padding: 25px 40px 25px 40px;
   border-radius: 10px;
@@ -236,7 +236,7 @@
   transition: all 0.4s ease-in-out;
   font-size: 20px;
 }
-.cardbutton__box-submit:hover {
+.card__button__box-submit:hover {
   color: rgba(225, 36, 36, 0.7254901961);
   border: 1px solid rgba(225, 36, 36, 0.2470588235);
 }

@@ -30,7 +30,7 @@
   }
 }
 
-@mixin Container($left, $right, $top, $indent) {
+@mixin container($left, $right, $top, $indent) {
   @if ($indent == padding) {
     padding-left: $left;
     padding-right: $right;
@@ -78,7 +78,7 @@ $desctop-small_screen: 1080px;
 $desctop-medium_screen: 1480px;
 $desctop-large_screen: 1860px;
 
-@mixin adaptiv($media) {
+@mixin adaptive($media) {
   @if ($media == mobile) {
     @media (max-width: $mobile_screen) {
       @content;

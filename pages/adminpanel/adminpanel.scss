@@ -62,9 +62,9 @@
 
 .red-line {
   height: 100vh;
-  @include Container(0px, 10px, 0, padding);
+  @include container(0px, 10px, 0, padding);
   @include flex(row, 0, 0);
-  @include adaptiv(table) {
+  @include adaptive(table) {
     height: 150vh;
   }
   &__marshruts {
@@ -92,10 +92,10 @@
         &:hover {
           background-color: #949494a8;
         }
-        @include adaptiv(table) {
+        @include adaptive(table) {
           @include flex(row, center, center);
         }
-        @include adaptiv(mobile) {
+        @include adaptive(mobile) {
           @include flex(column, center, center);
         }
         &.active {
@@ -121,7 +121,7 @@
           overflow: hidden;
           width: 300px;
           height: 300px;
-          @include adaptiv(table) {
+          @include adaptive(table) {
             width: 200px;
             height: 200px;
           }
@@ -135,7 +135,7 @@
   }
 }
 
-.drop-container {
+.drop- container {
   position: relative;
   display: flex;
   gap: 10px;
@@ -165,7 +165,7 @@
   }
 }
 
-.cardbutton {
+.card__button {
   width: 100%;
   margin-top: 30px;
 

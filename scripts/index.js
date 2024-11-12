@@ -1,7 +1,6 @@
-
 // Бургер меню
-function burgerMeny() {
-  const burger = document.querySelector(".burgerMeny");
+function burger__meny() {
+  const burger = document.querySelector(".burger__meny");
   if (!burger.classList.contains("bbase")) {
     if (burger.classList.contains("bhide")) {
       burger.classList.remove("bhide");
