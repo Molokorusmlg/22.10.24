@@ -162,7 +162,7 @@
   }
 }
 
-.redline {
+.red-line {
   height: 100vh;
   @include Container(0px, 10px, 0, padding);
   @include flex(row, 0, 0);
@@ -345,14 +345,14 @@
         height: 20px;
       }
     }
-    &__cardBox {
+    &__card-box {
       @include flex(column, 0, center);
       gap: 100px;
       width: 100%;
       height: 50vh;
       margin-top: 50px;
       object-fit: contain;
-      &_SmallCardBox {
+      &_small-card-box {
         width: 100%;
         height: 50vh;
         position: relative;

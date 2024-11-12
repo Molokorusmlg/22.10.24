@@ -8,22 +8,22 @@
     <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico" />
   </head>
   <body>
-    <section class="redline" id="line">
-      <div class="redline__bigText">
-        <h1 class="redline__bigText-title">Красная Линия</h1>
-        <div class="redline__bigText-searchBox">
+    <section class="red-line" id="line">
+      <div class="red-line__bigText">
+        <h1 class="red-line__bigText-title">Красная Линия</h1>
+        <div class="red-line__bigText-searchBox">
           <input
-            class="redline__bigText-input"
+            class="red-line__bigText-input"
             oninput="SeeSearch()"
             id="search"
             type="text"
             placeholder="Найти по слову"
           />
         </div>
-        <div class="redline__bigText_inputbox">
-          <div class="redline__bigText_ColumCeckButtons">
-            <div class="redline__bigText_checkbuttonBox">
-              <label class="redline__bigText-label" for="parks">Парки</label>
+        <div class="red-line__bigText_inputbox">
+          <div class="red-line__bigText_ColumCeckButtons">
+            <div class="red-line__bigText_checkbuttonBox">
+              <label class="red-line__bigText-label" for="parks">Парки</label>
               <input
                 onclick="showCheckbox('p')"
                 class="check"
@@ -33,8 +33,8 @@
               />
             </div>
 
-            <div class="redline__bigText_checkbuttonBox">
-              <label class="redline__bigText-label" for="buildings"
+            <div class="red-line__bigText_checkbuttonBox">
+              <label class="red-line__bigText-label" for="buildings"
                 >здания</label
               >
               <input
@@ -47,9 +47,9 @@
             </div>
           </div>
 
-          <div class="redline__bigText_ColumCeckButtons">
-            <div class="redline__bigText_checkbuttonBox">
-              <label class="redline__bigText-label" for="museums">музеи</label>
+          <div class="red-line__bigText_ColumCeckButtons">
+            <div class="red-line__bigText_checkbuttonBox">
+              <label class="red-line__bigText-label" for="museums">музеи</label>
               <input
                 onclick="showCheckbox('m')"
                 class="check"
@@ -59,8 +59,8 @@
               />
             </div>
 
-            <div class="redline__bigText_checkbuttonBox">
-              <label class="redline__bigText-label" for="hrams">храмы</label>
+            <div class="red-line__bigText_checkbuttonBox">
+              <label class="red-line__bigText-label" for="hrams">храмы</label>
               <input
                 onclick="showCheckbox('h')"
                 class="check"
@@ -71,34 +71,34 @@
             </div>
           </div>
         </div>
-        <button class="redline__bigText_button" onclick="Reset()">
+        <button class="red-line__bigText_button" onclick="Reset()">
           <p>Сбросить</p>
         </button>
         <div class="pagination"></div>
-        <hr class="redline__bigText-line" />
-        <div class="redline__bigText-text"></div>
+        <hr class="red-line__bigText-line" />
+        <div class="red-line__bigText-text"></div>
       </div>
-      <div class="redline__marshruts">
-        <div class="redline__marshruts_container">
-          <div class="redline__marshruts-title">
-            <h1 class="redline__marshruts-title">Маршрут</h1>
+      <div class="red-line__marshruts">
+        <div class="red-line__marshruts_container">
+          <div class="red-line__marshruts-title">
+            <h1 class="red-line__marshruts-title">Маршрут</h1>
           </div>
-          <div class="redline__marshruts__line">
+          <div class="red-line__marshruts__line">
             <img
-              class="redline__marshruts__line-img"
+              class="red-line__marshruts__line-img"
               src="../../assets/img/Linemarshruts.svg"
               alt=""
             />
-            <div class="redline__marshruts-circle" id="m1">
+            <div class="red-line__marshruts-circle" id="m1">
               <p class="number__marshrut">1</p>
             </div>
           </div>
-          <div class="redline__marshruts-text">
-            <p class="redline__marshruts-text">Площадь 1905 года</p>
+          <div class="red-line__marshruts-text">
+            <p class="red-line__marshruts-text">Площадь 1905 года</p>
           </div>
-          <div class="redline__marshruts__cardBox">
+          <div class="red-line__marshruts__card-box">
             <div
-              class="redline__marshruts__cardBox_SmallCardBox"
+              class="red-line__marshruts__card-box_small-card-box"
               onclick="goToNextHTML()"
             ></div>
             <button class="controls">

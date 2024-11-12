@@ -2,7 +2,7 @@ let cardsData = [];
 let linksData = [];
 let baseData = [];
 function LinkCreate(img1, img2, title1, title2) {
-  const linkBlock = `<div class="blocktonext__firstblock" onclick = "GotoPageNext()">
+  return (linkBlock = `<div class="blocktonext__firstblock" onclick = "GotoPageNext()">
         <div class="blocktonext__card">
           <div class="blocktonext__cardsecond__imgBlock">
             <img
@@ -37,8 +37,7 @@ function LinkCreate(img1, img2, title1, title2) {
             />
           </div>
         </div>
-      </div>`;
-  return linkBlock;
+      </div>`);
 }
 
 function CardCreate(img, map, text, title) {

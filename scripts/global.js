@@ -25,7 +25,7 @@ function circlePagination() {
 
 function cicleLinks() {
   // Создание ссылок
-  const parentBlock = document.querySelector(".redline__bigText-text");
+  const parentBlock = document.querySelector(".red-line__bigText-text");
   linkList.forEach((link) => {
     const links = document.createElement("a");
     if (link.indexLink <= 10) {
@@ -42,12 +42,12 @@ function cicleLinks() {
 
 //сама карточка
 function CardCreate(img, map, text) {
-  const cardBlock = `<div class="redline__marshruts__cardBox_card-img">
+  const cardBlock = `<div class="red-line__marshruts__card-box_card-img">
                   <img src=${img} alt="" />
                   
                  </div>
-                <div class="redline__marshruts__cardBox_card-columnbox">
-                  <div class="redline__marshruts__cardBox_card-map">
+                <div class="red-line__marshruts__card-box_card-columnbox">
+                  <div class="red-line__marshruts__card-box_card-map">
                     <iframe
                       src=${map}
                       width="200"
@@ -58,7 +58,7 @@ function CardCreate(img, map, text) {
                       referrerpolicy="no-referrer-when-downgrade"
                     ></iframe>
                   </div>
-                  <div class="redline__marshruts__cardBox_card-description">
+                  <div class="red-line__marshruts__card-box_card-description">
                     <p>
                       ${text}
                     </p>
@@ -75,11 +75,11 @@ function goToNextHTML() {
 function cikle() {
   // Создание карточек
   const parentCards = document.querySelector(
-    ".redline__marshruts__cardBox_SmallCardBox"
+    ".red-line__marshruts__card-box_small-card-box"
   );
   cityList.forEach((city) => {
     const card = document.createElement("div");
-    card.classList.add("redline__marshruts__cardBox_card");
+    card.classList.add("red-line__marshruts__card-box_card");
     card.classList.add("nonActive");
     const card_final = CardCreate(city.Img_scr, city.Map_scr, city.Text);
     card.innerHTML = card_final;
@@ -218,23 +218,23 @@ function SeeSearch() {
 let curentCardIndex = 0;
 // Вывод карт
 
-let number_card = document.querySelector(".redline__marshruts-circle");
-let cards = document.querySelectorAll(".redline__marshruts__cardBox_card");
-let cardName = document.querySelector(".redline__marshruts-text");
+let number_card = document.querySelector(".red-line__marshruts-circle");
+let cards = document.querySelectorAll(".red-line__marshruts__card-box_card");
+let cardName = document.querySelector(".red-line__marshruts-text");
 let Body = document.querySelector("body");
 
 function ShowCard(index) {
-  number_card = document.querySelector(".redline__marshruts-circle");
-  cards = document.querySelectorAll(".redline__marshruts__cardBox_card");
-  cardName = document.querySelector(".redline__marshruts-text");
+  number_card = document.querySelector(".red-line__marshruts-circle");
+  cards = document.querySelectorAll(".red-line__marshruts__card-box_card");
+  cardName = document.querySelector(".red-line__marshruts-text");
   Body = document.querySelector("body");
   cards[curentCardIndex].classList.replace("active", "nonActive");
   cards[index].classList.replace("nonActive", "active");
-  cardName.innerHTML = `<p class="redline__marshruts-text">${cityList[index].Title}</p>`;
+  cardName.innerHTML = `<p class="red-line__marshruts-text">${cityList[index].Title}</p>`;
   curentCardIndex = index;
   number_card.innerHTML = `<p>${index + 1}</p>`;
   const active_title_text = document.getElementById(index);
-  const title_blockd = document.querySelector(".redline__marshruts-text");
+  const title_blockd = document.querySelector(".red-line__marshruts-text");
 }
 
 // Переключение фильтров, запись в локалстроедж
