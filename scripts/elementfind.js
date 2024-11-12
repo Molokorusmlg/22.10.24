@@ -188,15 +188,15 @@ async function loadingPage() {
 loadingPage();
 
 /* 
-new branch
+git add
 git commit -m ""
 git push
-git fetch
-git fetch --all
 git pull 
 git pull --all 
-git branch -m
+git fetch
+git fetch --all
+new branch
+git branch -m / branch -f 
 git reset HEAD~
-git add
 микро макро 
 */

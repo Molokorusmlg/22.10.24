@@ -34,9 +34,184 @@ body {
   align-items: center;
 }
 
+.form-hide {
+  display: none;
+}
+
+.button-active {
+  color: rgba(243, 4, 4, 0.631372549);
+}
+
 .block {
   width: 40%;
   height: 60%;
   background-color: #fff;
   border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0px 4px 9.9px -5px rgba(0, 0, 0, 0.6588235294);
+}
+.block__wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.block__buttons {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.block__button-register {
+  font-size: 15px;
+  font-family: Montserrat;
+  font-weight: 800;
+  transition: all 0.2s ease-in-out;
+}
+.block__button-register:hover {
+  color: rgba(243, 4, 4, 0.631372549);
+}
+.block__button-signin {
+  font-size: 15px;
+  font-family: Montserrat;
+  font-weight: 800;
+  transition: all 0.2s ease-in-out;
+}
+.block__button-signin:hover {
+  color: rgba(243, 4, 4, 0.631372549);
+}
+
+.form__wrap {
+  width: 100%;
+  height: 70%;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register {
+  width: 70%;
+  margin-top: 30px;
+}
+.register__box {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.register__box-submit {
+  text-decoration: none;
+  padding: 15px 20px 15px 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 9.9px -5px rgba(0, 0, 0, 0.2509803922);
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.137254902);
+  transition: all 0.4s ease-in-out;
+}
+.register__box-submit:hover {
+  color: rgba(225, 36, 36, 0.7254901961);
+  border: 1px solid rgba(225, 36, 36, 0.2470588235);
+}
+.register__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.register__form_input {
+  width: 100%;
+  border: 1px solid rgba(202, 202, 202, 0.7254901961);
+  padding: 10px;
+  border-radius: 20px;
+  outline: none;
+  box-shadow: 0px 4px 9.9px -5px rgba(0, 0, 0, 0.2509803922);
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.137254902);
+  transition: all 0.4s ease-in-out;
+}
+.register__form_input::-moz-placeholder {
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.register__form_input::placeholder {
+  transition: all 0.4s ease-in-out;
+}
+.register__form_input:hover {
+  border: 1px solid rgba(225, 36, 36, 0.2470588235);
+}
+.register__form_input:hover::-moz-placeholder {
+  color: rgba(225, 36, 36, 0.7254901961);
+}
+.register__form_input:hover::placeholder {
+  color: rgba(225, 36, 36, 0.7254901961);
+}
+
+.signin {
+  width: 70%;
+  margin-top: 30px;
+}
+.signin__box {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.signin__box-submit {
+  text-decoration: none;
+  padding: 15px 20px 15px 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 9.9px -5px rgba(0, 0, 0, 0.2509803922);
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.137254902);
+  transition: all 0.4s ease-in-out;
+}
+.signin__box-submit:hover {
+  color: rgba(225, 36, 36, 0.7254901961);
+  border: 1px solid rgba(225, 36, 36, 0.2470588235);
+}
+.signin__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.signin__form_input {
+  width: 100%;
+  border: 1px solid rgba(202, 202, 202, 0.7254901961);
+  padding: 10px;
+  border-radius: 20px;
+  outline: none;
+  box-shadow: 0px 4px 9.9px -5px rgba(0, 0, 0, 0.2509803922);
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.137254902);
+  transition: all 0.4s ease-in-out;
+}
+.signin__form_input::-moz-placeholder {
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.signin__form_input::placeholder {
+  transition: all 0.4s ease-in-out;
+}
+.signin__form_input:hover {
+  border: 1px solid rgba(225, 36, 36, 0.2470588235);
+}
+.signin__form_input:hover::-moz-placeholder {
+  color: rgba(225, 36, 36, 0.7254901961);
+}
+.signin__form_input:hover::placeholder {
+  color: rgba(225, 36, 36, 0.7254901961);
 }

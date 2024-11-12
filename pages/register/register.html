@@ -8,36 +8,50 @@
   </head>
   <body class="RegisterBackgroung">
     <div class="block">
-      <div class="block__buttons">
-        <p class="block__button-register">Регистрация</p>
-        <p class="block__button-signin">Вход</p>
-      </div>
-      <div class="register">
-        <div class="register__form">
-          <input
-            type="text"
-            placeholder="Придумайте логин"
-            class="register__form_input"
-          />
-          <input
-            type="password"
-            placeholder="Пароль"
-            class="register__form_input"
-          />
+      <div class="block__wrap">
+        <div class="block__buttons">
+          <p class="block__button-register" onclick="ButtonClick(1)">Sign up</p>
+          <p
+            class="block__button-signin button-active"
+            onclick="ButtonClick(2)"
+          >
+            Sign in
+          </p>
         </div>
-        <a href="#" class="register__submit"></a>
       </div>
-      <div class="signin">
-        <div class="signin__form">
-          <input type="text" placeholder="Логин" class="signin__form_input" />
-          <input
-            type="password"
-            placeholder="Пароль"
-            class="signin__form_input"
-          />
+      <div class="form__wrap">
+        <div class="register form-hide">
+          <div class="register__form">
+            <input
+              type="text"
+              placeholder="Придумайте логин"
+              class="register__form_input"
+            />
+            <input
+              type="password"
+              placeholder="Пароль"
+              class="register__form_input"
+            />
+          </div>
+          <div class="register__box">
+            <a href="#" class="register__box-submit">Сохранить</a>
+          </div>
         </div>
-        <a href="#" class="signin__submit"></a>
+        <div class="signin">
+          <div class="signin__form">
+            <input type="text" placeholder="Логин" class="signin__form_input" />
+            <input
+              type="password"
+              placeholder="Пароль"
+              class="signin__form_input"
+            />
+          </div>
+          <div class="signin__box">
+            <a href="#" class="signin__box-submit">Сохранить</a>
+          </div>
+        </div>
       </div>
     </div>
+    <script src="../../scripts/formAuth.js"></script>
   </body>
 </html>
