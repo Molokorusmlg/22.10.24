@@ -7,6 +7,37 @@
     <link rel="stylesheet" href="./css/adminpanel.css" />
   </head>
   <body>
-    <h1>Я КРЙТОЙ ПЕРЕЦ А МИХА sa ЛОЛ КЕКЕ</h1>
+    <h1>Удалить Карточки</h1>
+    <div class="cards"></div>
+    <div class="newCard">
+      <h1>Создать карточку</h1>
+      <form action="" class="newCard__form">
+        <label for="images" class="drop-container" id="dropcontainer">
+          <span class="drop-title">Drop files here</span>
+          or
+          <input type="file" id="images" accept="image/*" required />
+        </label>
+        <input
+          class="newCard__form-input"
+          type="text"
+          placeholder="Заголовок"
+        />
+        <textarea
+          class="newCard__form-input newCard__form-input-big"
+          type="text"
+          placeholder="Описание"
+        ></textarea>
+
+        <input
+          class="newCard__form-input"
+          type="text"
+          placeholder="Ссылка на кртинку"
+        />
+      </form>
+      <div class="cardbutton__box">
+        <a href="#" class="cardbutton__box-submit">Создать</a>
+      </div>
+    </div>
+    <script src="../../scripts/admin.js"></script>
   </body>
 </html>

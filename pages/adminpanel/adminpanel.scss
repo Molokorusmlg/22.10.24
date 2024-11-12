@@ -17,3 +17,175 @@
   src: url("../../../assets/fonts/MontserratAlternates-ExtraBold.ttf");
   font-weight: 800;
 }
+
+.cards {
+  @include flex(column, none, none);
+  gap: 10px;
+  height: 90vh;
+  overflow: scroll;
+  box-shadow: 0px 4px 9.9px -5px #000000a8;
+}
+
+.newCard {
+  padding: 30px;
+  height: 80vh;
+  &__form {
+    @include flex(column, center, center);
+    gap: 30px;
+    &-input {
+      width: 50%;
+      border: 1px solid #cacacab9;
+      padding: 20px;
+      border-radius: 20px;
+      outline: none;
+      box-shadow: 0px 4px 9.9px -5px #00000040;
+      color: black;
+      border: 1px solid #00000023;
+      transition: all 0.4s ease-in-out;
+      &-big {
+        height: 100px;
+        word-break: break-all;
+        resize: none;
+      }
+      &::placeholder {
+        transition: all 0.4s ease-in-out;
+      }
+      &:hover {
+        &::placeholder {
+          color: #e12424b9;
+        }
+        border: 1px solid #e124243f;
+      }
+    }
+  }
+}
+
+.redline {
+  height: 100vh;
+  @include Container(0px, 10px, 0, padding);
+  @include flex(row, 0, 0);
+  @include adaptiv(table) {
+    height: 150vh;
+  }
+  &__marshruts {
+    @include flex(column, 0, center);
+    max-width: 80vw;
+    width: 100%;
+    &__cardBox {
+      @include flex(column, 0, 0);
+      gap: 100px;
+      width: 100%;
+      height: 50vh;
+      margin-top: 50px;
+      object-fit: contain;
+      &_SmallCardBox {
+        width: 100%;
+        height: 50vh;
+        position: relative;
+      }
+      &_card {
+        width: 100%;
+        padding: 40px;
+        @include flex(row, 0, 0);
+        gap: 30px;
+        transition: 0.6s ease-in-out;
+        &:hover {
+          background-color: #949494a8;
+        }
+        @include adaptiv(table) {
+          @include flex(row, center, center);
+        }
+        @include adaptiv(mobile) {
+          @include flex(column, center, center);
+        }
+        &.active {
+          animation: card_visible 0.7s ease-in-out;
+          opacity: 1;
+        }
+        &-columnbox {
+          width: 200px;
+        }
+        &-map {
+          margin-bottom: 16px;
+        }
+        &-description {
+          border-radius: 5px;
+          width: 200px;
+          height: 132px;
+          color: #d00000;
+          font-size: 15px;
+          letter-spacing: 1px;
+        }
+        &-img {
+          border-radius: 5px;
+          overflow: hidden;
+          width: 300px;
+          height: 300px;
+          @include adaptiv(table) {
+            width: 200px;
+            height: 200px;
+          }
+          img {
+            display: block;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.drop-container {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px dashed #555;
+  color: #444;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  &-title {
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.2s ease-in-out;
+  }
+  &:hover {
+    background: #eee;
+    border-color: #111;
+    .drop-title {
+      color: #222;
+    }
+  }
+}
+
+.cardbutton {
+  width: 100%;
+  margin-top: 30px;
+  &__box {
+    margin-top: 60px;
+    width: 100%;
+    @include flex(row, center, center);
+    &-submit {
+      text-decoration: none;
+      padding: 25px 40px 25px 40px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0px 4px 9.9px -5px #00000040;
+      color: black;
+      border: 1px solid #00000023;
+      transition: all 0.4s ease-in-out;
+      font-size: 20px;
+      &:hover {
+        color: #e12424b9;
+        border: 1px solid #e124243f;
+      }
+    }
+  }
+}

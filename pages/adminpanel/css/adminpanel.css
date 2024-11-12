@@ -24,3 +24,219 @@
   src: url("../../../assets/fonts/MontserratAlternates-ExtraBold.ttf");
   font-weight: 800;
 }
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: none;
+  gap: 10px;
+  height: 90vh;
+  overflow: scroll;
+  box-shadow: 0px 4px 9.9px -5px rgba(0, 0, 0, 0.6588235294);
+}
+
+.newCard {
+  padding: 30px;
+  height: 80vh;
+}
+.newCard__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.newCard__form-input {
+  width: 50%;
+  border: 1px solid rgba(202, 202, 202, 0.7254901961);
+  padding: 20px;
+  border-radius: 20px;
+  outline: none;
+  box-shadow: 0px 4px 9.9px -5px rgba(0, 0, 0, 0.2509803922);
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.137254902);
+  transition: all 0.4s ease-in-out;
+}
+.newCard__form-input-big {
+  height: 100px;
+  word-break: break-all;
+  resize: none;
+}
+.newCard__form-input::-moz-placeholder {
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.newCard__form-input::placeholder {
+  transition: all 0.4s ease-in-out;
+}
+.newCard__form-input:hover {
+  border: 1px solid rgba(225, 36, 36, 0.2470588235);
+}
+.newCard__form-input:hover::-moz-placeholder {
+  color: rgba(225, 36, 36, 0.7254901961);
+}
+.newCard__form-input:hover::placeholder {
+  color: rgba(225, 36, 36, 0.7254901961);
+}
+
+.redline {
+  height: 100vh;
+  padding-left: 0px;
+  padding-right: 10px;
+  padding-top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: 0;
+  align-items: 0;
+}
+@media (max-width: 768px) {
+  .redline {
+    height: 150vh;
+  }
+}
+.redline__marshruts {
+  display: flex;
+  flex-direction: column;
+  justify-content: 0;
+  align-items: center;
+  max-width: 80vw;
+  width: 100%;
+}
+.redline__marshruts__cardBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: 0;
+  align-items: 0;
+  gap: 100px;
+  width: 100%;
+  height: 50vh;
+  margin-top: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.redline__marshruts__cardBox_SmallCardBox {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+}
+.redline__marshruts__cardBox_card {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: 0;
+  align-items: 0;
+  gap: 30px;
+  transition: 0.6s ease-in-out;
+}
+.redline__marshruts__cardBox_card:hover {
+  background-color: rgba(148, 148, 148, 0.6588235294);
+}
+@media (max-width: 768px) {
+  .redline__marshruts__cardBox_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 467px) {
+  .redline__marshruts__cardBox_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.redline__marshruts__cardBox_card.active {
+  animation: card_visible 0.7s ease-in-out;
+  opacity: 1;
+}
+.redline__marshruts__cardBox_card-columnbox {
+  width: 200px;
+}
+.redline__marshruts__cardBox_card-map {
+  margin-bottom: 16px;
+}
+.redline__marshruts__cardBox_card-description {
+  border-radius: 5px;
+  width: 200px;
+  height: 132px;
+  color: #d00000;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.redline__marshruts__cardBox_card-img {
+  border-radius: 5px;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+}
+@media (max-width: 768px) {
+  .redline__marshruts__cardBox_card-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+.redline__marshruts__cardBox_card-img img {
+  display: block;
+  height: 100%;
+}
+
+.drop-container {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px dashed #555;
+  color: #444;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.drop-container-title {
+  color: #444;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: color 0.2s ease-in-out;
+}
+.drop-container:hover {
+  background: #eee;
+  border-color: #111;
+}
+.drop-container:hover .drop-title {
+  color: #222;
+}
+
+.cardbutton {
+  width: 100%;
+  margin-top: 30px;
+}
+.cardbutton__box {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.cardbutton__box-submit {
+  text-decoration: none;
+  padding: 25px 40px 25px 40px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 9.9px -5px rgba(0, 0, 0, 0.2509803922);
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.137254902);
+  transition: all 0.4s ease-in-out;
+  font-size: 20px;
+}
+.cardbutton__box-submit:hover {
+  color: rgba(225, 36, 36, 0.7254901961);
+  border: 1px solid rgba(225, 36, 36, 0.2470588235);
+}
