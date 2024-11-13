@@ -44,7 +44,7 @@
   filter: brightness(0.4);
 }
 
-.blocktonext {
+.block_to_next {
   padding: 3%;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -55,7 +55,7 @@
     height: 200px;
     width: 100%;
     @include flex(row, flex-end, center);
-    @include adaptiv(table) {
+    @include adaptive(table) {
       height: 130px;
     }
   }
@@ -63,7 +63,7 @@
     height: 200px;
     width: 100%;
     @include flex(row, flex-start, center);
-    @include adaptiv(table) {
+    @include adaptive(table) {
       height: 130px;
     }
   }
@@ -83,10 +83,10 @@
         filter: brightness(1);
       }
     }
-    @include adaptiv(table) {
+    @include adaptive(table) {
       width: 80%;
     }
-    @include adaptiv("mobile") {
+    @include adaptive("mobile") {
       width: 98%;
     }
     &-text {
@@ -96,7 +96,7 @@
       font-size: 20px;
       font-family: Montserrat;
       font-weight: 800;
-      @include adaptiv("small-pc") {
+      @include adaptive("small-pc") {
         font-size: 15px;
         width: 40%;
       }
@@ -122,10 +122,10 @@
         filter: brightness(1);
       }
     }
-    @include adaptiv(table) {
+    @include adaptive(table) {
       width: 80%;
     }
-    @include adaptiv("mobile") {
+    @include adaptive("mobile") {
       width: 98%;
     }
     &__imgBlock {
@@ -147,10 +147,10 @@
       text-align: center;
       font-size: 60px;
       color: #d00000;
-      @include adaptiv("small-pc") {
+      @include adaptive("small-pc") {
         font-size: 50px;
       }
-      @include adaptiv("table") {
+      @include adaptive("table") {
         font-size: 30px;
       }
     }
@@ -159,7 +159,7 @@
     background-color: #d00000;
     height: 10px;
     border: none;
-    @include adaptiv("table") {
+    @include adaptive("table") {
       height: 5px;
       margin-top: 5px;
     }
@@ -170,7 +170,7 @@
     @include flex(row, center, center);
     flex-wrap: wrap;
     gap: 1%;
-    @include adaptiv("small-pc") {
+    @include adaptive("small-pc") {
       margin-top: 20px;
       @include flex(column, 0, center);
       flex-wrap: nowrap;
@@ -179,10 +179,10 @@
     &_img {
       &-box {
         width: 30%;
-        @include adaptiv("small-pc") {
+        @include adaptive("small-pc") {
           width: 40%;
         }
-        @include adaptiv("mobile") {
+        @include adaptive("mobile") {
           width: 70%;
         }
       }
@@ -196,11 +196,11 @@
     &__map {
       width: 30%;
       height: 60%;
-      @include adaptiv("small-pc") {
+      @include adaptive("small-pc") {
         width: 90%;
         height: 35%;
       }
-      @include adaptiv("mobile") {
+      @include adaptive("mobile") {
         width: 70%;
       }
     }
@@ -220,7 +220,7 @@
   top: 20px;
   left: 20px;
   transition: 0.4s ease-in-out;
-  @include adaptiv("table") {
+  @include adaptive("table") {
     top: 10px;
   }
   &:hover {
@@ -229,14 +229,14 @@
   img {
     width: 25px;
     height: 25px;
-    @include adaptiv("table") {
+    @include adaptive("table") {
       width: 15px;
       height: 15px;
     }
   }
 }
 
-.activeLoading {
+.active__loading {
   @include flex(row, center, center);
 }
 

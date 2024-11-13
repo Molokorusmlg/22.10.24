@@ -25,29 +25,29 @@ function circlePagination() {
 
 function cicleLinks() {
   // Создание ссылок
-  const parentBlock = document.querySelector(".redline__bigText-text");
+  const parentBlock = document.querySelector(".red-line__big__text-text");
   linkList.forEach((link) => {
     const links = document.createElement("a");
     if (link.indexLink <= 10) {
       links.classList.add(link.classLink, "firstPage");
-      links.innerHTML = `<a onclick="ShowCard(${link.indexLink})" id="${link.indexLink}" data-index=${link.indexLink} class="${link.classLink} cardLink" >${link.TitleLink}</a>`;
+      links.innerHTML = `<a onclick="showCard(${link.indexLink})" id="${link.indexLink}" data-index=${link.indexLink} class="${link.classLink} cardLink" >${link.TitleLink}</a>`;
       parentBlock.appendChild(links);
     } else if (link.indexLink > 10 && link.indexLink <= 20) {
       links.classList.add(link.classLink, "secondPage", "hidePage");
-      links.innerHTML = `<a onclick="ShowCard(${link.indexLink})" id="${link.indexLink}" data-index=${link.indexLink} class="${link.classLink} cardLink">${link.TitleLink}</a>`;
+      links.innerHTML = `<a onclick="showCard(${link.indexLink})" id="${link.indexLink}" data-index=${link.indexLink} class="${link.classLink} cardLink">${link.TitleLink}</a>`;
       parentBlock.appendChild(links);
     }
   });
 }
 
 //сама карточка
-function CardCreate(img, map, text) {
-  const cardBlock = `<div class="redline__marshruts__cardBox_card-img">
+function cardCreate(img, map, text) {
+  return (cardBlock = `<div class="red-line__marshruts__card-box_card-img">
                   <img src=${img} alt="" />
                   
                  </div>
-                <div class="redline__marshruts__cardBox_card-columnbox">
-                  <div class="redline__marshruts__cardBox_card-map">
+                <div class="red-line__marshruts__card-box_card-columnbox">
+                  <div class="red-line__marshruts__card-box_card-map">
                     <iframe
                       src=${map}
                       width="200"
@@ -58,13 +58,12 @@ function CardCreate(img, map, text) {
                       referrerpolicy="no-referrer-when-downgrade"
                     ></iframe>
                   </div>
-                  <div class="redline__marshruts__cardBox_card-description">
+                  <div class="red-line__marshruts__card-box_card-description">
                     <p>
                       ${text}
                     </p>
                   </div>
-              </div>`;
-  return cardBlock;
+              </div>`);
 }
 
 function goToNextHTML() {
@@ -72,16 +71,16 @@ function goToNextHTML() {
   window.location.href = "http://127.0.0.1:5500/pages/unical/unicalPage.html";
 }
 
-function cikle() {
+function cardInnerParent() {
   // Создание карточек
   const parentCards = document.querySelector(
-    ".redline__marshruts__cardBox_SmallCardBox"
+    ".red-line__marshruts__card-box_small-card-box"
   );
   cityList.forEach((city) => {
     const card = document.createElement("div");
-    card.classList.add("redline__marshruts__cardBox_card");
+    card.classList.add("red-line__marshruts__card-box_card");
     card.classList.add("nonActive");
-    const card_final = CardCreate(city.Img_scr, city.Map_scr, city.Text);
+    const card_final = cardCreate(city.Img_scr, city.Map_scr, city.Text);
     card.innerHTML = card_final;
     parentCards.appendChild(card);
   });
@@ -110,9 +109,9 @@ function pagination(page) {
   }
 }
 // Бургер меню
-function burgerMeny() {
-  const burger = document.querySelector(".burgerMeny");
-  if (!burger.classList.contains("bbase")) {
+function burgerMenu() {
+  const burger = document.querySelector(".burger__meny");
+  if (!burger.classList.contains("base")) {
     if (burger.classList.contains("bhide")) {
       burger.classList.remove("bhide");
       burger.classList.add("bvis");
@@ -121,7 +120,7 @@ function burgerMeny() {
       burger.classList.remove("bvis");
     }
   } else {
-    burger.classList.remove("bbase");
+    burger.classList.remove("base");
     burger.classList.add("bvis");
   }
 }
@@ -148,10 +147,12 @@ function showCheckbox(type) {
     }
   });
 }
+
 let Buildings = document.querySelectorAll(".buildings");
 let Parks = document.querySelectorAll(".parki");
 let Museums = document.querySelectorAll(".museumi");
 let Hrams = document.querySelectorAll(".hrami");
+
 // Фильтры обработка и вывод
 function viewElement(elList, localItem) {
   elList.forEach((el) => {
@@ -183,7 +184,7 @@ function viewElements() {
   }
 }
 
-function Reset() {
+function reset() {
   const radio = document.querySelectorAll(".check");
   radio.forEach((el) => {
     el.checked = false;
@@ -200,7 +201,7 @@ function findCitiesByTitle(searchString) {
 }
 
 // Вывод совпадений
-function SeeSearch() {
+function seeSearch() {
   const request = document.getElementById("search").value;
   const searchList = findCitiesByTitle(request);
   const linksCard = document.querySelectorAll(".cardLink");
@@ -216,25 +217,23 @@ function SeeSearch() {
   });
 }
 let curentCardIndex = 0;
-// Вывод карт
-
-let number_card = document.querySelector(".redline__marshruts-circle");
-let cards = document.querySelectorAll(".redline__marshruts__cardBox_card");
-let cardName = document.querySelector(".redline__marshruts-text");
+let number_card = document.querySelector(".red-line__marshruts-circle");
+let cards = document.querySelectorAll(".red-line__marshruts__card-box_card");
+let cardName = document.querySelector(".red-line__marshruts-text");
 let Body = document.querySelector("body");
 
-function ShowCard(index) {
-  number_card = document.querySelector(".redline__marshruts-circle");
-  cards = document.querySelectorAll(".redline__marshruts__cardBox_card");
-  cardName = document.querySelector(".redline__marshruts-text");
+function showCard(index) {
+  number_card = document.querySelector(".red-line__marshruts-circle");
+  cards = document.querySelectorAll(".red-line__marshruts__card-box_card");
+  cardName = document.querySelector(".red-line__marshruts-text");
   Body = document.querySelector("body");
   cards[curentCardIndex].classList.replace("active", "nonActive");
   cards[index].classList.replace("nonActive", "active");
-  cardName.innerHTML = `<p class="redline__marshruts-text">${cityList[index].Title}</p>`;
+  cardName.innerHTML = `<p class="red-line__marshruts-text">${cityList[index].Title}</p>`;
   curentCardIndex = index;
   number_card.innerHTML = `<p>${index + 1}</p>`;
   const active_title_text = document.getElementById(index);
-  const title_blockd = document.querySelector(".redline__marshruts-text");
+  const title_blockd = document.querySelector(".red-line__marshruts-text");
 }
 
 // Переключение фильтров, запись в локалстроедж
@@ -245,10 +244,10 @@ document.querySelectorAll(".check").forEach((el) => {
 
 const modalForm = document.querySelector(".modal");
 // Модальное окно
-function ModalMeny() {
+function modalMeny() {
   const modal = document.querySelector(".modal");
   const inputs = document.querySelectorAll(".modal__form-input");
-  if (!modal.classList.contains("bbase")) {
+  if (!modal.classList.contains("base")) {
     if (modal.classList.contains("bhide")) {
       modal.classList.remove("bhide");
       modal.classList.add("bvis");
@@ -260,7 +259,7 @@ function ModalMeny() {
       });
     }
   } else {
-    modal.classList.remove("bbase");
+    modal.classList.remove("base");
     modal.classList.add("bvis");
   }
 }
@@ -271,17 +270,17 @@ document.querySelector(".controls").addEventListener("click", function (event) {
     if (index < 0) {
       index = cards.length - 1;
     }
-    ShowCard(index);
+    showCard(index);
   } else if (event.target.classList.contains("arrow-reverse")) {
     let index = curentCardIndex + 1;
     if (index >= cards.length) {
       index = 0;
     }
-    ShowCard(index);
+    showCard(index);
   }
 });
 
-async function GetCards() {
+async function getCards() {
   try {
     const response = await fetch(
       "https://67275558302d03037e70ad42.mockapi.io/api/redline/cardList",
@@ -296,7 +295,7 @@ async function GetCards() {
   }
 }
 
-async function GetLinks() {
+async function getLinks() {
   try {
     const response = await fetch(
       "https://67275558302d03037e70ad42.mockapi.io/api/redline/linkList",
@@ -312,14 +311,14 @@ async function GetLinks() {
 }
 
 async function loadingPage() {
-  await GetCards();
-  await GetLinks();
-  await cikle();
+  await getCards();
+  await getLinks();
+  await cardInnerParent();
   await cicleLinks();
   await circlePagination();
-  await ShowCard(curentCardIndex);
+  await showCard(curentCardIndex);
   const Loading = document.querySelector(".loading");
-  Loading.classList.remove("activeLoading");
+  Loading.classList.remove("active__loading");
   Buildings = document.querySelectorAll(".buildings");
   Parks = document.querySelectorAll(".parki");
   Museums = document.querySelectorAll(".museumi");

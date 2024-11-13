@@ -3,10 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adminpanel</title>
+    <title>Admin panel</title>
     <link rel="stylesheet" href="./css/adminpanel.css" />
   </head>
   <body>
-    <h1>Я КРЙТОЙ ПЕРЕЦ А МИХА sa ЛОЛ КЕКЕ</h1>
+    <h1>Удалить Карточки</h1>
+    <div class="cards"></div>
+    <div class="new_card">
+      <h1>Создать карточку</h1>
+      <form action="" class="new_card__form">
+        <label for="images" class="drop-container" id="drop-container">
+          <span class="drop-title">Drop files here</span>
+          or
+          <input type="file" id="images" accept="image/*" required />
+        </label>
+        <input
+          class="new_card__form-input"
+          type="text"
+          placeholder="Заголовок"
+          id="titleid"
+        />
+        <textarea
+          class="new_card__form-input new_card__form-input-big"
+          type="text"
+          placeholder="Описание"
+          id="textid"
+        ></textarea>
+
+        <input
+          class="new_card__form-input"
+          type="text"
+          placeholder="Ссылка на кртинку"
+          id="mapid"
+        />
+      </form>
+      <div class="card__button__box" onclick="test()">
+        <a href="#" class="card__button__box-submit">Создать</a>
+      </div>
+    </div>
+    <script src="../../scripts/admin.js"></script>
   </body>
 </html>

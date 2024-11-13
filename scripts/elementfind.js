@@ -1,35 +1,35 @@
 let cardsData = [];
 let linksData = [];
 let baseData = [];
-function LinkCreate(img1, img2, title1, title2) {
-  const linkBlock = `<div class="blocktonext__firstblock" onclick = "GotoPageNext()">
-        <div class="blocktonext__card">
-          <div class="blocktonext__cardsecond__imgBlock">
+function linkCreate(img1, img2, title1, title2) {
+  return (linkBlock = `<div class="block_to_next__firstblock" onclick = "goToPageNext()">
+        <div class="block_to_next__card">
+          <div class="block_to_next__cardsecond__imgBlock">
             <img
               class="imgArrow"
               src=${img1}
               alt="aaa"
             />
           </div>
-          <p class="blocktonext__card-text">${title1}</p>
+          <p class="block_to_next__card-text">${title1}</p>
 
           <img
-            class="blocktonext__card-photo reverse"
+            class="block_to_next__card-photo reverse"
             src="../../assets/img/arrowBack.svg"
             alt="arrow"
           />
         </div>
       </div>
-      <div class="blocktonext__secondblock" onclick = "GotoPagePrevios()">
-        <div class="blocktonext__cardsecond">
+      <div class="block_to_next__secondblock" onclick = "goToPagePrevios()">
+        <div class="block_to_next__cardsecond">
           <img
-            class="blocktonext__card-photo"
+            class="block_to_next__card-photo"
             src="../../assets/img/arrowBack.svg"
             alt="arrow"
           />
 
-          <p class="blocktonext__card-text">${title2}</p>
-          <div class="blocktonext__cardsecond__imgBlock">
+          <p class="block_to_next__card-text">${title2}</p>
+          <div class="block_to_next__cardsecond__imgBlock">
             <img
               class="imgArrowreverse"
               src = ${img2}
@@ -37,12 +37,11 @@ function LinkCreate(img1, img2, title1, title2) {
             />
           </div>
         </div>
-      </div>`;
-  return linkBlock;
+      </div>`);
 }
 
-function CardCreate(img, map, text, title) {
-  const cardBlock = `<div class="page__title">
+function cardCreate(img, map, text, title) {
+  return (cardBlock = `<div class="page__title">
         <h1 class="page__title-text">${title}</h1>
       </div>
       <hr class="page__line" />
@@ -71,24 +70,23 @@ function CardCreate(img, map, text, title) {
             ${text}
           </p>
         </div>
-      </div>`;
-  return cardBlock;
+      </div>`);
 }
 
 function iinerLink() {
-  const parentLink = document.querySelector(".blocktonext");
-  const linkcreateated = LinkCreate(
+  const parentLink = document.querySelector(".block_to_next");
+  const linkCreateated = linkCreate(
     linksData[0].Img_scr,
     linksData[1].Img_scr,
     linksData[0].Title,
     linksData[1].Title
   );
-  parentLink.innerHTML = linkcreateated;
+  parentLink.innerHTML = linkCreateated;
 }
 
 function innerCard() {
   const parentBlock = document.querySelector(".page");
-  const cardFinal = CardCreate(
+  const cardFinal = cardCreate(
     cardData.Img_scr,
     cardData.Map_scr,
     cardData.Text,
@@ -97,9 +95,9 @@ function innerCard() {
   parentBlock.innerHTML = cardFinal;
 }
 
-function AnimationVisible() {
+function animationVisible() {
   const elements = document.querySelectorAll(
-    ".blocktonext__card, .blocktonext__cardsecond"
+    ".block_to_next__card, .block_to_next__cardsecond"
   );
 
   elements.forEach((element) => {
@@ -118,9 +116,10 @@ function AnimationVisible() {
     }
   });
 }
-window.addEventListener("scroll", AnimationVisible);
 
-function GotoPageNext() {
+window.addEventListener("scroll", animationVisible);
+
+function goToPageNext() {
   const indexThisPage = localStorage.getItem("CurrentCard");
 
   if (indexThisPage == baseData.length - 1) {
@@ -131,7 +130,7 @@ function GotoPageNext() {
   window.location.href = "http://127.0.0.1:5500/pages/unical/unicalPage.html";
 }
 
-function GotoPagePrevios() {
+function goToPagePrevios() {
   const indexThisPage = localStorage.getItem("CurrentCard");
 
   if (indexThisPage == 0) {
@@ -142,7 +141,7 @@ function GotoPagePrevios() {
   window.location.href = "http://127.0.0.1:5500/pages/unical/unicalPage.html";
 }
 
-async function GetCardData() {
+async function getCardData() {
   try {
     const response = await fetch(
       "https://67275558302d03037e70ad42.mockapi.io/api/redline/cardList",
@@ -160,7 +159,7 @@ async function GetCardData() {
 
 async function loadingPage() {
   try {
-    await GetCardData();
+    await getCardData();
     const curentCardInexNew = localStorage.getItem("CurrentCard");
     if (curentCardInexNew == 0) {
       linksData.push(cardsData[cardsData.length - 1]);
@@ -180,7 +179,7 @@ async function loadingPage() {
     console.error(e);
   } finally {
     const Loading = document.querySelector(".loading");
-    Loading.classList.remove("activeLoading");
+    Loading.classList.remove("active__loading");
     Loading.classList.add("loadingComplete");
   }
 }

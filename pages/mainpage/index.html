@@ -8,27 +8,27 @@
     <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico" />
   </head>
   <body>
-    <section class="aboutcitY">
+    <section class="about__background_main">
       <header class="header">
         <div class="header__container">
           <div class="header__logo">
             <img
               src="../../assets/img/logo.png"
-              alt="ЛОГО"
+              alt="логотипчик"
               class="header__img"
             />
           </div>
           <div class="header__menu">
             <div class="header__links">
               <a href="#maps" class="header__link">Карта</a>
-              <a href="../redline/redLine.html" class="header__link">Линия</a>
+              <a href="../redline/redline.html" class="header__link">Линия</a>
             </div>
           </div>
           <div class="header__buttons">
-            <div onclick="ModalMeny()" class="header__button">
+            <div onclick="modalMeny()" class="header__button">
               <a class="header__button-link" href="#">Свзяться с нами</a>
             </div>
-            <a onclick="burgerMeny()" href="#" class="header__burger">
+            <a onclick="burgerMenu()" href="#" class="header__burger">
               <img
                 class="header__burger-img"
                 src="../../assets/img/Burger.svg"
@@ -38,16 +38,16 @@
           </div>
         </div>
       </header>
-      <div class="aboutcity" onclick="ShowEkb()">
-        <h1 class="aboutcity__title">Екатеринбург</h1>
-        <p class="aboutcity__text">
+      <div class="about__city" onclick="showEkb()">
+        <h1 class="about__city__title">Екатеринбург</h1>
+        <p class="about__city__text">
           Главный кород Свердловской области. Эталон промышленного города,
           конструктивизма и постмодернизма в одном лице
         </p>
       </div>
     </section>
-    <section class="Bigmap" id="maps">
-      <div class="mapsmall" style="position: relative; overflow: hidden">
+    <section class="big_map" id="maps">
+      <div class="map_small" style="position: relative; overflow: hidden">
         <a
           href="https://yandex.ru/maps/54/yekaterinburg/?utm_medium=mapframe&utm_source=maps"
           style="color: #eee; font-size: 12px; position: absolute; top: 0px"
@@ -68,12 +68,12 @@
           "
         ></iframe>
       </div>
-      <div class="Bigmap__hide">
-        <div class="Bigmap__text noroute">
-          <h1 class="Bigmap__text-title">
+      <div class="big_map__hide">
+        <div class="big_map__text no-route">
+          <h1 class="big_map__text-title">
             Посмотрите интеерсные места нашего города!
           </h1>
-          <p class="Bigmap__text-paragraph">
+          <p class="big_map__text-paragraph">
             Екатеринбург находится на границе Европы и Азии. Географические
             координаты: 56°50′ северной широты, 60°35′ восточной долготы, 270 м
             над уровнем моря. Расположен на восточном склоне Среднего Урала,
@@ -86,12 +86,12 @@
             довольно широкая. Имеет пойменные террасы: низкую и высокую.
           </p>
         </div>
-        <div class="streka" onclick="hedeText()">
-          <img src="../../assets/img/right_strelka.svg" alt="right_strelka" />
+        <div class="arrow__map" onclick="hedeText()">
+          <img src="../../assets/img/right_arrow.svg" alt="right_arrow" />
         </div>
       </div>
     </section>
-    <section class="modal bbase">
+    <section class="modal base">
       <div class="modal__form">
         <p class="modal__form-title">Подписаться</p>
         <form class="modal__form-form" action="">
@@ -102,14 +102,14 @@
             placeholder="password"
           />
         </form>
-        <div class="modal__form-buttonBox">
-          <button onclick="ModalMeny()" class="modal__form-button">
+        <div class="modal__form-button__box">
+          <button onclick="modalMeny()" class="modal__form-button">
             <p class="modal__form-button-text">Submit</p>
           </button>
         </div>
       </div>
     </section>
-    <footer class="footer" id="foot">
+    <footer class="footer" id="footer">
       <div class="footer__company">
         <h4 class="footer__company-title">ООО Урал</h4>
         <p class="footer__company-text">Спасибо за внимание</p>
@@ -129,32 +129,34 @@
           <a>+89961800116</a>
         </div>
       </div>
-      <div class="footer__button" onclick="ModalMeny()">
+      <div class="footer__button" onclick="modalMeny()">
         <a href="#">Свзяться с нами</a>
       </div>
       <div class="footer__logo">
         <img src="../../assets/img/logo.png" alt="" />
       </div>
     </footer>
-    <div class="burgerMeny bbase">
-      <div class="burgerMeny_block">
-        <div class="burgerMeny_block_header">
-          <p class="burgerMeny_block_header-title">Екат<br />ерин<br />бург</p>
+    <div class="burger__meny base">
+      <div class="burger__meny_block">
+        <div class="burger__meny_block_header">
+          <p class="burger__meny_block_header-title">
+            Екат<br />ерин<br />бург
+          </p>
           <img
-            onclick="burgerMeny()"
-            class="burgerMeny_block_header-imgsecond"
+            onclick="burgerMenu()"
+            class="burger__meny_block_header-imgsecond"
             src="../../assets/img/close_burder_red.svg"
             alt=""
           />
         </div>
-        <div class="burgerMeny_block_spisok">
-          <a class="burgerMeny_block_spisok-link" href="../mainpage/index.html"
+        <div class="burger__meny_block_list">
+          <a class="burger__meny_block_list-link" href="../mainpage/index.html"
             >Главная</a
           >
-          <a class="burgerMeny_block_spisok-link" href="../redline/redLine.html"
+          <a class="burger__meny_block_list-link" href="../redline/redline.html"
             >Линия</a
           >
-          <a class="burgerMeny_block_spisok-link" href="#foot">О нас</a>
+          <a class="burger__meny_block_list-link" href="#footer">О нас</a>
         </div>
       </div>
     </div>

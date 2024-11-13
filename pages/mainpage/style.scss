@@ -39,7 +39,7 @@
   &__container {
     height: 100%;
     @include flex(row, space-between, center);
-    @include Container(2%, 2%, 0, padding);
+    @include container(2%, 2%, 0, padding);
   }
   &__logo {
     img {
@@ -50,7 +50,7 @@
   &__links {
     height: 100%;
     @include flex(row, space-between, center);
-    @include adaptiv(small-pc) {
+    @include adaptive(small-pc) {
       display: none;
     }
   }
@@ -82,7 +82,7 @@
     }
   }
 }
-.aboutcitY {
+.about__background_main {
   height: 100vh;
   background: url("../../../assets/img//4562a1a6-99c7-40ee-bbff-9ca955979e7e.png")
     no-repeat center center/cover;
@@ -96,8 +96,8 @@
   transition: all 0.4s ease-in-out;
 }
 
-.aboutcity {
-  @include Container(5%, 5%, 13%, padding);
+.about__city {
+  @include container(5%, 5%, 13%, padding);
   @include flex(column, 0, center);
   gap: 3rem;
 
@@ -105,7 +105,7 @@
     font-size: 100px;
     color: #e5383b;
     letter-spacing: 10px;
-    @include adaptiv(table) {
+    @include adaptive(table) {
       font-size: 60px;
     }
   }
@@ -115,16 +115,16 @@
     color: #f5f3f4;
     letter-spacing: 5px;
     text-align: center;
-    @include adaptiv(table) {
+    @include adaptive(table) {
       font-size: 20px;
     }
   }
 }
 
-.Bigmap {
+.big_map {
   overflow: hidden;
   @include flex(row, space-around, 0);
-  @include Container(5%, 5%, 5%, padding);
+  @include container(5%, 5%, 5%, padding);
   padding-bottom: 5%;
   &__hide {
     transition: 0.4s ease-in-out;
@@ -136,7 +136,7 @@
     text-align: center;
     gap: 30px;
     max-width: 60vw;
-    @include adaptiv(small-pc) {
+    @include adaptive(small-pc) {
       max-width: 30vw;
     }
     &-title {
@@ -144,7 +144,7 @@
       font-family: Montserrat;
       font-size: 40px;
       font-weight: 800;
-      @include adaptiv(small-pc) {
+      @include adaptive(small-pc) {
         font-size: 20px;
       }
     }
@@ -155,25 +155,25 @@
       font-family: Montserrat;
       font-size: 20px;
       font-weight: 800;
-      @include adaptiv(small-pc) {
+      @include adaptive(small-pc) {
         font-size: 15px;
       }
     }
   }
 }
 
-.redline {
+.red-line {
   height: 100vh;
-  @include Container(0px, 10px, 0, padding);
+  @include container(0px, 10px, 0, padding);
   @include flex(row, 0, 0);
-  @include adaptiv(table) {
+  @include adaptive(table) {
     height: 150vh;
   }
-  &__bigText {
+  &__big__text {
     max-width: 20vw;
     @include flex(column, 0, 0);
     border-right: #e12424 solid 10px;
-    @include adaptiv(mobile) {
+    @include adaptive(mobile) {
       border-right: #e12424 solid 4px;
     }
     &-line {
@@ -194,7 +194,7 @@
       border-radius: 20px;
       margin-bottom: 20px;
       margin-top: 20px;
-      @include adaptiv(table) {
+      @include adaptive(table) {
         font-size: 15px;
         height: 40px;
         width: 70%;
@@ -210,23 +210,23 @@
       margin-bottom: 10px;
       @include flex(row, space-between, 0);
       width: 65%;
-      @include adaptiv(table) {
+      @include adaptive(table) {
         @include flex(column, space-between, 0);
         gap: 20px;
       }
     }
 
-    &_ColumCeckButtons {
+    &_colum__ceck__buttons {
       @include flex(column, center, center);
       gap: 20px;
     }
 
-    &_checkbuttonBox {
+    &_check__button__box {
       @include flex(row, center, center);
       gap: 5px;
     }
 
-    &-searchBox {
+    &-search__box {
       @include flex(row, center, 0);
     }
 
@@ -234,7 +234,7 @@
       margin: 0 auto;
       font-size: 20px;
       color: #e12424;
-      @include adaptiv(table) {
+      @include adaptive(table) {
         font-size: 18px;
         text-align: center;
       }
@@ -263,10 +263,10 @@
       font-size: 60px;
       margin-bottom: 20px;
       text-align: center;
-      @include adaptiv(small-pc) {
+      @include adaptive(small-pc) {
         font-size: 25px;
       }
-      @include adaptiv(table) {
+      @include adaptive(table) {
         font-size: 20px;
       }
     }
@@ -280,12 +280,12 @@
       letter-spacing: 2px;
       overflow-y: scroll;
       overflow-x: visible;
-      @include adaptiv(table) {
+      @include adaptive(table) {
         padding-left: 2px;
         width: 95%;
       }
       a {
-        @include adaptiv(table) {
+        @include adaptive(table) {
           font-size: 15px;
         }
         &:hover {
@@ -298,7 +298,7 @@
     @include flex(column, 0, center);
     max-width: 80vw;
     width: 100%;
-    &_container {
+    &_ container {
       width: 100%;
     }
     &-title {
@@ -306,7 +306,7 @@
       font-size: 60px;
       text-align: center;
       margin-bottom: 30px;
-      @include adaptiv(table) {
+      @include adaptive(table) {
         font-size: 30px;
       }
     }
@@ -315,7 +315,7 @@
       color: #d00000;
       margin-top: 70px;
       text-align: center;
-      @include adaptiv(table) {
+      @include adaptive(table) {
         margin-top: 20px;
         font-size: 20px;
       }
@@ -325,7 +325,7 @@
       position: relative;
       @include flex(column, center, center);
       &-img {
-        @include adaptiv(small-pc) {
+        @include adaptive(small-pc) {
           display: none;
         }
       }
@@ -340,19 +340,19 @@
       width: 50px;
       height: 50px;
       border-radius: 50px;
-      @include adaptiv(table) {
+      @include adaptive(table) {
         width: 20px;
         height: 20px;
       }
     }
-    &__cardBox {
+    &__card-box {
       @include flex(column, 0, center);
       gap: 100px;
       width: 100%;
       height: 50vh;
       margin-top: 50px;
       object-fit: contain;
-      &_SmallCardBox {
+      &_small-card-box {
         width: 100%;
         height: 50vh;
         position: relative;
@@ -365,10 +365,10 @@
         gap: 30px;
         opacity: 0;
         transition: 0.6s ease-in-out;
-        @include adaptiv(table) {
+        @include adaptive(table) {
           @include flex(row, center, center);
         }
-        @include adaptiv(mobile) {
+        @include adaptive(mobile) {
           @include flex(column, center, center);
         }
         &.active {
@@ -395,7 +395,7 @@
           overflow: hidden;
           width: 300px;
           height: 300px;
-          @include adaptiv(table) {
+          @include adaptive(table) {
             width: 200px;
             height: 200px;
           }
@@ -495,7 +495,7 @@
         background-color: #ececec;
       }
     }
-    &-buttonBox {
+    &-button__box {
       margin-top: 40px;
       @include flex(row, center, 0);
     }
@@ -530,7 +530,7 @@
   color: #e12424;
   text-decoration: underline;
   gap: 10px;
-  @include adaptiv(small-pc) {
+  @include adaptive(small-pc) {
     @include flex(column, center, center);
   }
 }
@@ -540,9 +540,9 @@
   height: 200px;
   @include flex(row, space-between, center);
   gap: 15rem;
-  @include Container(2%, 2%, 0, padding);
+  @include container(2%, 2%, 0, padding);
   color: #fff;
-  @include adaptiv("medium-pc") {
+  @include adaptive("medium-pc") {
     gap: 10%;
   }
   a {
@@ -557,7 +557,7 @@
     img {
       width: 150px;
       height: 60px;
-      @include adaptiv(table) {
+      @include adaptive(table) {
         display: none;
       }
     }
@@ -568,13 +568,13 @@
     gap: 30px;
     &-title {
       font-size: 25px;
-      @include adaptiv(table) {
+      @include adaptive(table) {
         font-size: 15px;
       }
     }
     &-text {
       font-size: 20px;
-      @include adaptiv(table) {
+      @include adaptive(table) {
         font-size: 10px;
       }
     }
@@ -611,7 +611,7 @@
   gap: 10px;
 }
 
-.telefone {
+.telephone {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -620,7 +620,7 @@
 .controls {
   background-color: #fff;
   border: none;
-  @include adaptiv(table) {
+  @include adaptive(table) {
     margin-top: 510px;
   }
 }
@@ -642,14 +642,14 @@
   &-text {
     font-size: 20px;
     &-link {
-      @include adaptiv(table) {
+      @include adaptive(table) {
         margin-top: 250px;
       }
     }
   }
 }
 
-.burgerMeny {
+.burger__meny {
   transition: 0.7s ease-in-out;
   height: 100vh;
   width: 100vw;
@@ -668,7 +668,7 @@
     position: absolute;
     top: 0px;
     right: 0px;
-    @include adaptiv(mobile) {
+    @include adaptive(mobile) {
       width: 50%;
     }
     &_header {
@@ -687,7 +687,7 @@
         height: 25%;
       }
     }
-    &_spisok {
+    &_list {
       margin-top: 30%;
       @include flex(column, 0, center);
       gap: 25%;
@@ -714,7 +714,7 @@
   transition: all 0.4s ease-in-out;
 }
 
-.mapsmall {
+.map_small {
   width: 40vw;
   height: 80vh;
 }
@@ -728,12 +728,12 @@
   transition: all 0.4s ease-in-out;
 }
 
-.noroute {
+.no-route {
   opacity: 1;
   transition: all 0.4s ease-in-out;
 }
 
-.streka_hiden {
+.arrow__map_hiden {
   position: absolute;
   right: 0px;
   transition: 0.4s ease-in-out;
@@ -747,7 +747,7 @@
   }
 }
 
-.streka {
+.arrow__map {
   transition: 0.4s ease-in-out;
   &:hover {
     transform: translateX(10px);
@@ -772,7 +772,7 @@
   }
 }
 
-.bbase {
+.base {
   display: none;
 }
 
@@ -856,7 +856,7 @@
   right: 20px;
 }
 
-.activeLoading {
+.active__loading {
   @include flex(row, center, center);
 }
 
