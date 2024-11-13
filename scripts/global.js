@@ -1,38 +1,51 @@
+let firstpage = document.querySelectorAll(".firstPage");
+let secondpage = document.querySelectorAll(".secondPage");
+let thirdpage = document.querySelectorAll(".thirdPage");
+let fourpage = document.querySelectorAll(".fourPage");
 let cityList = [];
 let linkList = [];
 
+// Создание пагинации
 function circlePagination() {
-  // Создание пагинации
   const parentBlock = document.querySelector(".pagination");
-  const scolko = linkList.length / 10;
+
   for (index = 0; index < Math.ceil(linkList.length / 10); ++index) {
     const links = document.createElement("a");
     const proIndex = index * index + 10;
 
-    if (index != 0) {
+    if (index) {
       links.innerHTML = `<a onclick="pagination(${
         index + 1
       })" class="pagination__page-a">${proIndex + 1}..${proIndex + 10}</a>`;
       parentBlock.appendChild(links);
-    } else {
-      links.innerHTML = `<a onclick="pagination(${
-        index + 1
-      })" class="pagination__page-a">${index + 1}..${proIndex + 1}</a>`;
-      parentBlock.appendChild(links);
+      return;
     }
+
+    links.innerHTML = `<a onclick="pagination(${
+      index + 1
+    })" class="pagination__page-a">${index + 1}..${proIndex + 1}</a>`;
+    parentBlock.appendChild(links);
   }
 }
 
+// Создание ссылок
 function cicleLinks() {
-  // Создание ссылок
   const parentBlock = document.querySelector(".red-line__big__text-text");
+
   linkList.forEach((link) => {
     const links = document.createElement("a");
-    if (link.indexLink <= 10) {
+
+    const isLessOrEqualesTen = link.indexLink <= 10;
+    const isLessOrEquales = link.indexLink <= 20;
+
+    if (isLessOrEqualesTen) {
       links.classList.add(link.classLink, "firstPage");
       links.innerHTML = `<a onclick="showCard(${link.indexLink})" id="${link.indexLink}" data-index=${link.indexLink} class="${link.classLink} cardLink" >${link.TitleLink}</a>`;
       parentBlock.appendChild(links);
-    } else if (link.indexLink > 10 && link.indexLink <= 20) {
+      return;
+    }
+
+    if (!isLessOrEqualesTen && isLessOrEquales) {
       links.classList.add(link.classLink, "secondPage", "hidePage");
       links.innerHTML = `<a onclick="showCard(${link.indexLink})" id="${link.indexLink}" data-index=${link.indexLink} class="${link.classLink} cardLink">${link.TitleLink}</a>`;
       parentBlock.appendChild(links);
@@ -42,7 +55,7 @@ function cicleLinks() {
 
 //сама карточка
 function cardCreate(img, map, text) {
-  return (cardBlock = `<div class="red-line__marshruts__card-box_card-img">
+  return `<div class="red-line__marshruts__card-box_card-img">
                   <img src=${img} alt="" />
                   
                  </div>
@@ -63,33 +76,32 @@ function cardCreate(img, map, text) {
                       ${text}
                     </p>
                   </div>
-              </div>`);
+              </div>`;
 }
 
 function goToNextHTML() {
   localStorage.setItem("CurrentCard", curentCardIndex);
-  window.location.href = "http://127.0.0.1:5500/pages/unical/unicalPage.html";
+  window.location.href = LINKS_LIST.NEXT_HTML;
 }
 
+// Создание карточек
 function cardInnerParent() {
-  // Создание карточек
   const parentCards = document.querySelector(
     ".red-line__marshruts__card-box_small-card-box"
   );
-  cityList.forEach((city) => {
+
+  cityList.forEach(({ Img_scr, Map_scr, Text }) => {
     const card = document.createElement("div");
+    const card_final = cardCreate(Img_scr, Map_scr, Text);
+
     card.classList.add("red-line__marshruts__card-box_card");
     card.classList.add("nonActive");
-    const card_final = cardCreate(city.Img_scr, city.Map_scr, city.Text);
+
     card.innerHTML = card_final;
     parentCards.appendChild(card);
   });
 }
 
-let firstpage = document.querySelectorAll(".firstPage");
-let secondpage = document.querySelectorAll(".secondPage");
-let thirdpage = document.querySelectorAll(".thirdPage");
-let fourpage = document.querySelectorAll(".fourPage");
 // обработка пагинации
 function pagination(page) {
   if (page == "1") {
@@ -111,6 +123,7 @@ function pagination(page) {
 // Бургер меню
 function burgerMenu() {
   const burger = document.querySelector(".burger__meny");
+
   if (!burger.classList.contains("base")) {
     if (burger.classList.contains("bhide")) {
       burger.classList.remove("bhide");
@@ -130,21 +143,18 @@ const checkBox = document.querySelectorAll(".check");
 function showCheckbox(type) {
   const checkBox = document.querySelectorAll(".check");
   checkBox.forEach((checkbox) => {
-    if (checkbox.checked) {
-      if (type == "p") {
-        localStorage.setItem("parks", parks.checked);
-      }
-      if (type == "b") {
-        localStorage.setItem("buildings", buildings.checked);
-      }
-      if (type == "m") {
-        localStorage.setItem("museums", museums.checked);
-      }
-      if (type == "h") {
-        localStorage.setItem("hrams", parks.checked);
-      }
-      viewElements();
-    }
+    if (!checkbox.checked) return;
+
+    if (type == "p") return localStorage.setItem("parks", parks.checked);
+
+    if (type == "b")
+      return localStorage.setItem("buildings", buildings.checked);
+
+    if (type == "m") return localStorage.setItem("museums", museums.checked);
+
+    if (type == "h") return localStorage.setItem("hrams", parks.checked);
+
+    viewElements();
   });
 }
 
@@ -258,11 +268,12 @@ function modalMeny() {
         input.value = "";
       });
     }
-  } else {
-    modal.classList.remove("base");
-    modal.classList.add("bvis");
+    return;
   }
+  modal.classList.remove("base");
+  modal.classList.add("bvis");
 }
+
 // Обработчик события нажатия на стрелки (слайдер)
 document.querySelector(".controls").addEventListener("click", function (event) {
   if (event.target.classList.contains("arrow")) {
