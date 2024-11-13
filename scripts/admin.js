@@ -44,6 +44,36 @@ async function deleteCard(index) {
   }
 }
 
+async function addNewCard() {
+  const imgScrNew = document.getElementById("images").files;
+  const mapSrcNew = document.getElementById("mapid").value;
+  const TextNew = document.getElementById("textid").value;
+  const TitleNew = document.getElementById("titleid").value;
+  try {
+    const response = await fetch(
+      `https://67275558302d03037e70ad42.mockapi.io/api/redline/cardList/${cityList.length}`,
+      {
+        method: "PUT",
+        body: JSON.stringify({
+          Img_scr: imgScrNew,
+          Map_scr: `"${mapSrcNew}"`,
+          Text: `"${TextNew}"`,
+          Title: `"${TitleNew}"`,
+          id: `"${cityList.length}"`,
+          indexObj: cityList.length,
+        }),
+      }
+    );
+    console.log(length(cityList));
+
+    console.log("Delete sucsess");
+  } catch (error) {
+    console.log(error);
+  } finally {
+    console.log("Deleted completed");
+  }
+}
+
 // Создание карточек
 function createAllCards() {
   const parentCards = document.querySelector(".cards");
@@ -71,9 +101,21 @@ async function getCards() {
     );
     const data = await response.json();
     cityList = data;
+    console.log(cityList);
   } catch (error) {
     console.log(error);
   }
+}
+
+function test() {
+  const imgScrNew = document.getElementById("images").value;
+  const mapSrcNew = document.getElementById("mapid").value;
+  const TextNew = document.getElementById("textid").value;
+  const TitleNew = document.getElementById("titleid").value;
+  console.log(`"${imgScrNew}"`);
+  console.log(`"${mapSrcNew}"`);
+  console.log(`"${TextNew}"`);
+  console.log(`"${TitleNew}"`);
 }
 
 async function loadingPage() {
