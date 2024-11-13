@@ -109,9 +109,9 @@ function pagination(page) {
   }
 }
 // Бургер меню
-function burger__meny() {
+function burgerMenu() {
   const burger = document.querySelector(".burger__meny");
-  if (!burger.classList.contains("bbase")) {
+  if (!burger.classList.contains("base")) {
     if (burger.classList.contains("bhide")) {
       burger.classList.remove("bhide");
       burger.classList.add("bvis");
@@ -120,7 +120,7 @@ function burger__meny() {
       burger.classList.remove("bvis");
     }
   } else {
-    burger.classList.remove("bbase");
+    burger.classList.remove("base");
     burger.classList.add("bvis");
   }
 }
@@ -147,10 +147,12 @@ function showCheckbox(type) {
     }
   });
 }
+
 let Buildings = document.querySelectorAll(".buildings");
 let Parks = document.querySelectorAll(".parki");
 let Museums = document.querySelectorAll(".museumi");
 let Hrams = document.querySelectorAll(".hrami");
+
 // Фильтры обработка и вывод
 function viewElement(elList, localItem) {
   elList.forEach((el) => {
@@ -215,8 +217,6 @@ function seeSearch() {
   });
 }
 let curentCardIndex = 0;
-// Вывод карт
-
 let number_card = document.querySelector(".red-line__marshruts-circle");
 let cards = document.querySelectorAll(".red-line__marshruts__card-box_card");
 let cardName = document.querySelector(".red-line__marshruts-text");
@@ -247,7 +247,7 @@ const modalForm = document.querySelector(".modal");
 function modalMeny() {
   const modal = document.querySelector(".modal");
   const inputs = document.querySelectorAll(".modal__form-input");
-  if (!modal.classList.contains("bbase")) {
+  if (!modal.classList.contains("base")) {
     if (modal.classList.contains("bhide")) {
       modal.classList.remove("bhide");
       modal.classList.add("bvis");
@@ -259,7 +259,7 @@ function modalMeny() {
       });
     }
   } else {
-    modal.classList.remove("bbase");
+    modal.classList.remove("base");
     modal.classList.add("bvis");
   }
 }

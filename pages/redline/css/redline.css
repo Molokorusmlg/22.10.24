@@ -747,7 +747,7 @@
   gap: 10px;
 }
 
-.telefone {
+.telephone {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -834,7 +834,7 @@
   width: 25%;
   height: 25%;
 }
-.burger__meny_block_spisok {
+.burger__meny_block_list {
   margin-top: 30%;
   display: flex;
   flex-direction: column;
@@ -843,7 +843,7 @@
   gap: 25%;
   height: 80%;
 }
-.burger__meny_block_spisok-link {
+.burger__meny_block_list-link {
   font-size: 30px;
   letter-spacing: 3px;
   font-family: "Pt";
@@ -853,7 +853,7 @@
   font-size: 25px;
   transition: 0.4s ease-in-out;
 }
-.burger__meny_block_spisok-link:hover {
+.burger__meny_block_list-link:hover {
   color: #d00000;
 }
 
@@ -921,7 +921,7 @@
   transform: translateX(-20px);
 }
 
-.bbase {
+.base {
   display: none;
 }
 

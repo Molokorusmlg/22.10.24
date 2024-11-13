@@ -116,6 +116,7 @@ function animationVisible() {
     }
   });
 }
+
 window.addEventListener("scroll", animationVisible);
 
 function goToPageNext() {

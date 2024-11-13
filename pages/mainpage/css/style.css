@@ -105,13 +105,15 @@
 
 .about__background_main {
   height: 100vh;
-  background: url("../../../assets/img//4562a1a6-99c7-40ee-bbff-9ca955979e7e.png") no-repeat center center/cover;
+  background: url("../../../assets/img//4562a1a6-99c7-40ee-bbff-9ca955979e7e.png")
+    no-repeat center center/cover;
   transition: all 0.4s ease-in-out;
 }
 
 .zloiEKB {
   height: 100vh;
-  background: url("../../../assets/img//besov.webp") no-repeat center center/cover;
+  background: url("../../../assets/img//besov.webp") no-repeat center
+    center/cover;
   transition: all 0.4s ease-in-out;
 }
 
@@ -449,7 +451,7 @@
   height: 50vh;
   margin-top: 50px;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .red-line__marshruts__card-box_small-card-box {
   width: 100%;
@@ -748,7 +750,7 @@
   gap: 10px;
 }
 
-.telefone {
+.telephone {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -835,7 +837,7 @@
   width: 25%;
   height: 25%;
 }
-.burger__meny_block_spisok {
+.burger__meny_block_list {
   margin-top: 30%;
   display: flex;
   flex-direction: column;
@@ -844,7 +846,7 @@
   gap: 25%;
   height: 80%;
 }
-.burger__meny_block_spisok-link {
+.burger__meny_block_list-link {
   font-size: 30px;
   letter-spacing: 3px;
   font-family: "Pt";
@@ -854,7 +856,7 @@
   font-size: 25px;
   transition: 0.4s ease-in-out;
 }
-.burger__meny_block_spisok-link:hover {
+.burger__meny_block_list-link:hover {
   color: #d00000;
 }
 
@@ -922,7 +924,7 @@
   transform: translateX(-20px);
 }
 
-.bbase {
+.base {
   display: none;
 }
 

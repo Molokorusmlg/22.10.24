@@ -1,7 +1,7 @@
 // Бургер меню
-function burger__meny() {
+function burgerMenu() {
   const burger = document.querySelector(".burger__meny");
-  if (!burger.classList.contains("bbase")) {
+  if (!burger.classList.contains("base")) {
     if (burger.classList.contains("bhide")) {
       burger.classList.remove("bhide");
       burger.classList.add("bvis");
@@ -10,7 +10,7 @@ function burger__meny() {
       burger.classList.remove("bvis");
     }
   } else {
-    burger.classList.remove("bbase");
+    burger.classList.remove("base");
     burger.classList.add("bvis");
   }
 }
@@ -60,7 +60,7 @@ const modalForm = document.querySelector(".modal");
 // Модальное окно
 function modalMeny() {
   const modal = document.querySelector(".modal");
-  if (!modal.classList.contains("bbase")) {
+  if (!modal.classList.contains("base")) {
     if (modal.classList.contains("bhide")) {
       modal.classList.remove("bhide");
       modal.classList.add("bvis");
@@ -69,7 +69,7 @@ function modalMeny() {
       modal.classList.remove("bvis");
     }
   } else {
-    modal.classList.remove("bbase");
+    modal.classList.remove("base");
     modal.classList.add("bvis");
   }
 }

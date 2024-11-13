@@ -1,8 +1,9 @@
 let cityList = [];
 let linkList = [];
 
-function cardCreate(img, map, text) {
-  return (cardBlock = `<div class="red-line__marshruts__card-box_card-img">
+function cardCreate(img, map, text, index) {
+  return (cardBlock = `<div class = "red-line__marshruts__card-box_card" onclick = "deleteCard(${index})">
+    <div class="red-line__marshruts__card-box_card-img">
                   <img src=${img} alt="" />
                   
                  </div>
@@ -23,7 +24,24 @@ function cardCreate(img, map, text) {
                       ${text}
                     </p>
                   </div>
+              </div>
               </div>`);
+}
+
+async function deleteCard(index) {
+  try {
+    const response = await fetch(
+      `https://67275558302d03037e70ad42.mockapi.io/api/redline/cardList/${index}`,
+      {
+        method: "DELETE",
+      }
+    );
+    console.log("Delete sucsess");
+  } catch (error) {
+    console.log(error);
+  } finally {
+    console.log("Deleted completed");
+  }
 }
 
 // Создание карточек
@@ -32,7 +50,12 @@ function createAllCards() {
   cityList.forEach((city) => {
     const card = document.createElement("div");
     card.classList.add("red-line__marshruts__card-box_card");
-    const card_final = cardCreate(city.Img_scr, city.Map_scr, city.Text);
+    const card_final = cardCreate(
+      city.Img_scr,
+      city.Map_scr,
+      city.Text,
+      cityList.indexOf(city)
+    );
     card.innerHTML = card_final;
     parentCards.appendChild(card);
   });

@@ -610,7 +610,7 @@
   gap: 10px;
 }
 
-.telefone {
+.telephone {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -686,7 +686,7 @@
         height: 25%;
       }
     }
-    &_spisok {
+    &_list {
       margin-top: 30%;
       @include flex(column, 0, center);
       gap: 25%;
@@ -771,7 +771,7 @@
   }
 }
 
-.bbase {
+.base {
   display: none;
 }
 
