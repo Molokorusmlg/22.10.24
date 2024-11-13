@@ -2,7 +2,7 @@ let cardsData = [];
 let linksData = [];
 let baseData = [];
 function linkCreate(img1, img2, title1, title2) {
-  return (linkBlock = `<div class="block_to_next__firstblock" onclick = "goToPageNext()">
+  return `<div class="block_to_next__firstblock" onclick = "goToPageNext()">
         <div class="block_to_next__card">
           <div class="block_to_next__cardsecond__imgBlock">
             <img
@@ -37,11 +37,11 @@ function linkCreate(img1, img2, title1, title2) {
             />
           </div>
         </div>
-      </div>`);
+      </div>`;
 }
 
 function cardCreate(img, map, text, title) {
-  return (cardBlock = `<div class="page__title">
+  return `<div class="page__title">
         <h1 class="page__title-text">${title}</h1>
       </div>
       <hr class="page__line" />
@@ -70,7 +70,7 @@ function cardCreate(img, map, text, title) {
             ${text}
           </p>
         </div>
-      </div>`);
+      </div>`;
 }
 
 function iinerLink() {

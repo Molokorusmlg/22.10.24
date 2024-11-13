@@ -2,7 +2,7 @@ let cityList = [];
 let linkList = [];
 
 function cardCreate(img, map, text, index) {
-  return (cardBlock = `<div class = "red-line__marshruts__card-box_card" onclick = "deleteCard(${index})">
+  return `<div class = "red-line__marshruts__card-box_card" onclick = "deleteCard(${index})">
     <div class="red-line__marshruts__card-box_card-img">
                   <img src=${img} alt="" />
                   
@@ -25,7 +25,7 @@ function cardCreate(img, map, text, index) {
                     </p>
                   </div>
               </div>
-              </div>`);
+              </div>`;
 }
 
 async function deleteCard(index) {
@@ -45,7 +45,7 @@ async function deleteCard(index) {
 }
 
 async function addNewCard() {
-  const imgScrNew = document.getElementById("images").files;
+  const imgScrNew = document.getElementById("images");
   const mapSrcNew = document.getElementById("mapid").value;
   const TextNew = document.getElementById("textid").value;
   const TitleNew = document.getElementById("titleid").value;
@@ -77,15 +77,19 @@ async function addNewCard() {
 // Создание карточек
 function createAllCards() {
   const parentCards = document.querySelector(".cards");
+
   cityList.forEach((city) => {
     const card = document.createElement("div");
+
     card.classList.add("red-line__marshruts__card-box_card");
+
     const card_final = cardCreate(
       city.Img_scr,
       city.Map_scr,
       city.Text,
       cityList.indexOf(city)
     );
+
     card.innerHTML = card_final;
     parentCards.appendChild(card);
   });
@@ -100,6 +104,7 @@ async function getCards() {
       }
     );
     const data = await response.json();
+
     cityList = data;
     console.log(cityList);
   } catch (error) {
@@ -108,10 +113,17 @@ async function getCards() {
 }
 
 function test() {
-  const imgScrNew = document.getElementById("images").value;
+  const imgScrNew = document.getElementById("images");
   const mapSrcNew = document.getElementById("mapid").value;
   const TextNew = document.getElementById("textid").value;
   const TitleNew = document.getElementById("titleid").value;
+
+  let file = imgScrNew.files[0];
+  console.log(file);
+  const a = readAsDataURL(file);
+  localStorage.setItem("dfdsd", a);
+  console.log(localStorage.getItem("dfdsd"));
+
   console.log(`"${imgScrNew}"`);
   console.log(`"${mapSrcNew}"`);
   console.log(`"${TextNew}"`);

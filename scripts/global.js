@@ -42,7 +42,7 @@ function cicleLinks() {
 
 //сама карточка
 function cardCreate(img, map, text) {
-  return (cardBlock = `<div class="red-line__marshruts__card-box_card-img">
+  return `<div class="red-line__marshruts__card-box_card-img">
                   <img src=${img} alt="" />
                   
                  </div>
@@ -63,7 +63,7 @@ function cardCreate(img, map, text) {
                       ${text}
                     </p>
                   </div>
-              </div>`);
+              </div>`;
 }
 
 function goToNextHTML() {

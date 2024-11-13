@@ -106,7 +106,7 @@
       height: 25px;
     }
   }
-  &__cardsecond {
+  &__cards__second {
     overflow: hidden;
     background-color: hsl(0, 0%, 100%);
     box-shadow: 0px 4px 9.9px -5px #00000040;
@@ -128,7 +128,7 @@
     @include adaptive("mobile") {
       width: 98%;
     }
-    &__imgBlock {
+    &__img__block {
       width: 50%;
       height: 100%;
       overflow: hidden;
