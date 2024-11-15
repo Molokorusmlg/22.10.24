@@ -140,7 +140,7 @@ function goToPagePrevios() {
 
 async function getCardData() {
   try {
-    const response = await fetch(BASE_URL + "redline/cardList", {
+    const response = await fetch(CARDS_URL + "redline/cardList", {
       method: "GET",
     });
     const data = await response.json();

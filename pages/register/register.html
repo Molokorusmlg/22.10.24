@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
     <link rel="stylesheet" href="./css/register.css" />
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico" />
   </head>
   <body class="RegisterBackgroung">
     <div class="block">
@@ -24,17 +25,24 @@
           <div class="register__form">
             <input
               type="text"
+              placeholder="Введите Фио"
+              class="register__form_input name__registration"
+            />
+            <input
+              type="text"
               placeholder="Придумайте логин"
-              class="register__form_input"
+              class="register__form_input login__registration"
             />
             <input
               type="password"
               placeholder="Пароль"
-              class="register__form_input"
+              class="register__form_input password__registration"
             />
           </div>
           <div class="register__box">
-            <a href="#" class="register__box-submit">Сохранить</a>
+            <a onclick="postUser()" href="#" class="register__box-submit"
+              >Сохранить</a
+            >
           </div>
         </div>
         <div class="signin">

@@ -1,5 +1,5 @@
 function cardCreate(img, map, text, index) {
-  return (cardBlock = `<div class = "red-line__marshruts__card-box_card" onclick = "deleteCard(${index})">
+  return `<div class = "red-line__marshruts__card-box_card" onclick = "deleteCard(${index})">
     <div class="red-line__marshruts__card-box_card-img">
                   <img src=${img} alt="" />
                   
@@ -22,12 +22,29 @@ function cardCreate(img, map, text, index) {
                     </p>
                   </div>
               </div>
-              </div>`);
+              </div>`;
+}
+
+function usersCreate(name, login) {
+  return `<p class = "users__name">${name}</p>
+    <p class = "users__login">${login}</p>`;
+}
+
+// Отображение пользователей
+function createUsers() {
+  const parentUsers = document.querySelector(".users");
+  userList.forEach((user) => {
+    const userBlock = document.createElement("div");
+    userBlock.classList.add("user__block");
+    const user_final = usersCreate(user.name, user.login);
+    userBlock.innerHTML = user_final;
+    parentUsers.appendChild(userBlock);
+  });
 }
 
 async function deleteCard(index) {
   try {
-    await fetch(BASE_URL + `redline/cardList/${index}`, {
+    await fetch(CARDS_URL + `redline/cardList/${index}`, {
       method: "DELETE",
     });
     console.log("Delete sucsess");
@@ -45,7 +62,7 @@ async function addNewCard() {
   const TitleNew = document.getElementById("titleid").value;
 
   try {
-    await fetch(BASE_URL + `redline/cardList/${cityList.length}`, {
+    await fetch(CARDS_URL + `redline/cardList/${cityList.length}`, {
       method: "PUT",
       body: JSON.stringify({
         Img_scr: imgScrNew,
@@ -83,12 +100,24 @@ function createAllCards() {
 
 async function getCards() {
   try {
-    const response = await fetch(BASE_URL + "redline/cardList", {
+    const response = await fetch(CARDS_URL + "redline/cardList", {
       method: "GET",
     });
     const data = await response.json();
     cityList = data;
-    console.log(cityList);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function getUsers() {
+  try {
+    const response = await fetch(USERS_URL + "users", {
+      method: "GET",
+    });
+    const data = await response.json();
+    userList = data;
+    console.log(userList);
   } catch (error) {
     console.log(error);
   }
@@ -96,7 +125,9 @@ async function getCards() {
 
 async function loadingPage() {
   await getCards();
+  await getUsers();
   await createAllCards();
+  await createUsers();
 }
 
 loadingPage();

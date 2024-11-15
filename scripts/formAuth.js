@@ -1,13 +1,57 @@
+const FORM_STATES = {
+  REGISTER: 1,
+  LOGIN: 2,
+};
+
 function buttonClick(state) {
-  if (state == 1) {
-    buttonReg.classList.add("button-active");
-    buttonIn.classList.remove("button-active");
-    formReg.classList.remove("form-hide");
-    formIn.classList.add("form-hide");
-  } else {
-    buttonReg.classList.remove("button-active");
-    buttonIn.classList.add("button-active");
-    formIn.classList.remove("form-hide");
-    formReg.classList.add("form-hide");
+  const elements = {
+    buttons: {
+      register: buttonReg,
+      login: buttonIn,
+    },
+    forms: {
+      register: formReg,
+      login: formIn,
+    },
+  };
+
+  const isRegisterState = state === FORM_STATES.REGISTER;
+
+  elements.buttons.register.classList.toggle("button-active", isRegisterState);
+  elements.buttons.login.classList.toggle("button-active", !isRegisterState);
+  elements.forms.register.classList.toggle("form-hide", !isRegisterState);
+  elements.forms.login.classList.toggle("form-hide", isRegisterState);
+}
+
+async function postUser() {
+  try {
+    const loginValue = document.querySelector(".login__registration").value;
+    const passwordValue = document.querySelector(
+      ".password__registration"
+    ).value;
+    const nameValue = document.querySelector(".name__registration").value;
+
+    const response = await fetch(`${USERS_URL}users`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify({
+        login: loginValue,
+        password: passwordValue,
+        name: nameValue,
+        admin: false,
+      }),
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      localStorage.setItem("login", loginValue);
+      window.location.href =
+        "http://127.0.0.1:5500/pages/mainpage/mainpage.html";
+    }
+    return data;
+  } catch (error) {
+    console.log(`Ошибка типа: ${error}`);
   }
 }

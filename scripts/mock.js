@@ -56,7 +56,8 @@ const mapEkb = document.querySelector(".map_small");
 // Конец index.js -----------------------------------------
 
 // URL для api
-const BASE_URL = "https://67275558302d03037e70ad42.mockapi.io/api/";
+const CARDS_URL = "https://67275558302d03037e70ad42.mockapi.io/api/";
+const USERS_URL = "https://6737c61b4eb22e24fca622b9.mockapi.io/";
 
 // admin.js
 // Все родители карточек (два папы)
@@ -71,6 +72,7 @@ const Loading = document.querySelector(".loading");
 // Данные с Fetch запросов на страницах
 let cityList = []; // global.js admin.js
 let linkList = []; // global.js
+let userList = []; // admin.js
 let cardsData = []; // elementfind.js
 let linksData = []; // elementfind.js
 let baseData = []; // elementfind.js
