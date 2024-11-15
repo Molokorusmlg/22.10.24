@@ -142,7 +142,6 @@ function setShowBurgerMenu() {
 function showCheckbox(type) {
   checkBox.forEach((checkbox) => {
     if (!checkbox.checked) return;
-
     if (!typesCheckBox[type]) return;
     localStorage.setItem(
       typesCheckBox[type][0],
@@ -222,7 +221,6 @@ function showCard(index) {
   number_card = document.querySelector(".red-line__marshruts-circle");
   cards = document.querySelectorAll(".red-line__marshruts__card-box_card");
   cardName = document.querySelector(".red-line__marshruts-text");
-  Body = document.querySelector("body");
   cards[curentCardIndex].classList.replace("active", "nonActive");
   cards[index].classList.replace("nonActive", "active");
   cardName.innerHTML = `<p class="red-line__marshruts-text">${cityList[index].Title}</p>`;
@@ -279,16 +277,7 @@ async function loadingPage() {
   await cicleLinks();
   await circlePagination();
   await showCard(curentCardIndex);
-  const Loading = document.querySelector(".loading");
   Loading.classList.remove("active__loading");
-  Buildings = document.querySelectorAll(".buildings");
-  Parks = document.querySelectorAll(".parki");
-  Museums = document.querySelectorAll(".museumi");
-  Hrams = document.querySelectorAll(".hrami");
-  firstpage = document.querySelectorAll(".firstPage");
-  secondpage = document.querySelectorAll(".secondPage");
-  thirdpage = document.querySelectorAll(".thirdPage");
-  fourpage = document.querySelectorAll(".fourPage");
   Loading.classList.add("loadingComplete");
 }
 

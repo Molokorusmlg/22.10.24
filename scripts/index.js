@@ -17,34 +17,34 @@ function setShowBurgerMenu() {
 
 // Смена заднего фона и текста на главной странице
 function showEkb() {
-  if (Mainpage.className == "about__background_main") {
-    TitleEKB.innerHTML = `<h1 class="about__city__title">город бесов😈</h1>`;
-    TextEKB.innerHTML = `<p class="about__city__text">
+  if (mainPage.className == "about__background_main") {
+    titleEkb.innerHTML = `<h1 class="about__city__title">город бесов😈</h1>`;
+    textEkb.innerHTML = `<p class="about__city__text">
           Самый крутой город на руси. Самый модный и инновационный!
         </p>`;
-    Mainpage.classList.add("zloiEKB");
-    Mainpage.classList.remove("about__background_main");
+    mainPage.classList.add("zloiEKB");
+    mainPage.classList.remove("about__background_main");
   } else {
-    TitleEKB.innerHTML = `<h1 class="about__city__title">Екатеринбург</h1>`;
-    TextEKB.innerHTML = `<p class="about__city__text">
+    titleEkb.innerHTML = `<h1 class="about__city__title">Екатеринбург</h1>`;
+    textEkb.innerHTML = `<p class="about__city__text">
           Главный кород Свердловской области. Эталон промышленного города,
           конструктивизма и постмодернизма в одном лице
         </p>>`;
-    Mainpage.classList.add("about__background_main");
-    Mainpage.classList.remove("zloiEKB");
+    mainPage.classList.add("about__background_main");
+    mainPage.classList.remove("zloiEKB");
   }
 }
 
 // Убираем текст, открываем полностью карту города
 function hedeText() {
-  if (MapEkb.className == "map_small") {
-    MapText.classList.replace("no-route", "route");
+  if (mapEkb.className == "map_small") {
+    mapText.classList.replace("no-route", "route");
     arrowMap.classList.replace("arrow__map", "arrow__map_hiden");
-    MapEkb.classList.replace("map_small", "mapbig");
+    mapEkb.classList.replace("map_small", "mapbig");
   } else {
-    MapText.classList.replace("route", "no-route");
+    mapText.classList.replace("route", "no-route");
     arrowMap.classList.replace("arrow__map_hiden", "arrow__map");
-    MapEkb.classList.replace("mapbig", "map_small");
+    mapEkb.classList.replace("mapbig", "map_small");
   }
 }
 

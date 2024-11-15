@@ -94,18 +94,6 @@ async function getCards() {
   }
 }
 
-// <!-- TODO: Что за тесты у тебя тут происходят удаляй --!>
-function test() {
-  const imgScrNew = document.getElementById("images").value;
-  const mapSrcNew = document.getElementById("mapid").value;
-  const TextNew = document.getElementById("textid").value;
-  const TitleNew = document.getElementById("titleid").value;
-  console.log(`"${imgScrNew}"`);
-  console.log(`"${mapSrcNew}"`);
-  console.log(`"${TextNew}"`);
-  console.log(`"${TitleNew}"`);
-}
-
 async function loadingPage() {
   await getCards();
   await createAllCards();

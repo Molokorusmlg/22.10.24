@@ -172,7 +172,6 @@ async function loadingPage() {
   } catch (e) {
     console.error(e);
   } finally {
-    const Loading = document.querySelector(".loading");
     Loading.classList.remove("active__loading");
     Loading.classList.add("loadingComplete");
   }
