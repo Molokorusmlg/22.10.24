@@ -1,0 +1,14 @@
+{
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": ["comment.line.double-slash.js"],
+        "settings": {
+          "foreground": "#e20303a4",
+          "fontStyle": "italic bold underline"
+        },
+        "name": "TODO"
+      }
+    ]
+  }
+}

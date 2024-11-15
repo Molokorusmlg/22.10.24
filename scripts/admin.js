@@ -1,6 +1,3 @@
-let cityList = [];
-let linkList = [];
-
 function cardCreate(img, map, text, index) {
   return (cardBlock = `<div class = "red-line__marshruts__card-box_card" onclick = "deleteCard(${index})">
     <div class="red-line__marshruts__card-box_card-img">
@@ -30,12 +27,9 @@ function cardCreate(img, map, text, index) {
 
 async function deleteCard(index) {
   try {
-    const response = await fetch(
-      `https://67275558302d03037e70ad42.mockapi.io/api/redline/cardList/${index}`,
-      {
-        method: "DELETE",
-      }
-    );
+    await fetch(BASE_URL + `redline/cardList/${index}`, {
+      method: "DELETE",
+    });
     console.log("Delete sucsess");
   } catch (error) {
     console.log(error);
@@ -49,23 +43,19 @@ async function addNewCard() {
   const mapSrcNew = document.getElementById("mapid").value;
   const TextNew = document.getElementById("textid").value;
   const TitleNew = document.getElementById("titleid").value;
-  try {
-    const response = await fetch(
-      `https://67275558302d03037e70ad42.mockapi.io/api/redline/cardList/${cityList.length}`,
-      {
-        method: "PUT",
-        body: JSON.stringify({
-          Img_scr: imgScrNew,
-          Map_scr: `"${mapSrcNew}"`,
-          Text: `"${TextNew}"`,
-          Title: `"${TitleNew}"`,
-          id: `"${cityList.length}"`,
-          indexObj: cityList.length,
-        }),
-      }
-    );
-    console.log(length(cityList));
 
+  try {
+    await fetch(BASE_URL + `redline/cardList/${cityList.length}`, {
+      method: "PUT",
+      body: JSON.stringify({
+        Img_scr: imgScrNew,
+        Map_scr: `"${mapSrcNew}"`,
+        Text: `"${TextNew}"`,
+        Title: `"${TitleNew}"`,
+        id: `"${cityList.length}"`,
+        indexObj: cityList.length,
+      }),
+    });
     console.log("Delete sucsess");
   } catch (error) {
     console.log(error);
@@ -93,12 +83,9 @@ function createAllCards() {
 
 async function getCards() {
   try {
-    const response = await fetch(
-      "https://67275558302d03037e70ad42.mockapi.io/api/redline/cardList",
-      {
-        method: "GET",
-      }
-    );
+    const response = await fetch(BASE_URL + "redline/cardList", {
+      method: "GET",
+    });
     const data = await response.json();
     cityList = data;
     console.log(cityList);
@@ -107,6 +94,7 @@ async function getCards() {
   }
 }
 
+// <!-- TODO: Что за тесты у тебя тут происходят удаляй --!>
 function test() {
   const imgScrNew = document.getElementById("images").value;
   const mapSrcNew = document.getElementById("mapid").value;

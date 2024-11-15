@@ -1,5 +1,5 @@
 // Бургер меню
-function burgerMenu() {
+function setShowBurgerMenu() {
   const burger = document.querySelector(".burger__meny");
   if (!burger.classList.contains("base")) {
     if (burger.classList.contains("bhide")) {
@@ -14,9 +14,6 @@ function burgerMenu() {
     burger.classList.add("bvis");
   }
 }
-const TitleEKB = document.querySelector(".about__city__title");
-const TextEKB = document.querySelector(".about__city__text");
-const Mainpage = document.querySelector(".about__background_main");
 
 // Смена заднего фона и текста на главной странице
 function showEkb() {
@@ -38,10 +35,6 @@ function showEkb() {
   }
 }
 
-const arrowMap = document.querySelector(".arrow__map");
-const MapText = document.querySelector(".big_map__text");
-const MapEkb = document.querySelector(".map_small");
-
 // Убираем текст, открываем полностью карту города
 function hedeText() {
   if (MapEkb.className == "map_small") {
@@ -54,8 +47,6 @@ function hedeText() {
     MapEkb.classList.replace("mapbig", "map_small");
   }
 }
-
-const modalForm = document.querySelector(".modal");
 
 // Модальное окно
 function modalMeny() {

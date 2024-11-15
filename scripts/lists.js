@@ -1,3 +1,4 @@
+// <! -- TODO: ты же вроде не смог это реализовать, удали или используй в mock.js --!>
 export const cityList = [
   {
     Img_scr: "./assets/img/1905year.jpg",

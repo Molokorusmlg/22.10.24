@@ -1,6 +1,5 @@
-let cardsData = [];
-let linksData = [];
-let baseData = [];
+window.addEventListener("scroll", animationVisible);
+
 function linkCreate(img1, img2, title1, title2) {
   return (linkBlock = `<div class="block_to_next__firstblock" onclick = "goToPageNext()">
         <div class="block_to_next__card">
@@ -117,8 +116,6 @@ function animationVisible() {
   });
 }
 
-window.addEventListener("scroll", animationVisible);
-
 function goToPageNext() {
   const indexThisPage = localStorage.getItem("CurrentCard");
 
@@ -143,12 +140,9 @@ function goToPagePrevios() {
 
 async function getCardData() {
   try {
-    const response = await fetch(
-      "https://67275558302d03037e70ad42.mockapi.io/api/redline/cardList",
-      {
-        method: "GET",
-      }
-    );
+    const response = await fetch(BASE_URL + "redline/cardList", {
+      method: "GET",
+    });
     const data = await response.json();
     baseData = data;
     cardsData = data;
