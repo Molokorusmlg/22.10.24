@@ -248,7 +248,7 @@ function modalMeny() {
 
 async function getCards() {
   try {
-    const response = await fetch(BASE_URL + "redline/cardList", {
+    const response = await fetch(CARDS_URL + "redline/cardList", {
       method: "GET",
     });
     const data = await response.json();
@@ -260,7 +260,7 @@ async function getCards() {
 
 async function getLinks() {
   try {
-    const response = await fetch(BASE_URL + "redline/linkList", {
+    const response = await fetch(CARDS_URL + "redline/linkList", {
       method: "GET",
     });
     const data = await response.json();
