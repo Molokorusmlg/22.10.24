@@ -44,24 +44,6 @@ const buttonIn = document.querySelector(".block__button-signin");
 const formReg = document.querySelector(".register");
 const formIn = document.querySelector(".signin");
 
-// elementfind.js
-// Родительские блоки для карточек "перехода на другую страницу"
-const parentLink = document.querySelector(".block_to_next");
-const parentBlock = document.querySelector(".page");
-
-// Индекс текущей страницы
-let indexThisPage = localStorage.getItem("CurrentCard");
-
-// Карточки перехода
-let elements = document.querySelectorAll(
-  ".block_to_next__card, .block_to_next__cardsecond"
-);
-
-// Какая сейчас карта?
-let curentCardInexNew = localStorage.getItem("CurrentCard");
-
-// Конец elementfind.js -----------------------------------------
-
 // index.js
 // Элементы для изменения на главной странице
 const Mainpage = document.querySelector(".about__background_main");
@@ -81,14 +63,6 @@ const BASE_URL = "https://67275558302d03037e70ad42.mockapi.io/api/";
 // admin.js
 // Все родители карточек (два папы)
 let parentCards = document.querySelector(".cards");
-
-// Получение данных для создания карточек
-let imgScrNew = document.getElementById("images").files;
-let mapSrcNew = document.getElementById("mapid").value;
-let TextNew = document.getElementById("textid").value;
-let TitleNew = document.getElementById("titleid").value;
-
-// Конец admin.js -----------------------------------------
 
 // global.js, index.js Бургер-меню
 const burgerMenu = document.querySelector(".burger__meny");
