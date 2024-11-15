@@ -44,14 +44,14 @@ const formIn = document.querySelector(".signin");
 
 // index.js
 // Элементы для изменения на главной странице
-const Mainpage = document.querySelector(".about__background_main");
-const TitleEKB = document.querySelector(".about__city__title");
-const TextEKB = document.querySelector(".about__city__text");
+const mainPage = document.querySelector(".about__background_main");
+const titleEkb = document.querySelector(".about__city__title");
+const textEkb = document.querySelector(".about__city__text");
 
 // Элементы для изменения карты на главной странице
 const arrowMap = document.querySelector(".arrow__map");
-const MapText = document.querySelector(".big_map__text");
-const MapEkb = document.querySelector(".map_small");
+const mapText = document.querySelector(".big_map__text");
+const mapEkb = document.querySelector(".map_small");
 
 // Конец index.js -----------------------------------------
 
