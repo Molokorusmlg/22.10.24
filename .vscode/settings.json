@@ -4,7 +4,7 @@
       {
         "scope": ["comment.line.double-slash.js"],
         "settings": {
-          "foreground": "#e20303a4",
+          "foreground": "#5dcf8d",
           "fontStyle": "italic bold underline"
         },
         "name": "TODO"

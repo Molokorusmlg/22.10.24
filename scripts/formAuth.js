@@ -1,9 +1,3 @@
-const buttonReg = document.querySelector(".block__button-register");
-const buttonIn = document.querySelector(".block__button-signin");
-
-const formReg = document.querySelector(".register");
-const formIn = document.querySelector(".signin");
-
 function buttonClick(state) {
   if (state == 1) {
     buttonReg.classList.add("button-active");

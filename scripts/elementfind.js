@@ -73,7 +73,6 @@ function cardCreate(img, map, text, title) {
 }
 
 function iinerLink() {
-  const parentLink = document.querySelector(".block_to_next");
   const linkCreateated = linkCreate(
     linksData[0].Img_scr,
     linksData[1].Img_scr,
@@ -84,7 +83,6 @@ function iinerLink() {
 }
 
 function innerCard() {
-  const parentBlock = document.querySelector(".page");
   const cardFinal = cardCreate(
     cardData.Img_scr,
     cardData.Map_scr,
@@ -95,7 +93,7 @@ function innerCard() {
 }
 
 function animationVisible() {
-  const elements = document.querySelectorAll(
+  elements = document.querySelectorAll(
     ".block_to_next__card, .block_to_next__cardsecond"
   );
 
@@ -117,7 +115,7 @@ function animationVisible() {
 }
 
 function goToPageNext() {
-  const indexThisPage = localStorage.getItem("CurrentCard");
+  indexThisPage = localStorage.getItem("CurrentCard");
 
   if (indexThisPage == baseData.length - 1) {
     localStorage.setItem("CurrentCard", 0);
@@ -128,7 +126,7 @@ function goToPageNext() {
 }
 
 function goToPagePrevios() {
-  const indexThisPage = localStorage.getItem("CurrentCard");
+  indexThisPage = localStorage.getItem("CurrentCard");
 
   if (indexThisPage == 0) {
     localStorage.setItem("CurrentCard", baseData.length - 1);
@@ -154,7 +152,7 @@ async function getCardData() {
 async function loadingPage() {
   try {
     await getCardData();
-    const curentCardInexNew = localStorage.getItem("CurrentCard");
+    curentCardInexNew = localStorage.getItem("CurrentCard");
     if (curentCardInexNew == 0) {
       linksData.push(cardsData[cardsData.length - 1]);
       linksData.push(cardsData[Number(curentCardInexNew) + 1]);
@@ -172,7 +170,6 @@ async function loadingPage() {
   } catch (e) {
     console.error(e);
   } finally {
-    const Loading = document.querySelector(".loading");
     Loading.classList.remove("active__loading");
     Loading.classList.add("loadingComplete");
   }

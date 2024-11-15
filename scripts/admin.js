@@ -39,10 +39,10 @@ async function deleteCard(index) {
 }
 
 async function addNewCard() {
-  const imgScrNew = document.getElementById("images").files;
-  const mapSrcNew = document.getElementById("mapid").value;
-  const TextNew = document.getElementById("textid").value;
-  const TitleNew = document.getElementById("titleid").value;
+  imgScrNew = document.getElementById("images").files;
+  mapSrcNew = document.getElementById("mapid").value;
+  TextNew = document.getElementById("textid").value;
+  TitleNew = document.getElementById("titleid").value;
 
   try {
     await fetch(BASE_URL + `redline/cardList/${cityList.length}`, {
@@ -66,7 +66,7 @@ async function addNewCard() {
 
 // Создание карточек
 function createAllCards() {
-  const parentCards = document.querySelector(".cards");
+  parentCards = document.querySelector(".cards");
   cityList.forEach((city) => {
     const card = document.createElement("div");
     card.classList.add("red-line__marshruts__card-box_card");
@@ -92,18 +92,6 @@ async function getCards() {
   } catch (error) {
     console.log(error);
   }
-}
-
-// <!-- TODO: Что за тесты у тебя тут происходят удаляй --!>
-function test() {
-  const imgScrNew = document.getElementById("images").value;
-  const mapSrcNew = document.getElementById("mapid").value;
-  const TextNew = document.getElementById("textid").value;
-  const TitleNew = document.getElementById("titleid").value;
-  console.log(`"${imgScrNew}"`);
-  console.log(`"${mapSrcNew}"`);
-  console.log(`"${TextNew}"`);
-  console.log(`"${TitleNew}"`);
 }
 
 async function loadingPage() {
