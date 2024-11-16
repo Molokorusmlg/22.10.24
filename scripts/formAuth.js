@@ -23,6 +23,31 @@ function buttonClick(state) {
   elements.forms.login.classList.toggle("form-hide", isRegisterState);
 }
 
+async function signInUser() {
+  try {
+    const response = await fetch(USERS_URL + "users", {
+      method: "GET",
+    });
+    const data = await response.json();
+    const users = data;
+    const loginValue = document.querySelector(".login__signin").value;
+    const passwordValue = document.querySelector(".password__signin").value;
+    let matches = 0;
+    users.forEach((user) => {
+      if (user.password == passwordValue && user.login == loginValue) {
+        localStorage.setItem("login", loginValue);
+        window.location.href =
+          "http://127.0.0.1:5500/pages/mainpage/mainpage.html";
+      }
+    });
+    if (matches == 0) {
+      console.log("Неверные данные");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 async function postUser() {
   try {
     const loginValue = document.querySelector(".login__registration").value;

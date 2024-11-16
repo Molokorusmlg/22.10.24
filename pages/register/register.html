@@ -47,15 +47,21 @@
         </div>
         <div class="signin">
           <div class="signin__form">
-            <input type="text" placeholder="Логин" class="signin__form_input" />
+            <input
+              type="text"
+              placeholder="Логин"
+              class="signin__form_input login__signin"
+            />
             <input
               type="password"
               placeholder="Пароль"
-              class="signin__form_input"
+              class="signin__form_input password__signin"
             />
           </div>
           <div class="signin__box">
-            <a href="#" class="signin__box-submit">Сохранить</a>
+            <a href="#" class="signin__box-submit" onclick="signInUser()"
+              >Сохранить</a
+            >
           </div>
         </div>
       </div>

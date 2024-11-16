@@ -527,7 +527,7 @@
   flex-direction: column;
   justify-content: 0;
   align-items: center;
-  gap: 25%;
+  gap: 15%;
   height: 80%;
 }
 .burger__meny_block_list-link {

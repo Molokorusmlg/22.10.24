@@ -92,6 +92,32 @@ function goToNextHTML() {
   window.location.href = "http://127.0.0.1:5500/pages/unical/unicalPage.html";
 }
 
+async function updateOrders(userId) {
+  const orders = localStorage.getItem("orders");
+  const newOrders = Number(orders) + 1;
+  try {
+    const response = await fetch(USERS_URL + "users/" + userId, {
+      method: "PUT",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "PATCH",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ orders: newOrders }),
+    });
+    localStorage.setItem("orders", newOrders);
+    location.reload();
+  } catch (error) {
+    console.error("Произошла ошибка:", error);
+  }
+}
+
+document.querySelector(".modal__form-button").addEventListener("click", () => {
+  const userId = localStorage.getItem("userId");
+  updateOrders(userId);
+});
+
 // Создание карточек
 function cardInnerParent() {
   cityList.forEach((city) => {

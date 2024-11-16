@@ -35,6 +35,15 @@ function showEkb() {
   }
 }
 
+function showAdminPanel() {
+  const isAdmin = localStorage.getItem("admin");
+  if (isAdmin == "true") {
+    const parentLinks = document.querySelector(".admin__panel__link");
+    const adminPanelLink = `<a class = "header__link" href="http://127.0.0.1:5500/pages/adminpanel/adminpanel.html">Админ-панель</a>`;
+    parentLinks.innerHTML = adminPanelLink;
+  }
+}
+
 // Убираем текст, открываем полностью карту города
 function hedeText() {
   if (mapEkb.className == "map_small") {
@@ -64,3 +73,30 @@ function modalMeny() {
     modal.classList.add("bvis");
   }
 }
+
+async function getFullData() {
+  try {
+    const response = await fetch(USERS_URL + "users", {
+      method: "GET",
+    });
+    const data = await response.json();
+    const userList = data;
+    userList.forEach((user) => {
+      if (user.login == localStorage.getItem("login")) {
+        localStorage.setItem("name", user.name);
+        localStorage.setItem("admin", user.admin);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function loadingPage() {
+  await getFullData();
+  showAdminPanel();
+  Loading.classList.remove("active__loading");
+  Loading.classList.add("loadingComplete");
+}
+
+loadingPage();

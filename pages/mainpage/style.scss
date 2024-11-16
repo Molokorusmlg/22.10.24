@@ -443,7 +443,7 @@
     &_list {
       margin-top: 30%;
       @include flex(column, 0, center);
-      gap: 25%;
+      gap: 15%;
       height: 80%;
       &-link {
         font-size: 30px;
