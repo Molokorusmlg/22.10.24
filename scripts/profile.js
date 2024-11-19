@@ -63,7 +63,7 @@ function innerInfo(name, login, password) {
 }
 
 function backToMainPage() {
-  window.location.href = "http://127.0.0.1:5500/pages/mainpage/mainpage.html";
+  window.location.href = BASE_URL + "mainpage/mainpage.html";
 }
 
 async function updateUser(userId, updatedData) {
@@ -115,7 +115,7 @@ document
   });
 
 document.querySelector(".exit").addEventListener("click", () => {
-  window.location.href = "http://127.0.0.1:5500/pages/register/register.html";
+  window.location.href = BASE_URL + "register/register.html";
 });
 
 document

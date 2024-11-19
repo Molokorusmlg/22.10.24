@@ -27,16 +27,19 @@
               type="text"
               placeholder="Введите Фио"
               class="register__form_input name__registration"
+              onkeydown="checkForEnterRegistration(event)"
             />
             <input
               type="text"
               placeholder="Придумайте логин"
               class="register__form_input login__registration"
+              onkeydown="checkForEnterRegistration(event)"
             />
             <input
               type="password"
               placeholder="Пароль"
               class="register__form_input password__registration"
+              onkeydown="checkForEnterRegistration(event)"
             />
           </div>
           <div class="register__box">
@@ -51,11 +54,13 @@
               type="text"
               placeholder="Логин"
               class="signin__form_input login__signin"
+              onkeydown="checkForEnterSignIn(event)"
             />
             <input
               type="password"
               placeholder="Пароль"
               class="signin__form_input password__signin"
+              onkeydown="checkForEnterSignIn(event)"
             />
           </div>
           <div class="signin__box">

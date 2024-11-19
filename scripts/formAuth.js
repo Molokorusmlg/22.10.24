@@ -36,8 +36,7 @@ async function signInUser() {
     users.forEach((user) => {
       if (user.password == passwordValue && user.login == loginValue) {
         localStorage.setItem("login", loginValue);
-        window.location.href =
-          "http://127.0.0.1:5500/pages/mainpage/mainpage.html";
+        window.location.href = BASE_URL + "mainpage/mainpage.html";
       }
     });
     if (matches == 0) {
@@ -45,6 +44,18 @@ async function signInUser() {
     }
   } catch (error) {
     console.log(error);
+  }
+}
+
+function checkForEnterRegistration(e) {
+  if (e.keyCode == 13) {
+    document.querySelector(".register__box-submit").click();
+  }
+}
+
+function checkForEnterSignIn(e) {
+  if (e.keyCode == 13) {
+    document.querySelector(".signin__box-submit").click();
   }
 }
 
@@ -56,7 +67,7 @@ async function postUser() {
     ).value;
     const nameValue = document.querySelector(".name__registration").value;
 
-    const response = await fetch(`${USERS_URL}users`, {
+    const response = await fetch(USERS_URL + "users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=UTF-8",
@@ -72,10 +83,8 @@ async function postUser() {
     const data = await response.json();
     if (response.ok) {
       localStorage.setItem("login", loginValue);
-      window.location.href =
-        "http://127.0.0.1:5500/pages/mainpage/mainpage.html";
+      window.location.href = BASE_URL + "mainpage/mainpage.html";
     }
-    return data;
   } catch (error) {
     console.log(`Ошибка типа: ${error}`);
   }

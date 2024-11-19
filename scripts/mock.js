@@ -59,6 +59,8 @@ const mapEkb = document.querySelector(".map_small");
 const CARDS_URL = "https://67275558302d03037e70ad42.mockapi.io/api/";
 const USERS_URL = "https://6737c61b4eb22e24fca622b9.mockapi.io/";
 
+const BASE_URL = "http://127.0.0.1:5500/pages/";
+
 // admin.js
 // Все родители карточек (два папы)
 let parentCards = document.querySelector(".cards");
