@@ -117,7 +117,6 @@ async function getUsers() {
     });
     const data = await response.json();
     userList = data;
-    console.log(userList);
   } catch (error) {
     console.log(error);
   }

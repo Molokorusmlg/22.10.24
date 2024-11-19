@@ -15,12 +15,12 @@ function buttonClick(state) {
     },
   };
 
-  const isRegisterState = state === FORM_STATES.REGISTER;
+  const isRegister = state === FORM_STATES.REGISTER;
 
-  elements.buttons.register.classList.toggle("button-active", isRegisterState);
-  elements.buttons.login.classList.toggle("button-active", !isRegisterState);
-  elements.forms.register.classList.toggle("form-hide", !isRegisterState);
-  elements.forms.login.classList.toggle("form-hide", isRegisterState);
+  elements.buttons.register.classList.toggle("button-active", isRegister);
+  elements.buttons.login.classList.toggle("button-active", !isRegister);
+  elements.forms.register.classList.toggle("form-hide", !isRegister);
+  elements.forms.login.classList.toggle("form-hide", isRegister);
 }
 
 async function signInUser() {
@@ -36,11 +36,15 @@ async function signInUser() {
     users.forEach((user) => {
       if (user.password == passwordValue && user.login == loginValue) {
         localStorage.setItem("login", loginValue);
+        matches = 1;
         window.location.href = BASE_URL + "mainpage/mainpage.html";
       }
     });
     if (matches == 0) {
-      console.log("Неверные данные");
+      errorBlock.classList.add("animation");
+      setTimeout(function () {
+        errorBlock.classList.remove("animation");
+      }, 3000);
     }
   } catch (error) {
     console.log(error);
@@ -81,10 +85,9 @@ async function postUser() {
     });
 
     const data = await response.json();
-    if (response.ok) {
-      localStorage.setItem("login", loginValue);
-      window.location.href = BASE_URL + "mainpage/mainpage.html";
-    }
+    if (!response.ok) return;
+    localStorage.setItem("login", loginValue);
+    window.location.href = BASE_URL + "mainpage/mainpage.html";
   } catch (error) {
     console.log(`Ошибка типа: ${error}`);
   }
