@@ -25,9 +25,17 @@ function cardCreate(img, map, text, index) {
               </div>`;
 }
 
-function usersCreate(name, login) {
-  return `<p class = "users__name">${name}</p>
-    <p class = "users__login">${login}</p>`;
+function usersCreate(name, login, password) {
+  return `<div class = 'users__field_block'>
+              <p class = "users__name">Name: ${name}</p>
+            </div>
+            <div class = 'users__field_block'>
+              <p class = "users__login">Login: ${login}</p>
+            </div>
+            <div class = 'users__field_block'>
+              <p class = "users__password">Password: ${password}</p>
+            </div>
+          `;
 }
 
 // Отображение пользователей
@@ -35,8 +43,8 @@ function createUsers() {
   const parentUsers = document.querySelector(".users");
   userList.forEach((user) => {
     const userBlock = document.createElement("div");
-    userBlock.classList.add("user__block");
-    const user_final = usersCreate(user.name, user.login);
+    userBlock.classList.add("users__block");
+    const user_final = usersCreate(user.name, user.login, user.password);
     userBlock.innerHTML = user_final;
     parentUsers.appendChild(userBlock);
   });
@@ -128,6 +136,13 @@ async function loadingPage() {
   await getUsers();
   await createAllCards();
   await createUsers();
+  const isAdmin = localStorage.getItem("admin");
+  console.log(isAdmin);
+
+  if (Boolean(isAdmin)) {
+    Loading.classList.remove("active__loading");
+    Loading.classList.add("loadingComplete");
+  }
 }
 
 loadingPage();
