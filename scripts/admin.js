@@ -131,17 +131,18 @@ async function getUsers() {
 }
 
 async function loadingPage() {
+  const isAdmin = localStorage.getItem("admin");
+  if (isAdmin == "false") {
+    const body = document.querySelector(".body");
+    body.classList.add("lock");
+    return;
+  }
   await getCards();
   await getUsers();
   await createAllCards();
   await createUsers();
-  const isAdmin = localStorage.getItem("admin");
-  console.log(isAdmin);
-
-  if (Boolean(isAdmin)) {
-    Loading.classList.remove("active__loading");
-    Loading.classList.add("loadingComplete");
-  }
+  Loading.classList.remove("active__loading");
+  Loading.classList.add("loadingComplete");
 }
 
 loadingPage();

@@ -155,10 +155,10 @@ async function loadingPage() {
   try {
     await getCardData();
     const curentCardInexNew = localStorage.getItem("CurrentCard");
-    if (curentCardInexNew === 0) {
+    if (curentCardInexNew == 0) {
       linksData.push(cardsData[cardsData.length - 1]);
       linksData.push(cardsData[Number(curentCardInexNew) + 1]);
-    } else if (curentCardInexNew === cardsData.length - 1) {
+    } else if (curentCardInexNew == cardsData.length - 1) {
       linksData.push(cardsData[0]);
       linksData.push(cardsData[curentCardInexNew - 1]);
     } else {

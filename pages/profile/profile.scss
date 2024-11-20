@@ -27,7 +27,7 @@
   }
 
   &__block {
-    background-color: #fff;
+    background-color: $true-white;
     width: 50%;
     height: 70%;
     border-radius: 10px;
@@ -46,7 +46,7 @@
       border-radius: 10px 10px 0px 0px;
 
       &_paragraph {
-        color: #fff;
+        color: $true-white;
         font-size: 20px;
       }
     }
@@ -105,7 +105,7 @@
         transition: all 0.4s ease-in-out;
         border: 1px solid #e124241e;
         border-radius: 10px;
-        background-color: #fff;
+        background-color: $true-white;
         height: 40px;
         &:hover {
           border: 1px solid #e12424bb;
@@ -118,7 +118,7 @@
         border: 1px solid #e124241e;
         border-radius: 10px;
         background-color: #e12424;
-        color: #fff;
+        color: $true-white;
         font-size: 15px;
         height: 100px;
 
@@ -171,7 +171,7 @@
   }
 
   &__text {
-    color: #d00000;
+    color: $light-red;
     font-size: 30px;
   }
 }
@@ -216,7 +216,7 @@
 
   &:hover {
     &::placeholder {
-      color: #e12424b9;
+      color: $red;
     }
     border: 1px solid #e124243f;
   }
@@ -232,7 +232,7 @@
 }
 
 .loading {
-  background-color: #fff;
+  background-color: $true-white;
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -257,12 +257,12 @@
 
 .first,
 .four {
-  background-color: #d00000;
+  background-color: $light-red;
 }
 
 .second,
 .third {
-  background-color: #fff;
+  background-color: $true-white;
 }
 
 .visible {

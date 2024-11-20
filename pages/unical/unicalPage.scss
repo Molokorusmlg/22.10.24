@@ -160,7 +160,7 @@
       width: 100%;
       text-align: center;
       font-size: 60px;
-      color: #d00000;
+      color: $light-red;
       @include adaptive("small-pc") {
         font-size: 50px;
       }
@@ -172,7 +172,7 @@
   }
 
   &__line {
-    background-color: #d00000;
+    background-color: $light-red;
     height: 10px;
     border: none;
     @include adaptive("table") {
@@ -269,7 +269,7 @@
 }
 
 .loading {
-  background-color: #fff;
+  background-color: $true-white;
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -295,12 +295,12 @@
 
 .first,
 .four {
-  background-color: #d00000;
+  background-color: $light-red;
 }
 
 .second,
 .third {
-  background-color: #fff;
+  background-color: $true-white;
 }
 
 .visible {

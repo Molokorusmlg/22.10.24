@@ -29,7 +29,7 @@
 
   &__button {
     border: none;
-    background-color: #fff;
+    background-color: $true-white;
     border-radius: 10px;
     padding: 10px;
     &-link {
@@ -86,7 +86,7 @@
     height: 100%;
     transition: 0.4s ease-in-out;
     &:hover {
-      color: #d00000;
+      color: $light-red;
     }
   }
 }
@@ -207,7 +207,7 @@
   &__form {
     box-shadow: -2px 0px 79px 23px rgba(251, 251, 251, 0.2);
     border-radius: 1.5rem;
-    background-color: #fff;
+    background-color: $true-white;
     padding: 2rem;
     width: 350px;
     height: 320px;
@@ -250,15 +250,15 @@
     &-button {
       border: 0;
       width: 70%;
-      color: #d00000;
+      color: $light-red;
       background-color: #eeeeee;
       border-radius: 1.5rem;
       padding: 15px 20px 15px 20px;
       transition: 0.6s ease-in-out;
 
       &:hover {
-        color: #fff;
-        background-color: #d00000;
+        color: $true-white;
+        background-color: $light-red;
       }
 
       &-text {
@@ -290,14 +290,14 @@
   background-color: #161a1d;
   height: 200px;
   gap: 15rem;
-  color: #fff;
+  color: $true-white;
   @include adaptive("medium-pc") {
     gap: 10%;
   }
 
   a {
     text-decoration: none;
-    color: #fff;
+    color: $true-white;
   }
 
   img {
@@ -377,7 +377,7 @@
 }
 
 .controls {
-  background-color: #fff;
+  background-color: $true-white;
   border: none;
   @include adaptive(table) {
     margin-top: 510px;
@@ -388,7 +388,7 @@
   border: solid rgb(235, 235, 235) 1px;
   border-radius: 10px;
   padding: 24px 100px;
-  color: #d00000;
+  color: $light-red;
   background-color: #fdfdfd;
   box-shadow: 4px 5px 0px rgba(34, 60, 80, 0.2);
   margin-top: 50px;
@@ -396,7 +396,7 @@
 
   &:hover {
     background-color: #e12424;
-    color: #fff;
+    color: $true-white;
   }
 
   &-text {
@@ -424,8 +424,8 @@
     @include flex(column, 0, center);
     width: 20%;
     height: 60%;
-    background-color: #fff;
-    border-left: 5px solid #d00000;
+    background-color: $true-white;
+    border-left: 5px solid $light-red;
     border-radius: 5px 0px 0px 5px;
     position: absolute;
     top: 0px;
@@ -444,7 +444,7 @@
         letter-spacing: 3px;
         font-family: "Pt";
         font-weight: 800;
-        color: #d00000;
+        color: $light-red;
       }
 
       &-imgsecond {
@@ -469,7 +469,7 @@
         font-size: 25px;
         transition: 0.4s ease-in-out;
         &:hover {
-          color: #d00000;
+          color: $light-red;
         }
       }
     }
@@ -612,7 +612,7 @@
 
 .loading {
   overflow-x: hidden;
-  background-color: #fff;
+  background-color: $true-white;
   width: 99vw;
   height: 100vh;
   position: absolute;
@@ -637,12 +637,12 @@
 
 .first,
 .four {
-  background-color: #d00000;
+  background-color: $light-red;
 }
 
 .second,
 .third {
-  background-color: #fff;
+  background-color: $true-white;
 }
 
 @keyframes burger-meny {
