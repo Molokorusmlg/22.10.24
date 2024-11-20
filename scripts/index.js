@@ -37,7 +37,8 @@ function showEkb() {
 
 function showAdminPanel() {
   const isAdmin = localStorage.getItem("admin");
-  if (!isAdmin === "true") return;
+
+  if (!isAdmin) return;
   const parentLinks = document.querySelector(".admin__panel__link");
   const adminPanelLink = `<a class = "header__link" href="http://127.0.0.1:5500/pages/adminpanel/adminpanel.html">Админ-панель</a>`;
   parentLinks.innerHTML = adminPanelLink;
