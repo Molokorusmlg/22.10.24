@@ -73,6 +73,7 @@
   &__form {
     @include flex(column, center, center);
     gap: 30px;
+
     &-input {
       width: 50%;
       border: 1px solid #fc6a6ab9;
@@ -83,14 +84,17 @@
       color: black;
       border: 1px solid #00000023;
       transition: all 0.4s ease-in-out;
+
       &-big {
         height: 100px;
         word-break: break-all;
         resize: none;
       }
+
       &::placeholder {
         transition: all 0.4s ease-in-out;
       }
+
       &:hover {
         &::placeholder {
           color: #e12424b9;
@@ -102,16 +106,18 @@
 }
 
 .red-line {
-  height: 100vh;
   @include container(0px, 10px, 0, padding);
   @include flex(row, 0, 0);
+  height: 100vh;
   @include adaptive(table) {
     height: 150vh;
   }
+
   &__marshruts {
     @include flex(column, 0, center);
     max-width: 80vw;
     width: 100%;
+
     &__card-box {
       @include flex(column, 0, 0);
       gap: 100px;
@@ -119,11 +125,13 @@
       height: 50vh;
       margin-top: 50px;
       object-fit: contain;
+
       &_small-card-box {
         width: 100%;
         height: 50vh;
         position: relative;
       }
+
       &_card {
         width: 100%;
         padding: 40px;
@@ -137,19 +145,28 @@
         @include adaptive(table) {
           @include flex(row, center, center);
         }
+
         @include adaptive(mobile) {
           @include flex(column, center, center);
         }
+
+        &:hover {
+          background-color: #949494a8;
+        }
+
         &.active {
           animation: card_visible 0.7s ease-in-out;
           opacity: 1;
         }
+
         &-columnbox {
           width: 200px;
         }
+
         &-map {
           margin-bottom: 16px;
         }
+
         &-description {
           border-radius: 5px;
           width: 200px;
@@ -158,6 +175,7 @@
           font-size: 15px;
           letter-spacing: 1px;
         }
+
         &-img {
           border-radius: 5px;
           overflow: hidden;
@@ -167,6 +185,7 @@
             width: 200px;
             height: 200px;
           }
+
           img {
             display: block;
             height: 100%;
@@ -191,6 +210,7 @@
   color: #444;
   cursor: pointer;
   transition: 0.3s ease-in-out;
+
   &-title {
     color: #444;
     font-size: 20px;
@@ -198,9 +218,11 @@
     text-align: center;
     transition: color 0.2s ease-in-out;
   }
+
   &:hover {
     background: #eee;
     border-color: #111;
+
     .drop-title {
       color: #222;
     }

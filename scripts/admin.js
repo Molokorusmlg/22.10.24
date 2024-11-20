@@ -38,7 +38,7 @@ function usersCreate(name, login, password) {
           `;
 }
 
-// Отображение пользователей
+// Создание карточек с данными пользователя
 function createUsers() {
   const parentUsers = document.querySelector(".users");
   userList.forEach((user) => {
@@ -125,7 +125,6 @@ async function getUsers() {
     });
     const data = await response.json();
     userList = data;
-    console.log(userList);
   } catch (error) {
     console.log(error);
   }

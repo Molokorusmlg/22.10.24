@@ -51,44 +51,51 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+
   &__firstblock {
-    height: 200px;
-    width: 100%;
     @include flex(row, flex-end, center);
-    @include adaptive(table) {
-      height: 130px;
-    }
-  }
-  &__secondblock {
     height: 200px;
     width: 100%;
-    @include flex(row, flex-start, center);
     @include adaptive(table) {
       height: 130px;
     }
   }
+
+  &__secondblock {
+    @include flex(row, flex-start, center);
+    height: 200px;
+    width: 100%;
+    @include adaptive(table) {
+      height: 130px;
+    }
+  }
+
   &__card {
+    @include flex(row, space-between, center);
     background-color: hsl(0, 6%, 100%);
     box-shadow: 0px 4px 9.9px -5px #00000040;
     width: 50%;
     border-radius: 20px;
     height: 100%;
-    @include flex(row, space-between, center);
     transition: all 0.8s ease-in-out;
     overflow: hidden;
     opacity: 0;
+
     &:hover {
       transform: translate(10px);
       .imgArrow {
         filter: brightness(1);
       }
     }
+
     @include adaptive(table) {
       width: 80%;
     }
+
     @include adaptive("mobile") {
       width: 98%;
     }
+
     &-text {
       text-align: center;
       width: 30%;
@@ -101,12 +108,15 @@
         width: 40%;
       }
     }
+
     &-photo {
       width: 25px;
       height: 25px;
     }
   }
+
   &__cardsecond {
+    @include flex(row, space-between, center);
     overflow: hidden;
     background-color: hsl(0, 0%, 100%);
     box-shadow: 0px 4px 9.9px -5px #00000040;
@@ -114,20 +124,24 @@
     height: 100%;
     width: 50%;
     transition: all 0.8s ease-in-out;
-    @include flex(row, space-between, center);
     opacity: 0;
+
     &:hover {
       transform: translate(-10px);
+
       .imgArrowreverse {
         filter: brightness(1);
       }
     }
+
     @include adaptive(table) {
       width: 80%;
     }
+
     @include adaptive("mobile") {
       width: 98%;
     }
+
     &__imgBlock {
       width: 50%;
       height: 100%;
@@ -150,11 +164,13 @@
       @include adaptive("small-pc") {
         font-size: 50px;
       }
+
       @include adaptive("table") {
         font-size: 30px;
       }
     }
   }
+
   &__line {
     background-color: #d00000;
     height: 10px;
@@ -164,18 +180,20 @@
       margin-top: 5px;
     }
   }
+
   &__card {
+    @include flex(row, center, center);
     box-shadow: 0px 4px 9.9px -5px #00000040;
     height: 90vh;
-    @include flex(row, center, center);
     flex-wrap: wrap;
     gap: 1%;
     @include adaptive("small-pc") {
-      margin-top: 20px;
       @include flex(column, 0, center);
+      margin-top: 20px;
       flex-wrap: nowrap;
       gap: 2%;
     }
+
     &_img {
       &-box {
         width: 30%;
@@ -186,6 +204,7 @@
           width: 70%;
         }
       }
+
       &-photo {
         box-shadow: 0px 4px 9.9px -5px #00000040;
         border-radius: 20px;
@@ -193,6 +212,7 @@
         height: 100%;
       }
     }
+
     &__map {
       width: 30%;
       height: 60%;
@@ -204,6 +224,7 @@
         width: 70%;
       }
     }
+
     &__text {
       width: 50%;
       &-paragraph {
@@ -223,9 +244,11 @@
   @include adaptive("table") {
     top: 10px;
   }
+
   &:hover {
     transform: translate(-10px);
   }
+
   img {
     width: 25px;
     height: 25px;
@@ -240,18 +263,6 @@
   @include flex(row, center, center);
 }
 
-@keyframes loading-complete-animation {
-  0% {
-    opacity: 1;
-    @include flex(row, center, center);
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    display: none;
-  }
-}
 .loadingComplete {
   animation: loading-complete-animation 0.7s ease-in-out;
   display: none;
@@ -266,21 +277,13 @@
   left: 0;
   z-index: 100;
   overflow: hidden;
+
   &__circle {
     width: 50px;
     height: 50px;
     display: flex;
     flex-wrap: wrap;
     animation: loading-animation 0.7s ease-in-out infinite;
-  }
-}
-
-@keyframes loading-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 
@@ -302,4 +305,26 @@
 
 .visible {
   opacity: 1; /* Конечная прозрачность */
+}
+
+@keyframes loading-complete-animation {
+  0% {
+    @include flex(row, center, center);
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+
+@keyframes loading-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

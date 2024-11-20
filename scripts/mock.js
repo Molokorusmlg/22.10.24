@@ -41,6 +41,7 @@ const buttonReg = document.querySelector(".block__button-register");
 const buttonIn = document.querySelector(".block__button-signin");
 const formReg = document.querySelector(".register");
 const formIn = document.querySelector(".signin");
+const errorBlock = document.querySelector(".error");
 
 // index.js
 // Элементы для изменения на главной странице
@@ -59,6 +60,8 @@ const mapEkb = document.querySelector(".map_small");
 const CARDS_URL = "https://67275558302d03037e70ad42.mockapi.io/api/";
 const USERS_URL = "https://6737c61b4eb22e24fca622b9.mockapi.io/";
 
+const BASE_URL = "http://127.0.0.1:5500/pages/";
+
 // admin.js
 // Все родители карточек (два папы)
 let parentCards = document.querySelector(".cards");
@@ -76,3 +79,36 @@ let userList = []; // admin.js
 let cardsData = []; // elementfind.js
 let linksData = []; // elementfind.js
 let baseData = []; // elementfind.js
+
+// Добавляем обработчик события
+document
+  .querySelector(".profile__block_new_order_button")
+  .addEventListener("click", () => {
+    const userId = localStorage.getItem("userId");
+    updateOrders(userId);
+  });
+
+document.querySelector(".exit").addEventListener("click", () => {
+  window.location.href = BASE_URL + "register/register.html";
+});
+
+document
+  .querySelector(".profile__block_new_order_save")
+  .addEventListener("click", () => {
+    const userId = localStorage.getItem("userId");
+    const newName = document.querySelector(
+      ".profile__block_information_name_input"
+    ).value;
+    const newLogin = document.querySelector(
+      ".profile__block_information_login_input"
+    ).value;
+    const newPassword = document.querySelector(
+      ".profile__block_information_password_input"
+    ).value;
+    const updatedData = {
+      name: `${newName}`,
+      login: `${newLogin}`,
+      password: `${newPassword}`,
+    };
+    updateUser(userId, updatedData);
+  });
