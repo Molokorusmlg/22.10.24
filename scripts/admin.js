@@ -25,23 +25,6 @@ function cardCreate(img, map, text, index) {
               </div>`;
 }
 
-function usersCreate(name, login) {
-  return `<p class = "users__name">${name}</p>
-    <p class = "users__login">${login}</p>`;
-}
-
-// Создание карточек с данными пользователя
-function createUsers() {
-  const parentUsers = document.querySelector(".users");
-  userList.forEach((user) => {
-    const userBlock = document.createElement("div");
-    userBlock.classList.add("user__block");
-    const user_final = usersCreate(user.name, user.login);
-    userBlock.innerHTML = user_final;
-    parentUsers.appendChild(userBlock);
-  });
-}
-
 async function deleteCard(index) {
   try {
     await fetch(CARDS_URL + `redline/cardList/${index}`, {

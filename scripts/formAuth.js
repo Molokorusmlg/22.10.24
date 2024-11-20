@@ -2,7 +2,6 @@ const FORM_STATES = {
   REGISTER: 1,
   LOGIN: 2,
 };
-
 function buttonClick(state) {
   const elements = {
     buttons: {
