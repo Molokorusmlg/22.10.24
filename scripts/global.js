@@ -96,7 +96,7 @@ async function updateOrders(userId) {
   const orders = localStorage.getItem("orders");
   const newOrders = Number(orders) + 1;
   try {
-    const response = await fetch(USERS_URL + "users/" + userId, {
+    await fetch(USERS_URL + "users/" + userId, {
       method: "PUT",
       headers: {
         "Access-Control-Allow-Origin": "*",
@@ -166,10 +166,10 @@ function showCheckbox(type) {
   const linksCardextra = document.querySelectorAll(".cardLink");
   let valueCheckbox = 0;
   checkBox.forEach((checkbox) => {
-    if (checkbox.checked == false) valueCheckbox += 1;
+    if (checkbox.checked === false) valueCheckbox += 1;
   });
 
-  if (valueCheckbox == 4) {
+  if (valueCheckbox === 4) {
     linksCard.forEach((link) => {
       link.classList.remove("hidePage");
     });

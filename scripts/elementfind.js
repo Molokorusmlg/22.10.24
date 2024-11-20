@@ -119,7 +119,7 @@ function animationVisible() {
 function goToPageNext() {
   const indexThisPage = localStorage.getItem("CurrentCard");
 
-  if (indexThisPage == baseData.length - 1) {
+  if (indexThisPage === baseData.length - 1) {
     localStorage.setItem("CurrentCard", 0);
   } else {
     localStorage.setItem("CurrentCard", Number(indexThisPage) + 1);
@@ -130,7 +130,7 @@ function goToPageNext() {
 function goToPagePrevios() {
   const indexThisPage = localStorage.getItem("CurrentCard");
 
-  if (indexThisPage == 0) {
+  if (indexThisPage === 0) {
     localStorage.setItem("CurrentCard", baseData.length - 1);
   } else {
     localStorage.setItem("CurrentCard", Number(indexThisPage) - 1);
@@ -155,10 +155,10 @@ async function loadingPage() {
   try {
     await getCardData();
     const curentCardInexNew = localStorage.getItem("CurrentCard");
-    if (curentCardInexNew == 0) {
+    if (curentCardInexNew === 0) {
       linksData.push(cardsData[cardsData.length - 1]);
       linksData.push(cardsData[Number(curentCardInexNew) + 1]);
-    } else if (curentCardInexNew == cardsData.length - 1) {
+    } else if (curentCardInexNew === cardsData.length - 1) {
       linksData.push(cardsData[0]);
       linksData.push(cardsData[curentCardInexNew - 1]);
     } else {

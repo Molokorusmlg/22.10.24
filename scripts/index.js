@@ -17,7 +17,7 @@ function setShowBurgerMenu() {
 
 // Смена заднего фона и текста на главной странице
 function showEkb() {
-  if (mainPage.className == "about__background_main") {
+  if (mainPage.className === "about__background_main") {
     titleEkb.innerHTML = `<h1 class="about__city__title">город бесов😈</h1>`;
     textEkb.innerHTML = `<p class="about__city__text">
           Самый крутой город на руси. Самый модный и инновационный!
@@ -37,16 +37,15 @@ function showEkb() {
 
 function showAdminPanel() {
   const isAdmin = localStorage.getItem("admin");
-  if (isAdmin == "true") {
-    const parentLinks = document.querySelector(".admin__panel__link");
-    const adminPanelLink = `<a class = "header__link" href="http://127.0.0.1:5500/pages/adminpanel/adminpanel.html">Админ-панель</a>`;
-    parentLinks.innerHTML = adminPanelLink;
-  }
+  if (!isAdmin === "true") return;
+  const parentLinks = document.querySelector(".admin__panel__link");
+  const adminPanelLink = `<a class = "header__link" href="http://127.0.0.1:5500/pages/adminpanel/adminpanel.html">Админ-панель</a>`;
+  parentLinks.innerHTML = adminPanelLink;
 }
 
 // Убираем текст, открываем полностью карту города
 function hedeText() {
-  if (mapEkb.className == "map_small") {
+  if (mapEkb.className === "map_small") {
     mapText.classList.replace("no-route", "route");
     arrowMap.classList.replace("arrow__map", "arrow__map_hiden");
     mapEkb.classList.replace("map_small", "mapbig");
@@ -82,10 +81,9 @@ async function getFullData() {
     const data = await response.json();
     const userList = data;
     userList.forEach((user) => {
-      if (user.login == localStorage.getItem("login")) {
-        localStorage.setItem("name", user.name);
-        localStorage.setItem("admin", user.admin);
-      }
+      if (!user.login === localStorage.getItem("login")) return;
+      localStorage.setItem("name", user.name);
+      localStorage.setItem("admin", user.admin);
     });
   } catch (error) {
     console.log(error);

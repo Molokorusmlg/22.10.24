@@ -19,12 +19,13 @@
 }
 
 .profile {
+  @include flex(row, center, center);
   background-color: #eee;
   height: 100vh;
-  @include flex(row, center, center);
   @include adaptive("mobile") {
     @include flex(row, none, center);
   }
+
   &__block {
     background-color: #fff;
     width: 50%;
@@ -34,39 +35,46 @@
     @include adaptive("mobile") {
       width: 100%;
     }
+
     &_title {
-      padding: 10px;
       @include flex(row, center, center);
+      padding: 10px;
       width: 100%;
       height: 10%;
       gap: 5%;
       background-color: #e12424;
       border-radius: 10px 10px 0px 0px;
+
       &_paragraph {
         color: #fff;
         font-size: 20px;
       }
     }
+
     &_information {
-      height: 40%;
       @include flex(row, none, none);
+      height: 40%;
+
       &_photo {
         width: 140%;
         @include adaptive(table) {
           display: none;
         }
+
         &_img {
           width: 100%;
           height: 100%;
           border-radius: 0 10px 10px 0;
         }
       }
+
       &_info {
+        @include flex(column, none, none);
         padding: 10px;
         width: 100%;
-        @include flex(column, none, none);
         gap: 10px;
       }
+
       &_orders {
         height: 100%;
         &_list {
@@ -76,18 +84,22 @@
           padding: 3px;
           border-radius: 5px;
         }
+
         &_title {
           font-size: 20px;
         }
+
         &_text {
           color: #4e4d4d;
         }
       }
     }
+
     &_new_order {
+      @include flex(row, none, none);
       width: 100%;
       height: 50%;
-      @include flex(row, none, none);
+
       &_button {
         box-shadow: 0px 4px 9.9px -5px #00000040;
         transition: all 0.4s ease-in-out;
@@ -99,6 +111,7 @@
           border: 1px solid #e12424bb;
         }
       }
+
       &_save {
         box-shadow: 0px 4px 9.9px -5px #00000040;
         transition: all 0.4s ease-in-out;
@@ -108,15 +121,18 @@
         color: #fff;
         font-size: 15px;
         height: 100px;
+
         &:hover {
           color: #f79f9f;
         }
       }
+
       &_title {
         font-size: 30px;
         text-align: center;
         color: #e12424;
       }
+
       &_get_order {
         padding: 10px;
         width: 50%;
@@ -127,11 +143,13 @@
           width: 100%;
         }
       }
+
       &_photo {
         width: 100%;
         @include adaptive(table) {
           display: none;
         }
+
         &_img {
           border-radius: 10px;
           width: 100%;
@@ -147,9 +165,11 @@
   top: 10px;
   right: 20px;
   transition: all 0.4s ease-in-out;
+
   &:hover {
     transform: translate(10px);
   }
+
   &__text {
     color: #d00000;
     font-size: 30px;
@@ -157,19 +177,22 @@
 }
 
 .back {
+  @include flex(row, center, center);
   position: absolute;
   top: 10px;
   left: 10px;
-  @include flex(row, center, center);
   gap: 20px;
   transition: all 0.4s ease-in-out;
+
   &:hover {
     transform: translate(-10px);
   }
+
   &__arrow {
     width: 30px;
     height: 30px;
   }
+
   &__text {
     font-size: 30px;
     color: #e12424;
@@ -186,9 +209,11 @@
   color: black;
   border: 1px solid #00000023;
   transition: all 0.4s ease-in-out;
+
   &::placeholder {
     transition: all 0.4s ease-in-out;
   }
+
   &:hover {
     &::placeholder {
       color: #e12424b9;
@@ -201,18 +226,6 @@
   @include flex(row, center, center);
 }
 
-@keyframes loading-complete-animation {
-  0% {
-    opacity: 1;
-    @include flex(row, center, center);
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    display: none;
-  }
-}
 .loadingComplete {
   animation: loading-complete-animation 0.7s ease-in-out;
   display: none;
@@ -236,15 +249,6 @@
   }
 }
 
-@keyframes loading-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .cube {
   width: 25px;
   height: 25px;
@@ -262,5 +266,27 @@
 }
 
 .visible {
-  opacity: 1; /* Конечная прозрачность */
+  opacity: 1;
+}
+
+@keyframes loading-complete-animation {
+  0% {
+    @include flex(row, center, center);
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+
+@keyframes loading-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

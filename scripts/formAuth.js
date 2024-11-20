@@ -34,13 +34,13 @@ async function signInUser() {
     const passwordValue = document.querySelector(".password__signin").value;
     let matches = 0;
     users.forEach((user) => {
-      if (user.password == passwordValue && user.login == loginValue) {
+      if (user.password === passwordValue && user.login === loginValue) {
         localStorage.setItem("login", loginValue);
         matches = 1;
         window.location.href = BASE_URL + "mainpage/mainpage.html";
       }
     });
-    if (matches == 0) {
+    if (matches === 0) {
       errorBlock.classList.add("animation");
       setTimeout(function () {
         errorBlock.classList.remove("animation");
@@ -52,13 +52,13 @@ async function signInUser() {
 }
 
 function checkForEnterRegistration(e) {
-  if (e.keyCode == 13) {
+  if (e.keyCode === 13) {
     document.querySelector(".register__box-submit").click();
   }
 }
 
 function checkForEnterSignIn(e) {
-  if (e.keyCode == 13) {
+  if (e.keyCode === 13) {
     document.querySelector(".signin__box-submit").click();
   }
 }

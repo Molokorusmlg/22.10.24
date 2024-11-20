@@ -30,7 +30,7 @@ function usersCreate(name, login) {
     <p class = "users__login">${login}</p>`;
 }
 
-// Отображение пользователей
+// Создание карточек с данными пользователя
 function createUsers() {
   const parentUsers = document.querySelector(".users");
   userList.forEach((user) => {
