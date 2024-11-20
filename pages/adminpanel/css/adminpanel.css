@@ -80,7 +80,6 @@
 }
 
 .red-line {
-  height: 100vh;
   padding-left: 0px;
   padding-right: 10px;
   padding-top: 0;
@@ -88,6 +87,7 @@
   flex-direction: row;
   justify-content: 0;
   align-items: 0;
+  height: 100vh;
 }
 @media (max-width: 768px) {
   .red-line {
@@ -129,9 +129,6 @@
   gap: 30px;
   transition: 0.6s ease-in-out;
 }
-.red-line__marshruts__card-box_card:hover {
-  background-color: rgba(148, 148, 148, 0.6588235294);
-}
 @media (max-width: 768px) {
   .red-line__marshruts__card-box_card {
     display: flex;
@@ -147,6 +144,9 @@
     justify-content: center;
     align-items: center;
   }
+}
+.red-line__marshruts__card-box_card:hover {
+  background-color: rgba(148, 148, 148, 0.6588235294);
 }
 .red-line__marshruts__card-box_card.active {
   animation: card_visible 0.7s ease-in-out;

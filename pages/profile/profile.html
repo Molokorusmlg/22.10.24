@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Профиль</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico" />
+    <link rel="stylesheet" href="./css/profile.css" />
+  </head>
+  <body>
+    <div class="profile">
+      <div class="profile__block">
+        <div class="profile__block_title">
+          <img src="../../assets/img/favicon.ico" alt="" />
+          <p class="profile__block_title_paragraph">Екатеринбург тур</p>
+        </div>
+        <div class="profile__block_information">
+          <div class="profile__block_information_photo">
+            <img
+              src="../../assets/img/4562a1a6-99c7-40ee-bbff-9ca955979e7e.png"
+              alt="none"
+              class="profile__block_information_photo_img"
+            />
+          </div>
+          <div class="profile__block_information_info"></div>
+        </div>
+        <div class="profile__block_new_order">
+          <div class="profile__block_new_order_get_order">
+            <h3 class="profile__block_new_order_title">Купить экскурсию</h3>
+            <input
+              class="profile__block_new_order_input profile__input"
+              type="text"
+              placeholder="Ведите ваш email"
+            />
+            <button class="profile__block_new_order_button">Офрмить</button>
+            <button class="profile__block_new_order_save">
+              Сохранить изменения
+            </button>
+          </div>
+          <div class="profile__block_new_order_photo">
+            <img
+              src="../../assets/img/besov.webp"
+              alt=""
+              class="profile__block_new_order_photo_img"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="back" onclick="backToMainPage()">
+        <img
+          src="../../assets/img/arrowBack.svg"
+          alt="arrow back"
+          class="back__arrow"
+        />
+        <p class="back__text">Вернуться</p>
+      </div>
+      <div class="exit">
+        <p class="exit__text">Выйти</p>
+      </div>
+    </div>
+    <div class="loading active__loading">
+      <div class="loading__circle">
+        <div class="cube first">
+          <span></span>
+        </div>
+        <div class="cube second">
+          <span></span>
+        </div>
+        <div class="cube third">
+          <span></span>
+        </div>
+        <div class="cube four">
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <script src="../../scripts/mock.js"></script>
+    <script src="../../scripts/profile.js"></script>
+  </body>
+</html>
