@@ -28,6 +28,7 @@
   @include container(0px, 10px, 0, padding);
   @include flex(row, 0, 0);
   height: 100vh;
+
   @include adaptive(table) {
     height: 150vh;
   }
@@ -36,6 +37,7 @@
     @include flex(column, 0, 0);
     max-width: 20vw;
     border-right: #e12424 solid 10px;
+
     @include adaptive(mobile) {
       border-right: #e12424 solid 4px;
     }
@@ -43,7 +45,7 @@
     &-line {
       height: 10px;
       border: none;
-      background-color: #d00000;
+      background-color: $light-red;
       margin-bottom: 20px;
     }
 
@@ -52,13 +54,14 @@
       width: 50%;
       font-size: 20px;
       margin: 0 auto;
-      background-color: #fff;
+      background-color: $true-white;
       border: 1px solid #cfcece;
-      color: #d00000;
+      color: $light-red;
       height: 30px;
       border-radius: 20px;
       margin-bottom: 20px;
       margin-top: 20px;
+
       @include adaptive(table) {
         font-size: 15px;
         height: 40px;
@@ -66,8 +69,8 @@
       }
 
       &:hover {
-        background-color: #d00000;
-        color: #fff;
+        background-color: $light-red;
+        color: $true-white;
       }
     }
 
@@ -76,6 +79,7 @@
       margin: 0 auto;
       margin-bottom: 10px;
       width: 65%;
+
       @include adaptive(table) {
         @include flex(column, space-between, 0);
         gap: 20px;
@@ -100,6 +104,7 @@
       margin: 0 auto;
       font-size: 20px;
       color: #e12424;
+
       @include adaptive(table) {
         font-size: 18px;
         text-align: center;
@@ -118,20 +123,23 @@
       outline: 0;
       transition: 0.6s ease-in-out;
       margin-bottom: 20px;
+
       &:focus {
         background-color: #ececec;
       }
     }
 
     &-title {
-      color: #fff;
+      color: $true-white;
       background-color: #e12424;
       font-size: 60px;
       margin-bottom: 20px;
       text-align: center;
+
       @include adaptive(small-pc) {
         font-size: 25px;
       }
+
       @include adaptive(table) {
         font-size: 20px;
       }
@@ -146,6 +154,7 @@
       letter-spacing: 2px;
       overflow-y: scroll;
       overflow-x: visible;
+
       @include adaptive(table) {
         padding-left: 2px;
         width: 95%;
@@ -173,10 +182,11 @@
     }
 
     &-title {
-      color: #d00000;
+      color: $light-red;
       font-size: 60px;
       text-align: center;
       margin-bottom: 30px;
+
       @include adaptive(table) {
         font-size: 30px;
       }
@@ -184,9 +194,10 @@
 
     &-text {
       font-size: 30px;
-      color: #d00000;
+      color: $light-red;
       margin-top: 70px;
       text-align: center;
+
       @include adaptive(table) {
         margin-top: 20px;
         font-size: 20px;
@@ -208,12 +219,13 @@
       @include flex(row, center, center);
       position: absolute;
       top: -20px;
-      background-color: #d00000;
-      color: #fff;
+      background-color: $light-red;
+      color: $true-white;
       font-size: 20px;
       width: 50px;
       height: 50px;
       border-radius: 50px;
+
       @include adaptive(table) {
         width: 20px;
         height: 20px;
@@ -242,9 +254,11 @@
         gap: 30px;
         opacity: 0;
         transition: 0.6s ease-in-out;
+
         @include adaptive(table) {
           @include flex(row, center, center);
         }
+
         @include adaptive(mobile) {
           @include flex(column, center, center);
         }
@@ -266,7 +280,7 @@
           border-radius: 5px;
           width: 200px;
           height: 132px;
-          color: #d00000;
+          color: $light-red;
           font-size: 15px;
           letter-spacing: 1px;
         }
@@ -276,6 +290,7 @@
           overflow: hidden;
           width: 300px;
           height: 300px;
+
           @include adaptive(table) {
             width: 200px;
             height: 200px;
@@ -322,7 +337,7 @@
   &__form {
     box-shadow: -2px 0px 79px 23px rgba(251, 251, 251, 0.2);
     border-radius: 1.5rem;
-    background-color: #fff;
+    background-color: $true-white;
     padding: 2rem;
     width: 350px;
     height: 320px;
@@ -365,15 +380,15 @@
     &-button {
       border: 0;
       width: 70%;
-      color: #d00000;
+      color: $light-red;
       background-color: #eeeeee;
       border-radius: 1.5rem;
       padding: 15px 20px 15px 20px;
       transition: 0.6s ease-in-out;
 
       &:hover {
-        color: #fff;
-        background-color: #d00000;
+        color: $true-white;
+        background-color: $light-red;
       }
 
       &-text {
@@ -394,6 +409,7 @@
   color: #e12424;
   text-decoration: underline;
   gap: 10px;
+
   @include adaptive(small-pc) {
     @include flex(column, center, center);
   }
@@ -405,14 +421,15 @@
   background-color: #161a1d;
   height: 200px;
   gap: 15rem;
-  color: #fff;
+  color: $true-white;
+
   @include adaptive("medium-pc") {
     gap: 10%;
   }
 
   a {
     text-decoration: none;
-    color: #fff;
+    color: $true-white;
   }
 
   img {
@@ -424,6 +441,7 @@
     img {
       width: 150px;
       height: 60px;
+
       @include adaptive(table) {
         display: none;
       }
@@ -437,6 +455,7 @@
 
     &-title {
       font-size: 25px;
+
       @include adaptive(table) {
         font-size: 15px;
       }
@@ -444,6 +463,7 @@
 
     &-text {
       font-size: 20px;
+
       @include adaptive(table) {
         font-size: 10px;
       }
@@ -458,7 +478,7 @@
   &__button {
     padding: 20px;
     transition: 0.7s ease-in-out;
-    background-color: #f5f3f4;
+    background-color: $red-white;
     border-radius: 5px;
 
     a {
@@ -469,7 +489,7 @@
       background-color: black;
 
       a {
-        color: #f5f3f4;
+        color: $red-white;
       }
     }
   }
@@ -494,8 +514,9 @@
 }
 
 .controls {
-  background-color: #fff;
+  background-color: $true-white;
   border: none;
+
   @include adaptive(table) {
     margin-top: 510px;
   }
@@ -505,7 +526,7 @@
   border: solid rgb(235, 235, 235) 1px;
   border-radius: 10px;
   padding: 24px 100px;
-  color: #d00000;
+  color: $light-red;
   background-color: #fdfdfd;
   box-shadow: 4px 5px 0px rgba(34, 60, 80, 0.2);
   margin-top: 50px;
@@ -513,7 +534,7 @@
 
   &:hover {
     background-color: #e12424;
-    color: #fff;
+    color: $true-white;
   }
 
   &-text {
@@ -541,12 +562,13 @@
     @include flex(column, 0, center);
     width: 20%;
     height: 60%;
-    background-color: #fff;
-    border-left: 5px solid #d00000;
+    background-color: $true-white;
+    border-left: 5px solid $light-red;
     border-radius: 5px 0px 0px 5px;
     position: absolute;
     top: 0px;
     right: 0px;
+
     @include adaptive(mobile) {
       width: 50%;
     }
@@ -561,10 +583,10 @@
         letter-spacing: 3px;
         font-family: "Pt";
         font-weight: 800;
-        color: #d00000;
+        color: $light-red;
       }
 
-      &-imgsecond {
+      &-img_second {
         width: 25%;
         height: 25%;
       }
@@ -587,7 +609,7 @@
         transition: 0.4s ease-in-out;
 
         &:hover {
-          color: #d00000;
+          color: $light-red;
         }
       }
     }
@@ -723,14 +745,14 @@
   @include flex(row, center, center);
 }
 
-.loadingComplete {
+.loading-complete {
   animation: loading-complete-animation 0.7s ease-in-out;
   display: none;
 }
 
 .loading {
   overflow-x: hidden;
-  background-color: #fff;
+  background-color: $true-white;
   width: 99vw;
   height: 100vh;
   position: absolute;
@@ -743,7 +765,7 @@
     height: 50px;
     display: flex;
     flex-wrap: wrap;
-    animation: loading-animation 0.7s ease-in-out infinite;
+    animation: loading-active 0.7s ease-in-out infinite;
   }
 }
 
@@ -755,15 +777,15 @@
 
 .first,
 .four {
-  background-color: #d00000;
+  background-color: $light-red;
 }
 
 .second,
 .third {
-  background-color: #fff;
+  background-color: $true-white;
 }
 
-@keyframes loading-animation {
+@keyframes loading-active {
   0% {
     transform: rotate(0deg);
   }

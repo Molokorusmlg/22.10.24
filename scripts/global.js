@@ -336,7 +336,7 @@ async function loadingPage() {
   Hrams = document.querySelectorAll(".hrami");
 
   Loading.classList.remove("active__loading");
-  Loading.classList.add("loadingComplete");
+  Loading.classList.add("loading-complete");
 }
 
 loadingPage();

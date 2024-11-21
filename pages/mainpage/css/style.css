@@ -105,13 +105,15 @@
 
 .about__background_main {
   height: 100vh;
-  background: url("../../../assets/img//4562a1a6-99c7-40ee-bbff-9ca955979e7e.png") no-repeat center center/cover;
+  background: url("../../../assets/img//4562a1a6-99c7-40ee-bbff-9ca955979e7e.png")
+    no-repeat center center/cover;
   transition: all 0.4s ease-in-out;
 }
 
 .zloiEKB {
   height: 100vh;
-  background: url("../../../assets/img//besov.webp") no-repeat center center/cover;
+  background: url("../../../assets/img//besov.webp") no-repeat center
+    center/cover;
   transition: all 0.4s ease-in-out;
 }
 
@@ -496,7 +498,7 @@
   font-weight: 800;
   color: #d00000;
 }
-.burger__meny_block_header-imgsecond {
+.burger__meny_block_header-img_second {
   width: 25%;
   height: 25%;
 }
@@ -650,7 +652,7 @@
   align-items: center;
 }
 
-.loadingComplete {
+.loading-complete {
   animation: loading-complete-animation 0.7s ease-in-out;
   display: none;
 }
@@ -670,7 +672,7 @@
   height: 50px;
   display: flex;
   flex-wrap: wrap;
-  animation: loading-animation 0.7s ease-in-out infinite;
+  animation: loading-active 0.7s ease-in-out infinite;
 }
 
 .cube {
@@ -716,7 +718,7 @@
     display: none;
   }
 }
-@keyframes loading-animation {
+@keyframes loading-active {
   0% {
     transform: rotate(0deg);
   }

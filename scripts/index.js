@@ -20,7 +20,7 @@ function showEkb() {
   if (mainPage.className === "about__background_main") {
     titleEkb.innerHTML = `<h1 class="about__city__title">город бесов😈</h1>`;
     textEkb.innerHTML = `<p class="about__city__text">
-          Самый крутой город на руси. Самый модный и инновационный!
+          Самый крутой город на Руси. Самый модный и инновационный!
         </p>`;
     mainPage.classList.add("zloiEKB");
     mainPage.classList.remove("about__background_main");
@@ -35,10 +35,12 @@ function showEkb() {
   }
 }
 
+// Проверка на админа
 function showAdminPanel() {
   const isAdmin = localStorage.getItem("admin");
+  console.log(!isAdmin);
 
-  if (!isAdmin) return;
+  if (isAdmin === "false") return;
   const parentLinks = document.querySelector(".admin__panel__link");
   const adminPanelLink = `<a class = "header__link" href="${BASE_URL}adminpanel/adminpanel.html">Админ-панель</a>`;
   parentLinks.innerHTML = adminPanelLink;
@@ -50,11 +52,11 @@ function hedeText() {
     mapText.classList.replace("no-route", "route");
     arrowMap.classList.replace("arrow__map", "arrow__map_hiden");
     mapEkb.classList.replace("map_small", "mapbig");
-  } else {
-    mapText.classList.replace("route", "no-route");
-    arrowMap.classList.replace("arrow__map_hiden", "arrow__map");
-    mapEkb.classList.replace("mapbig", "map_small");
+    return;
   }
+  mapText.classList.replace("route", "no-route");
+  arrowMap.classList.replace("arrow__map_hiden", "arrow__map");
+  mapEkb.classList.replace("mapbig", "map_small");
 }
 
 // Модальное окно
@@ -74,6 +76,7 @@ function modalMeny() {
   }
 }
 
+//Функция получание данных о всех пользователях
 async function getFullData() {
   try {
     const response = await fetch(USERS_URL + "users", {
@@ -82,7 +85,7 @@ async function getFullData() {
     const data = await response.json();
     const userList = data;
     userList.forEach((user) => {
-      if (!user.login === localStorage.getItem("login")) return;
+      if (!(user.login === localStorage.getItem("login"))) return;
       localStorage.setItem("name", user.name);
       localStorage.setItem("admin", user.admin);
     });
@@ -91,11 +94,12 @@ async function getFullData() {
   }
 }
 
+// Загрузка
 async function loadingPage() {
   await getFullData();
   showAdminPanel();
   Loading.classList.remove("active__loading");
-  Loading.classList.add("loadingComplete");
+  Loading.classList.add("loading-complete");
 }
 
 loadingPage();

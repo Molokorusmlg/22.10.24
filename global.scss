@@ -9,6 +9,11 @@
   list-style-type: none;
 }
 
+$light-red: #d00000;
+$red: #e12424b9;
+$true-white: #fff;
+$red-white: #f5f3f4;
+
 $mobile_screen: 467px;
 $table_screen: 768px;
 $desctop-small_screen: 1080px;
@@ -94,7 +99,7 @@ $desctop-large_screen: 1860px;
 
 @mixin buttonMain($width) {
   width: $width;
-  background-color: #fff;
+  background-color: $true-white;
   outline: none;
   border: 0;
   font-size: 10px;

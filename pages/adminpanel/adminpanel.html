@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="./css/adminpanel.css" />
     <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico" />
   </head>
-  <body>
-    <h1>Удалить карточки</h1>
+  <body class="body">
+    <div class="admin__title">
+      <h1 class="admin__title_text">Удалить карточки</h1>
+      <a class="admin__title_link" href="/pages/mainpage/mainpage.html#"
+        >Выход</a
+      >
+    </div>
     <div class="cards"></div>
+    <h1 class="admin__title_users">Пользователи</h1>
     <div class="users"></div>
     <div class="new_card">
       <h1>Создать карточку</h1>
@@ -41,6 +47,22 @@
       </form>
       <div class="card__button__box" onclick="test()">
         <a href="#" class="card__button__box-submit">Создать</a>
+      </div>
+    </div>
+    <div class="loading active__loading">
+      <div class="loading__circle">
+        <div class="cube first">
+          <span></span>
+        </div>
+        <div class="cube second">
+          <span></span>
+        </div>
+        <div class="cube third">
+          <span></span>
+        </div>
+        <div class="cube four">
+          <span></span>
+        </div>
       </div>
     </div>
     <script src="../../scripts/mock.js"></script>

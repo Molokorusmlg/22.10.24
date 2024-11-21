@@ -25,9 +25,17 @@ function cardCreate(img, map, text, index) {
               </div>`;
 }
 
-function usersCreate(name, login) {
-  return `<p class = "users__name">${name}</p>
-    <p class = "users__login">${login}</p>`;
+function usersCreate(name, login, password) {
+  return `<div class = 'users__field_block'>
+              <p class = "users__name">Name: ${name}</p>
+            </div>
+            <div class = 'users__field_block'>
+              <p class = "users__login">Login: ${login}</p>
+            </div>
+            <div class = 'users__field_block'>
+              <p class = "users__password">Password: ${password}</p>
+            </div>
+          `;
 }
 
 // Создание карточек с данными пользователя
@@ -35,13 +43,14 @@ function createUsers() {
   const parentUsers = document.querySelector(".users");
   userList.forEach((user) => {
     const userBlock = document.createElement("div");
-    userBlock.classList.add("user__block");
-    const user_final = usersCreate(user.name, user.login);
+    userBlock.classList.add("users__block");
+    const user_final = usersCreate(user.name, user.login, user.password);
     userBlock.innerHTML = user_final;
     parentUsers.appendChild(userBlock);
   });
 }
 
+// Удаление карточек
 async function deleteCard(index) {
   try {
     await fetch(CARDS_URL + `redline/cardList/${index}`, {
@@ -55,6 +64,7 @@ async function deleteCard(index) {
   }
 }
 
+// Добавление новых карточек в mock.api
 async function addNewCard() {
   const imgScrNew = document.getElementById("images").files;
   const mapSrcNew = document.getElementById("mapid").value;
@@ -123,10 +133,18 @@ async function getUsers() {
 }
 
 async function loadingPage() {
+  const isAdmin = localStorage.getItem("admin");
+  if (isAdmin == "false") {
+    const body = document.querySelector(".body");
+    body.classList.add("lock");
+    return;
+  }
   await getCards();
   await getUsers();
   await createAllCards();
   await createUsers();
+  Loading.classList.remove("active__loading");
+  Loading.classList.add("loading-complete");
 }
 
 loadingPage();
