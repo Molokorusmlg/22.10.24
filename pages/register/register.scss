@@ -37,6 +37,7 @@ body {
   @include flex(row, space-between, center);
   width: 20%;
   margin-bottom: 1%;
+
   @include adaptive("small-pc") {
     width: auto;
   }
@@ -75,6 +76,7 @@ body {
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0px 4px 9.9px -5px #000000a8;
+
   @include adaptive(table) {
     width: 90%;
     height: 50%;

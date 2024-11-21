@@ -151,6 +151,7 @@ async function getCardData() {
   }
 }
 
+// Загрузка страницы
 async function loadingPage() {
   try {
     await getCardData();
@@ -173,7 +174,7 @@ async function loadingPage() {
     console.error(e);
   } finally {
     Loading.classList.remove("active__loading");
-    Loading.classList.add("loadingComplete");
+    Loading.classList.add("loading-complete");
   }
 }
 

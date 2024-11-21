@@ -248,7 +248,7 @@
   align-items: center;
 }
 
-.loadingComplete {
+.loading-complete {
   animation: loading-complete-animation 0.7s ease-in-out;
   display: none;
 }
@@ -268,7 +268,7 @@
   height: 50px;
   display: flex;
   flex-wrap: wrap;
-  animation: loading-animation 0.7s ease-in-out infinite;
+  animation: loading-active 0.7s ease-in-out infinite;
 }
 
 .cube {
@@ -306,7 +306,7 @@
     display: none;
   }
 }
-@keyframes loading-animation {
+@keyframes loading-active {
   0% {
     transform: rotate(0deg);
   }

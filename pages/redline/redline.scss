@@ -28,6 +28,7 @@
   @include container(0px, 10px, 0, padding);
   @include flex(row, 0, 0);
   height: 100vh;
+
   @include adaptive(table) {
     height: 150vh;
   }
@@ -36,6 +37,7 @@
     @include flex(column, 0, 0);
     max-width: 20vw;
     border-right: #e12424 solid 10px;
+
     @include adaptive(mobile) {
       border-right: #e12424 solid 4px;
     }
@@ -59,6 +61,7 @@
       border-radius: 20px;
       margin-bottom: 20px;
       margin-top: 20px;
+
       @include adaptive(table) {
         font-size: 15px;
         height: 40px;
@@ -76,6 +79,7 @@
       margin: 0 auto;
       margin-bottom: 10px;
       width: 65%;
+
       @include adaptive(table) {
         @include flex(column, space-between, 0);
         gap: 20px;
@@ -100,6 +104,7 @@
       margin: 0 auto;
       font-size: 20px;
       color: #e12424;
+
       @include adaptive(table) {
         font-size: 18px;
         text-align: center;
@@ -118,6 +123,7 @@
       outline: 0;
       transition: 0.6s ease-in-out;
       margin-bottom: 20px;
+
       &:focus {
         background-color: #ececec;
       }
@@ -129,9 +135,11 @@
       font-size: 60px;
       margin-bottom: 20px;
       text-align: center;
+
       @include adaptive(small-pc) {
         font-size: 25px;
       }
+
       @include adaptive(table) {
         font-size: 20px;
       }
@@ -146,6 +154,7 @@
       letter-spacing: 2px;
       overflow-y: scroll;
       overflow-x: visible;
+
       @include adaptive(table) {
         padding-left: 2px;
         width: 95%;
@@ -177,6 +186,7 @@
       font-size: 60px;
       text-align: center;
       margin-bottom: 30px;
+
       @include adaptive(table) {
         font-size: 30px;
       }
@@ -187,6 +197,7 @@
       color: $light-red;
       margin-top: 70px;
       text-align: center;
+
       @include adaptive(table) {
         margin-top: 20px;
         font-size: 20px;
@@ -214,6 +225,7 @@
       width: 50px;
       height: 50px;
       border-radius: 50px;
+
       @include adaptive(table) {
         width: 20px;
         height: 20px;
@@ -242,9 +254,11 @@
         gap: 30px;
         opacity: 0;
         transition: 0.6s ease-in-out;
+
         @include adaptive(table) {
           @include flex(row, center, center);
         }
+
         @include adaptive(mobile) {
           @include flex(column, center, center);
         }
@@ -276,6 +290,7 @@
           overflow: hidden;
           width: 300px;
           height: 300px;
+
           @include adaptive(table) {
             width: 200px;
             height: 200px;
@@ -394,6 +409,7 @@
   color: #e12424;
   text-decoration: underline;
   gap: 10px;
+
   @include adaptive(small-pc) {
     @include flex(column, center, center);
   }
@@ -406,6 +422,7 @@
   height: 200px;
   gap: 15rem;
   color: $true-white;
+
   @include adaptive("medium-pc") {
     gap: 10%;
   }
@@ -424,6 +441,7 @@
     img {
       width: 150px;
       height: 60px;
+
       @include adaptive(table) {
         display: none;
       }
@@ -437,6 +455,7 @@
 
     &-title {
       font-size: 25px;
+
       @include adaptive(table) {
         font-size: 15px;
       }
@@ -444,6 +463,7 @@
 
     &-text {
       font-size: 20px;
+
       @include adaptive(table) {
         font-size: 10px;
       }
@@ -458,7 +478,7 @@
   &__button {
     padding: 20px;
     transition: 0.7s ease-in-out;
-    background-color: #f5f3f4;
+    background-color: $red-white;
     border-radius: 5px;
 
     a {
@@ -469,7 +489,7 @@
       background-color: black;
 
       a {
-        color: #f5f3f4;
+        color: $red-white;
       }
     }
   }
@@ -496,6 +516,7 @@
 .controls {
   background-color: $true-white;
   border: none;
+
   @include adaptive(table) {
     margin-top: 510px;
   }
@@ -547,6 +568,7 @@
     position: absolute;
     top: 0px;
     right: 0px;
+
     @include adaptive(mobile) {
       width: 50%;
     }
@@ -564,7 +586,7 @@
         color: $light-red;
       }
 
-      &-imgsecond {
+      &-img_second {
         width: 25%;
         height: 25%;
       }
@@ -723,7 +745,7 @@
   @include flex(row, center, center);
 }
 
-.loadingComplete {
+.loading-complete {
   animation: loading-complete-animation 0.7s ease-in-out;
   display: none;
 }
@@ -743,7 +765,7 @@
     height: 50px;
     display: flex;
     flex-wrap: wrap;
-    animation: loading-animation 0.7s ease-in-out infinite;
+    animation: loading-active 0.7s ease-in-out infinite;
   }
 }
 
@@ -763,7 +785,7 @@
   background-color: $true-white;
 }
 
-@keyframes loading-animation {
+@keyframes loading-active {
   0% {
     transform: rotate(0deg);
   }

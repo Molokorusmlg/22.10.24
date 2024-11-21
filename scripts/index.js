@@ -35,11 +35,12 @@ function showEkb() {
   }
 }
 
+// Проверка на админа
 function showAdminPanel() {
   const isAdmin = localStorage.getItem("admin");
-  console.log(isAdmin);
+  console.log(!isAdmin);
 
-  if (isAdmin == "false") return;
+  if (isAdmin === "false") return;
   const parentLinks = document.querySelector(".admin__panel__link");
   const adminPanelLink = `<a class = "header__link" href="${BASE_URL}adminpanel/adminpanel.html">Админ-панель</a>`;
   parentLinks.innerHTML = adminPanelLink;
@@ -51,11 +52,11 @@ function hedeText() {
     mapText.classList.replace("no-route", "route");
     arrowMap.classList.replace("arrow__map", "arrow__map_hiden");
     mapEkb.classList.replace("map_small", "mapbig");
-  } else {
-    mapText.classList.replace("route", "no-route");
-    arrowMap.classList.replace("arrow__map_hiden", "arrow__map");
-    mapEkb.classList.replace("mapbig", "map_small");
+    return;
   }
+  mapText.classList.replace("route", "no-route");
+  arrowMap.classList.replace("arrow__map_hiden", "arrow__map");
+  mapEkb.classList.replace("mapbig", "map_small");
 }
 
 // Модальное окно
@@ -75,6 +76,7 @@ function modalMeny() {
   }
 }
 
+//Функция получание данных о всех пользователях
 async function getFullData() {
   try {
     const response = await fetch(USERS_URL + "users", {
@@ -83,21 +85,21 @@ async function getFullData() {
     const data = await response.json();
     const userList = data;
     userList.forEach((user) => {
-      if (user.login === localStorage.getItem("login")) {
-        localStorage.setItem("name", user.name);
-        localStorage.setItem("admin", user.admin);
-      }
+      if (!(user.login === localStorage.getItem("login"))) return;
+      localStorage.setItem("name", user.name);
+      localStorage.setItem("admin", user.admin);
     });
   } catch (error) {
     console.log(error);
   }
 }
 
+// Загрузка
 async function loadingPage() {
   await getFullData();
   showAdminPanel();
   Loading.classList.remove("active__loading");
-  Loading.classList.add("loadingComplete");
+  Loading.classList.add("loading-complete");
 }
 
 loadingPage();

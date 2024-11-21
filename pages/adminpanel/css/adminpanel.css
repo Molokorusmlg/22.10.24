@@ -170,7 +170,7 @@
   height: 50vh;
   margin-top: 50px;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .red-line__marshruts__card-box_small-card-box {
   width: 100%;
@@ -325,7 +325,7 @@
     display: none;
   }
 }
-.loadingComplete {
+.loading-complete {
   animation: loading-complete-animation 0.7s ease-in-out;
   display: none;
 }
@@ -346,10 +346,10 @@
   height: 50px;
   display: flex;
   flex-wrap: wrap;
-  animation: loading-animation 0.7s ease-in-out infinite;
+  animation: loading-active 0.7s ease-in-out infinite;
 }
 
-@keyframes loading-animation {
+@keyframes loading-active {
   0% {
     transform: rotate(0deg);
   }

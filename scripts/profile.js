@@ -127,7 +127,7 @@ async function loadingPage() {
   await getUsers();
   await innerOrders(localStorage.getItem("orders"));
   Loading.classList.remove("active__loading");
-  Loading.classList.add("loadingComplete");
+  Loading.classList.add("loading-complete");
 }
 
 loadingPage();

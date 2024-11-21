@@ -50,6 +50,7 @@ function createUsers() {
   });
 }
 
+// Удаление карточек
 async function deleteCard(index) {
   try {
     await fetch(CARDS_URL + `redline/cardList/${index}`, {
@@ -63,6 +64,7 @@ async function deleteCard(index) {
   }
 }
 
+// Добавление новых карточек в mock.api
 async function addNewCard() {
   const imgScrNew = document.getElementById("images").files;
   const mapSrcNew = document.getElementById("mapid").value;
@@ -142,7 +144,7 @@ async function loadingPage() {
   await createAllCards();
   await createUsers();
   Loading.classList.remove("active__loading");
-  Loading.classList.add("loadingComplete");
+  Loading.classList.add("loading-complete");
 }
 
 loadingPage();

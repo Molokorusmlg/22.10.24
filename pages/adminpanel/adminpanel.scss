@@ -38,14 +38,17 @@
   @include flex(row, space-between, center);
   background-color: $light-red;
   padding: 15px;
+
   &_text {
     color: $true-white;
   }
+
   &_link {
     color: $true-white;
     text-decoration: none;
     font-size: 20px;
   }
+
   &_users {
     margin-top: 3%;
     margin-bottom: 3%;
@@ -62,6 +65,7 @@
   height: 300px;
   overflow-x: scroll;
   padding: 10px;
+
   &__block {
     @include flex(column, none, none);
     gap: 10%;
@@ -69,6 +73,7 @@
     border-radius: 10px;
     padding: 5px;
     transition: all 0.4s ease-in-out;
+
     &:hover {
       background-color: #ff3c3c;
     }
@@ -78,6 +83,7 @@
 .new_card {
   padding: 30px;
   height: 80vh;
+
   &__form {
     @include flex(column, center, center);
     gap: 30px;
@@ -117,6 +123,7 @@
   @include container(0px, 10px, 0, padding);
   @include flex(row, 0, 0);
   height: 100vh;
+
   @include adaptive(table) {
     height: 150vh;
   }
@@ -147,9 +154,11 @@
         gap: 30px;
         border-radius: 10px;
         transition: 0.6s ease-in-out;
+
         &:hover {
           background-color: #fc5757a8;
         }
+
         @include adaptive(table) {
           @include flex(row, center, center);
         }
@@ -281,7 +290,7 @@
     display: none;
   }
 }
-.loadingComplete {
+.loading-complete {
   animation: loading-complete-animation 0.7s ease-in-out;
   display: none;
 }
@@ -296,16 +305,17 @@
   left: 0;
   z-index: 100;
   overflow: hidden;
+
   &__circle {
     width: 50px;
     height: 50px;
     display: flex;
     flex-wrap: wrap;
-    animation: loading-animation 0.7s ease-in-out infinite;
+    animation: loading-active 0.7s ease-in-out infinite;
   }
 }
 
-@keyframes loading-animation {
+@keyframes loading-active {
   0% {
     transform: rotate(0deg);
   }

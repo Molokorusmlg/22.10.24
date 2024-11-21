@@ -22,6 +22,7 @@
   @include flex(row, center, center);
   background-color: #eee;
   height: 100vh;
+
   @include adaptive("mobile") {
     @include flex(row, none, center);
   }
@@ -32,6 +33,7 @@
     height: 70%;
     border-radius: 10px;
     box-shadow: 0px 4px 9.9px -5px #00000040;
+
     @include adaptive("mobile") {
       width: 100%;
     }
@@ -57,6 +59,7 @@
 
       &_photo {
         width: 140%;
+
         @include adaptive(table) {
           display: none;
         }
@@ -77,6 +80,7 @@
 
       &_orders {
         height: 100%;
+
         &_list {
           height: 48%;
           overflow: scroll;
@@ -107,6 +111,7 @@
         border-radius: 10px;
         background-color: $true-white;
         height: 40px;
+
         &:hover {
           border: 1px solid #e12424bb;
         }
@@ -139,6 +144,7 @@
         display: flex;
         flex-direction: column;
         gap: 10%;
+
         @include adaptive(table) {
           width: 100%;
         }
@@ -146,6 +152,7 @@
 
       &_photo {
         width: 100%;
+
         @include adaptive(table) {
           display: none;
         }
@@ -226,7 +233,7 @@
   @include flex(row, center, center);
 }
 
-.loadingComplete {
+.loading-complete {
   animation: loading-complete-animation 0.7s ease-in-out;
   display: none;
 }
@@ -240,12 +247,13 @@
   left: 0;
   z-index: 100;
   overflow: hidden;
+
   &__circle {
     width: 50px;
     height: 50px;
     display: flex;
     flex-wrap: wrap;
-    animation: loading-animation 0.7s ease-in-out infinite;
+    animation: loading-active 0.7s ease-in-out infinite;
   }
 }
 
@@ -282,7 +290,7 @@
   }
 }
 
-@keyframes loading-animation {
+@keyframes loading-active {
   0% {
     transform: rotate(0deg);
   }
