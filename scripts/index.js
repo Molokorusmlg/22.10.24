@@ -42,7 +42,7 @@ function showAdminPanel() {
 
   if (isAdmin === "false") return;
   const parentLinks = document.querySelector(".admin__panel__link");
-  const adminPanelLink = `<a class = "header__link" href="${BASE_URL}adminpanel/adminpanel.html">Админ-панель</a>`;
+  const adminPanelLink = `<a class = "header__link" href="../adminpanel/adminpanel.html">Админ-панель</a>`;
   parentLinks.innerHTML = adminPanelLink;
 }
 

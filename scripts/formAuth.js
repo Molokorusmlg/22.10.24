@@ -36,7 +36,7 @@ async function signInUser() {
       if (user.password === passwordValue && user.login === loginValue) {
         localStorage.setItem("login", loginValue);
         matches = 1;
-        window.location.href = BASE_URL + "mainpage/mainpage.html";
+        window.location.href = "../mainpage/mainpage.html";
       }
     });
     if (matches === 0) {
@@ -86,7 +86,7 @@ async function postUser() {
     const data = await response.json();
     if (!response.ok) return;
     localStorage.setItem("login", loginValue);
-    window.location.href = BASE_URL + "mainpage/mainpage.html";
+    window.location.href = BASE_URL + "../mainpage/mainpage.html";
   } catch (error) {
     console.log(`Ошибка типа: ${error}`);
   }

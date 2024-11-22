@@ -63,7 +63,7 @@ function innerInfo(name, login, password) {
 }
 
 const backToMainPage = () => {
-  window.location.href = BASE_URL + "mainpage/mainpage.html";
+  window.location.href = "../mainpage/mainpage.html";
 };
 
 async function updateUser(userId, updatedData) {
