@@ -124,7 +124,7 @@ function goToPageNext() {
   } else {
     localStorage.setItem("CurrentCard", Number(indexThisPage) + 1);
   }
-  window.location.href = BASE_URL + "unical/unicalPage.html";
+  window.location.href = "../unical/unicalPage.html";
 }
 
 function goToPagePrevios() {
@@ -135,7 +135,7 @@ function goToPagePrevios() {
   } else {
     localStorage.setItem("CurrentCard", Number(indexThisPage) - 1);
   }
-  window.location.href = BASE_URL + "unical/unicalPage.html";
+  window.location.href = -"../unical/unicalPage.html";
 }
 
 async function getCardData() {

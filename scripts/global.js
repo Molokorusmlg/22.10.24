@@ -89,7 +89,7 @@ function cardCreate(img, map, text) {
 
 function goToNextHTML() {
   localStorage.setItem("CurrentCard", curentCardIndex);
-  window.location.href = BASE_URL + "unical/unicalPage.html";
+  window.location.href = "../unical/unicalPage.html";
 }
 
 async function updateOrders(userId) {
