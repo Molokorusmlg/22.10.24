@@ -160,17 +160,24 @@
 
 .page {
   &__title {
+    @include flex(row, center, center);
+
     &-text {
       width: 100%;
       text-align: center;
       font-size: 60px;
       color: $light-red;
+
       @include adaptive("small-pc") {
         font-size: 50px;
       }
 
       @include adaptive("table") {
         font-size: 30px;
+      }
+
+      @include adaptive("mobile") {
+        font-size: 20px;
       }
     }
   }
@@ -179,6 +186,7 @@
     background-color: $light-red;
     height: 10px;
     border: none;
+
     @include adaptive("table") {
       height: 5px;
       margin-top: 5px;

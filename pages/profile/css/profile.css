@@ -101,7 +101,7 @@
   height: 100%;
 }
 .profile__block_information_orders_list {
-  height: 48%;
+  height: 28%;
   overflow: scroll;
   overflow-x: hidden;
   padding: 3px;

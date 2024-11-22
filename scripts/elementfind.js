@@ -119,7 +119,7 @@ function animationVisible() {
 function goToPageNext() {
   const indexThisPage = localStorage.getItem("CurrentCard");
 
-  if (indexThisPage === baseData.length - 1) {
+  if (Number(indexThisPage) === baseData.length - 1) {
     localStorage.setItem("CurrentCard", 0);
   } else {
     localStorage.setItem("CurrentCard", Number(indexThisPage) + 1);
@@ -130,12 +130,12 @@ function goToPageNext() {
 function goToPagePrevios() {
   const indexThisPage = localStorage.getItem("CurrentCard");
 
-  if (indexThisPage === 0) {
+  if (Number(indexThisPage) === 0) {
     localStorage.setItem("CurrentCard", baseData.length - 1);
   } else {
     localStorage.setItem("CurrentCard", Number(indexThisPage) - 1);
   }
-  window.location.href = -"../unical/unicalPage.html";
+  window.location.href = "../unical/unicalPage.html";
 }
 
 async function getCardData() {
