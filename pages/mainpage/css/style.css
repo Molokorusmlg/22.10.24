@@ -105,15 +105,13 @@
 
 .about__background_main {
   height: 100vh;
-  background: url("../../../assets/img//4562a1a6-99c7-40ee-bbff-9ca955979e7e.png")
-    no-repeat center center/cover;
+  background: url("../../../assets/img//4562a1a6-99c7-40ee-bbff-9ca955979e7e.png") no-repeat center center/cover;
   transition: all 0.4s ease-in-out;
 }
 
 .zloiEKB {
   height: 100vh;
-  background: url("../../../assets/img//besov.webp") no-repeat center
-    center/cover;
+  background: url("../../../assets/img//besov.webp") no-repeat center center/cover;
   transition: all 0.4s ease-in-out;
 }
 
@@ -134,7 +132,7 @@
 }
 @media (max-width: 768px) {
   .about__city__title {
-    font-size: 60px;
+    font-size: 50px;
   }
 }
 .about__city__text {
