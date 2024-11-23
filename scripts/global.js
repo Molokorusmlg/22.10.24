@@ -44,20 +44,23 @@ function circlePagination() {
         proIndex + 1
       }</a>`;
     }
-    paginationBlock.appendChild(links);
+    paginationBlock.forEach((block) => {
+      block.appendChild(links);
+    });
   }
 }
 
 // Создание ссылок
 function cicleLinks() {
-  linkList.forEach((link) => {
-    const links = document.createElement("a");
-    const curentClass = ["hidePage"];
-
-    linksBlock.appendChild(links);
-    links.innerHTML = `<a onclick="showCard(${link.indexLink})" data-index=${link.indexLink} class="${link.classLink} mini-link" >${link.TitleLink}</a>`;
-    links.classList.add(link.classLink, curentClass[0], "cardLink");
-    links.setAttribute("id", Math.ceil(link.indexLink / 10));
+  linksBlock.forEach((block) => {
+    linkList.forEach((link) => {
+      const links = document.createElement("a");
+      const curentClass = ["hidePage"];
+      block.appendChild(links);
+      links.innerHTML = `<a onclick="showCard(${link.indexLink})" data-index=${link.indexLink} class="${link.classLink} mini-link" >${link.TitleLink}</a>`;
+      links.classList.add(link.classLink, curentClass[0], "cardLink");
+      links.setAttribute("id", Math.ceil(link.indexLink / 10));
+    });
   });
 }
 
@@ -129,6 +132,20 @@ function cardInnerParent() {
     cardInnerBlock.appendChild(card);
   });
 }
+
+// Открытие филтров при мобильном разрешении
+const mobileFilterFunction = () => {
+  const toggleClasses = [
+    { element: filterBlock, className: "mobile__animation" },
+    { element: filterArrow, className: "arrow__animation" },
+    { element: shadowBlock, className: "mobile__shadow" },
+    { element: bodyBlock, className: "scroll__lock" },
+  ];
+
+  toggleClasses.forEach(({ element, className }) => {
+    element.classList.toggle(className);
+  });
+};
 
 // Обработка пагинации
 function pagination(page) {
@@ -245,19 +262,25 @@ function findCitiesByTitle(searchString) {
 }
 
 function seeSearch() {
-  const request = document.getElementById("search").value;
-  const searchList = findCitiesByTitle(request);
-  const linksCard = document.querySelectorAll(".mini-link");
+  const blocks = document.querySelectorAll(".red-line__big__text-input");
+  blocks.forEach((input) => {
+    request = input.value;
+    console.log(request);
+    if (request === "") return;
 
-  linksCard.forEach((link) => {
-    const indexStr = link.getAttribute("data-index");
-    const index = indexStr !== null ? Number(indexStr) : NaN;
+    const searchList = findCitiesByTitle(request);
+    const linksCard = document.querySelectorAll(".mini-link");
 
-    if (!isNaN(index) && !searchList.includes(index)) {
-      return link.classList.add("hidePage");
-    }
+    linksCard.forEach((link) => {
+      const indexStr = link.getAttribute("data-index");
+      const index = indexStr !== null ? Number(indexStr) : NaN;
 
-    link.classList.remove("hidePage");
+      if (!isNaN(index) && !searchList.includes(index)) {
+        return link.classList.add("hidePage");
+      }
+
+      link.classList.remove("hidePage");
+    });
   });
 }
 

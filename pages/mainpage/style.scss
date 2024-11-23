@@ -120,6 +120,10 @@
     @include adaptive(table) {
       font-size: 50px;
     }
+
+    @include adaptive("mobile") {
+      font-size: 28px;
+    }
   }
 
   &__text {
@@ -308,11 +312,20 @@
   a {
     text-decoration: none;
     color: $true-white;
+
+    @include adaptive("mobile") {
+      font-size: 10px;
+    }
   }
 
   img {
     width: 30px;
     height: 30px;
+
+    @include adaptive("mobile") {
+      width: 15px;
+      height: 15px;
+    }
   }
 
   &__logo {
@@ -358,6 +371,10 @@
     transition: 0.7s ease-in-out;
     background-color: $red-white;
     border-radius: 5px;
+
+    @include adaptive("mobile") {
+      padding: 5px;
+    }
 
     a {
       color: black;

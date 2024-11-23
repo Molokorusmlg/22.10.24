@@ -31,6 +31,8 @@
 
   @include adaptive(table) {
     height: 150vh;
+    padding-right: 0px;
+    @include flex(row, center, 0);
   }
 
   &__big__text {
@@ -160,6 +162,13 @@
         width: 95%;
       }
 
+      @include adaptive("mobile") {
+        padding: 0;
+        width: auto;
+        height: 355px;
+        overflow: scroll;
+      }
+
       a {
         @include adaptive(table) {
           font-size: 15px;
@@ -283,6 +292,10 @@
           color: $light-red;
           font-size: 15px;
           letter-spacing: 1px;
+
+          @include adaptive("mobile") {
+            text-align: center;
+          }
         }
 
         &-img {
@@ -330,7 +343,7 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  z-index: 3;
+  z-index: 5;
   top: 0px;
   left: 0px;
 
@@ -741,6 +754,97 @@
   right: 20px;
 }
 
+.desctop {
+  display: flex;
+  @include adaptive(table) {
+    display: none;
+  }
+}
+
+.mobile__block {
+  @include flex(row, 0, center);
+  position: absolute;
+  top: 0px;
+  left: -400px;
+  gap: 20px;
+  // background-color: #161a1d86;
+  width: 100%;
+  transition: 1s ease-in-out;
+  z-index: 3;
+  display: none;
+
+  @include adaptive("table") {
+    display: flex;
+  }
+}
+
+.mobile__animation {
+  transition: 1s ease-in-out;
+  left: 0;
+}
+
+.scroll__lock {
+  overflow: hidden;
+}
+
+.mobile__shadow__hide {
+  opacity: 0;
+  transition: 1s ease-in-out;
+}
+
+.mobile__shadow {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #161a1d79;
+  z-index: 2;
+  opacity: 1;
+  transition: 1s ease-in-out;
+  display: none;
+
+  @include adaptive("table") {
+    display: flex;
+  }
+}
+
+.mobile__display__none {
+  display: none;
+}
+
+.mobile__arrow {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  transition: 1s ease-in-out;
+  transform: rotate(180deg);
+  z-index: 3;
+  display: none;
+
+  @include adaptive("table") {
+    display: flex;
+  }
+
+  &__img {
+    transition: 1s ease-in-out;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.arrow__animation {
+  transition: 1s ease-in-out;
+  transform: rotate(0deg);
+  left: 230px;
+}
+
+.mobile {
+  height: 100vh;
+  max-width: 200px;
+  width: 200px;
+  background-color: $true-white;
+}
+
 .active__loading {
   @include flex(row, center, center);
 }
@@ -858,5 +962,30 @@
   }
   100% {
     display: none;
+  }
+}
+
+@keyframes mobile-filters-open {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(200px);
+  }
+}
+
+@keyframes mobile-filters-close {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-400px);
   }
 }
