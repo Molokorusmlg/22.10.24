@@ -80,6 +80,7 @@ async function postUser() {
         password: passwordValue,
         name: nameValue,
         admin: false,
+        orders: 0,
       }),
     });
 
