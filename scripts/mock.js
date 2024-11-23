@@ -3,8 +3,8 @@
 const modalForm = document.querySelector(".modal");
 
 // Пагинация на странице
-const paginationBlock = document.querySelector(".pagination");
-const linksBlock = document.querySelector(".red-line__big__text-text");
+const paginationBlock = document.querySelectorAll(".pagination");
+const linksBlock = document.querySelectorAll(".red-line__big__text-text");
 let firstpage = document.querySelectorAll(".firstPage");
 let secondpage = document.querySelectorAll(".secondPage");
 let thirdpage = document.querySelectorAll(".thirdPage");
@@ -14,6 +14,12 @@ let fourpage = document.querySelectorAll(".fourPage");
 const cardInnerBlock = document.querySelector(
   ".red-line__marshruts__card-box_small-card-box"
 );
+
+// Мобильные фильтры
+const filterBlock = document.querySelector(".mobile__block");
+const filterArrow = document.querySelector(".mobile__arrow");
+const shadowBlock = document.querySelector(".mobile__shadow__hide");
+const bodyBlock = document.querySelector(".scroll");
 
 // Фильтры
 const checkBox = document.querySelectorAll(".check");

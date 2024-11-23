@@ -180,6 +180,10 @@
   &__text {
     color: $light-red;
     font-size: 30px;
+
+    @include adaptive("mobile") {
+      font-size: 20px;
+    }
   }
 }
 
@@ -198,11 +202,20 @@
   &__arrow {
     width: 30px;
     height: 30px;
+
+    @include adaptive("mobile") {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   &__text {
     font-size: 30px;
     color: #e12424;
+
+    @include adaptive("mobile") {
+      font-size: 20px;
+    }
   }
 }
 

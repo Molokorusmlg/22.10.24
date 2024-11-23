@@ -135,6 +135,11 @@
     font-size: 50px;
   }
 }
+@media (max-width: 467px) {
+  .about__city__title {
+    font-size: 28px;
+  }
+}
 .about__city__text {
   max-width: 500px;
   font-size: 30px;
@@ -344,9 +349,20 @@
   text-decoration: none;
   color: #fff;
 }
+@media (max-width: 467px) {
+  .footer a {
+    font-size: 10px;
+  }
+}
 .footer img {
   width: 30px;
   height: 30px;
+}
+@media (max-width: 467px) {
+  .footer img {
+    width: 15px;
+    height: 15px;
+  }
 }
 .footer__logo img {
   width: 150px;
@@ -390,6 +406,11 @@
   transition: 0.7s ease-in-out;
   background-color: #f5f3f4;
   border-radius: 5px;
+}
+@media (max-width: 467px) {
+  .footer__button {
+    padding: 5px;
+  }
 }
 .footer__button a {
   color: black;

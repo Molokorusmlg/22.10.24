@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="./css/redline.css" />
     <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico" />
   </head>
-  <body>
+  <body class="scroll">
     <section class="red-line" id="line">
-      <div class="red-line__big__text">
+      <div class="red-line__big__text desctop">
         <h1 class="red-line__big__text-title">Красная Линия</h1>
         <div class="red-line__big__text-search__box">
           <input
-            class="red-line__big__text-input"
+            class="red-line__big__text-input red-line__big__text-input-search"
             oninput="seeSearch()"
             id="search"
             type="text"
@@ -204,6 +204,87 @@
         </div>
       </div>
     </div>
+    <div class="mobile__block">
+      <div class="red-line__big__text mobile">
+        <h1 class="red-line__big__text-title">Красная Линия</h1>
+        <div class="red-line__big__text-search__box">
+          <input
+            class="red-line__big__text-input red-line__big__text-input"
+            oninput="seeSearch()"
+            id="search"
+            type="text"
+            placeholder="Найти по слову"
+          />
+        </div>
+        <div class="red-line__big__text_inputbox">
+          <div class="red-line__big__text_colum__ceck__buttons">
+            <div class="red-line__big__text_check__button__box">
+              <label class="red-line__big__text-label" for="parks">Парки</label>
+              <input
+                onclick="showCheckbox('p')"
+                class="check"
+                id="parks"
+                type="checkbox"
+                value="парки"
+              />
+            </div>
+
+            <div class="red-line__big__text_check__button__box">
+              <label class="red-line__big__text-label" for="buildings"
+                >здания</label
+              >
+              <input
+                onclick="showCheckbox('b')"
+                class="check"
+                id="buildings"
+                type="checkbox"
+                value="здания"
+              />
+            </div>
+          </div>
+
+          <div class="red-line__big__text_colum__ceck__buttons">
+            <div class="red-line__big__text_check__button__box">
+              <label class="red-line__big__text-label" for="museums"
+                >музеи</label
+              >
+              <input
+                onclick="showCheckbox('m')"
+                class="check"
+                id="museums"
+                type="checkbox"
+                value="музеи"
+              />
+            </div>
+
+            <div class="red-line__big__text_check__button__box">
+              <label class="red-line__big__text-label" for="hrams">храмы</label>
+              <input
+                onclick="showCheckbox('h')"
+                class="check"
+                id="hrams"
+                type="checkbox"
+                value="храмы"
+              />
+            </div>
+          </div>
+        </div>
+        <button class="red-line__big__text_button" onclick="reset()">
+          <p>Сбросить</p>
+        </button>
+        <div class="pagination"></div>
+        <hr class="red-line__big__text-line" />
+        <div class="red-line__big__text-text"></div>
+      </div>
+    </div>
+    <div class="mobile__arrow" onclick="mobileFilterFunction()">
+      <img
+        class="mobile__arrow__img"
+        src="../../assets/img/arrowBack.svg"
+        alt=""
+      />
+    </div>
+    <div class="mobile__shadow__hide"><span></span></div>
     <div class="loading active__loading">
       <div class="loading__circle">
         <div class="cube first">

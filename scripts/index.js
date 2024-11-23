@@ -27,9 +27,9 @@ function showEkb() {
   } else {
     titleEkb.innerHTML = `<h1 class="about__city__title">Екатеринбург</h1>`;
     textEkb.innerHTML = `<p class="about__city__text">
-          Главный кород Свердловской области. Эталон промышленного города,
+          Главный город Свердловской области. Эталон промышленного города,
           конструктивизма и постмодернизма в одном лице
-        </p>>`;
+        </p>`;
     mainPage.classList.add("about__background_main");
     mainPage.classList.remove("zloiEKB");
   }

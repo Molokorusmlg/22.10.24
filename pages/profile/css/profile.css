@@ -189,6 +189,11 @@
   color: #d00000;
   font-size: 30px;
 }
+@media (max-width: 467px) {
+  .exit__text {
+    font-size: 20px;
+  }
+}
 
 .back {
   display: flex;
@@ -208,9 +213,20 @@
   width: 30px;
   height: 30px;
 }
+@media (max-width: 467px) {
+  .back__arrow {
+    width: 20px;
+    height: 20px;
+  }
+}
 .back__text {
   font-size: 30px;
   color: #e12424;
+}
+@media (max-width: 467px) {
+  .back__text {
+    font-size: 20px;
+  }
 }
 
 .profile__input {
