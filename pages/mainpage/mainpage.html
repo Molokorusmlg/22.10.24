@@ -48,7 +48,10 @@
       </div>
     </section>
     <section class="big_map" id="maps">
-      <div class="map_small" style="position: relative; overflow: hidden">
+      <div
+        class="map_small"
+        style="position: relative; overflow: hidden; z-index: 3"
+      >
         <a
           href="https://yandex.ru/maps/54/yekaterinburg/?utm_medium=mapframe&utm_source=maps"
           style="color: #eee; font-size: 12px; position: absolute; top: 0px"
@@ -70,7 +73,7 @@
         ></iframe>
       </div>
       <div class="big_map__hide">
-        <div class="big_map__text no-route">
+        <div class="big_map__text route">
           <h1 class="big_map__text-title">
             Посмотрите интеерсные места нашего города!
           </h1>
@@ -87,7 +90,7 @@
             довольно широкая. Имеет пойменные террасы: низкую и высокую.
           </p>
         </div>
-        <div class="arrow__map" onclick="hideText()">
+        <div class="arrow__map_hiden" onclick="hideText()">
           <img src="../../assets/img/right_arrow.svg" alt="right_arrow" />
         </div>
       </div>
@@ -137,7 +140,7 @@
         </div>
       </div>
       <div class="footer__button" onclick="modalMeny()">
-        <a href="#">Свзяться с нами</a>
+        <a href="#">Свзяться</a>
       </div>
       <div class="footer__logo">
         <img src="../../assets/img/logo.png" alt="" />

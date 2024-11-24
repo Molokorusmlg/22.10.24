@@ -529,6 +529,8 @@
   transition: all 0.4s ease-in-out;
 
   @include adaptive("mobile") {
+    position: relative;
+    top: -400;
     animation: map_close 0.7s ease-in-out;
     animation-fill-mode: forwards;
   }
@@ -558,6 +560,11 @@
 .no-route {
   opacity: 1;
   transition: all 0.4s ease-in-out;
+
+  @include adaptive("mobile") {
+    z-index: 1;
+    animation: map_open 0.7s ease-in-out;
+  }
 }
 
 .arrow__map_hiden {
@@ -570,6 +577,7 @@
     transform: rotate(90deg);
     position: relative;
     right: auto;
+    top: 0px;
     animation: arrow_map_close 0.7s ease-in-out;
     animation-fill-mode: forwards;
   }
@@ -584,6 +592,8 @@
   transition: 0.4s ease-in-out;
 
   @include adaptive("mobile") {
+    transition: 0.4s ease-in-out;
+    animation: arrow_map_open 0.7s ease-in-out;
     transform: rotate(-90deg);
   }
 
@@ -793,6 +803,8 @@
   100% {
     opacity: 0;
     transform: translateY(-400px);
+    position: relative;
+    top: -400px;
   }
 }
 
@@ -802,7 +814,9 @@
   }
 
   100% {
-    transform: translateY(-370px) rotate(90deg);
+    transform: translateY(-370px) rotate(-270deg);
+    position: relative;
+    top: -10px;
   }
 }
 
@@ -825,20 +839,22 @@
 @keyframes map_open {
   0% {
     opacity: 0;
+    transform: translateY(-400px);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(400px);
   }
 }
 
 @keyframes arrow_map_open {
   0% {
     opacity: 1;
+    transform: translateY(-370px);
   }
 
   100% {
-    transform: translateY(0px) rotate(-90deg);
+    opacity: 1;
+    transform: rotate(270deg);
   }
 }
