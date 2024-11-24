@@ -38,7 +38,6 @@ function showEkb() {
 // Проверка на админа
 function showAdminPanel() {
   const isAdmin = localStorage.getItem("admin");
-  console.log(!isAdmin);
 
   if (isAdmin === "false") return;
   const parentLinks = document.querySelector(".admin__panel__link");
@@ -47,16 +46,23 @@ function showAdminPanel() {
 }
 
 // Убираем текст, открываем полностью карту города
-function hedeText() {
-  if (mapEkb.className === "map_small") {
-    mapText.classList.replace("no-route", "route");
-    arrowMap.classList.replace("arrow__map", "arrow__map_hiden");
-    mapEkb.classList.replace("map_small", "mapbig");
-    return;
-  }
-  mapText.classList.replace("route", "no-route");
-  arrowMap.classList.replace("arrow__map_hiden", "arrow__map");
-  mapEkb.classList.replace("mapbig", "map_small");
+function hideText() {
+  const isMapSmall = mapEkb.className === "map_small";
+
+  mapText.classList.replace(
+    isMapSmall ? "no-route" : "route",
+    isMapSmall ? "route" : "no-route"
+  );
+
+  arrowMap.classList.replace(
+    isMapSmall ? "arrow__map" : "arrow__map_hiden",
+    isMapSmall ? "arrow__map_hiden" : "arrow__map"
+  );
+
+  mapEkb.classList.replace(
+    isMapSmall ? "map_small" : "mapbig",
+    isMapSmall ? "mapbig" : "map_small"
+  );
 }
 
 // Модальное окно
