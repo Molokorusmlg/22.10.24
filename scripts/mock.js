@@ -56,7 +56,7 @@ const titleEkb = document.querySelector(".about__city__title");
 const textEkb = document.querySelector(".about__city__text");
 
 // Элементы для изменения карты на главной странице
-const arrowMap = document.querySelector(".arrow__map");
+const arrowMap = document.querySelector(".arrow__map_hiden");
 const mapText = document.querySelector(".big_map__text");
 const mapEkb = document.querySelector(".map_small");
 
