@@ -38,6 +38,7 @@
     flex-direction: row;
     justify-content: none;
     align-items: center;
+    height: 900px;
   }
 }
 .profile__block {
@@ -50,6 +51,7 @@
 @media (max-width: 467px) {
   .profile__block {
     width: 100%;
+    height: 700px;
   }
 }
 .profile__block_title {
