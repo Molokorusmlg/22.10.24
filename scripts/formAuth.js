@@ -70,6 +70,15 @@ async function postUser() {
     ).value;
     const nameValue = document.querySelector(".name__registration").value;
 
+    if (loginValue == "" || passwordValue == "" || nameValue == "") {
+      errorBlock.classList.add("animation");
+      setTimeout(function () {
+        errorBlock.classList.remove("animation");
+      }, 3000);
+
+      return;
+    }
+
     const response = await fetch(USERS_URL + "users", {
       method: "POST",
       headers: {
@@ -84,7 +93,6 @@ async function postUser() {
       }),
     });
 
-    const data = await response.json();
     if (!response.ok) return;
     localStorage.setItem("login", loginValue);
     window.location.href = BASE_URL + "../mainpage/mainpage.html";

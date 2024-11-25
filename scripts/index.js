@@ -45,6 +45,35 @@ function showAdminPanel() {
   parentLinks.innerHTML = adminPanelLink;
 }
 
+async function newOrder() {
+  userLogin = localStorage.getItem("login");
+  userPassword = localStorage.getItem("password");
+
+  inputLogin = document.querySelector(".modal__input_login").value;
+  inputPassword = document.querySelector(".modal__input_password").value;
+
+  if (userLogin === inputLogin && userPassword === inputPassword) {
+    await updateOrders(localStorage.getItem("userId"));
+
+    const sucsessBlock = document.querySelector(".sucsess");
+    sucsessBlock.classList.replace("sucsess__close", "sucsess__open");
+
+    setTimeout(function () {
+      sucsessBlock.classList.replace("sucsess__open", "sucsess__close");
+    }, 3000);
+
+    return;
+  }
+
+  const errorBlock = document.querySelector(".error");
+
+  errorBlock.classList.replace("error__close", "error__open");
+
+  setTimeout(function () {
+    errorBlock.classList.replace("error__open", "error__close");
+  }, 3000);
+}
+
 // Убираем текст, открываем полностью карту города
 function hideText() {
   const isMapSmall = mapEkb.className === "map_small";
@@ -67,19 +96,54 @@ function hideText() {
 
 // Модальное окно
 function modalMeny() {
-  const modal = document.querySelector(".modal");
-  if (!modal.classList.contains("base")) {
-    if (modal.classList.contains("bhide")) {
-      modal.classList.remove("bhide");
-      modal.classList.add("bvis");
-    } else {
-      modal.classList.add("bhide");
-      modal.classList.remove("bvis");
-    }
-  } else {
-    modal.classList.remove("base");
-    modal.classList.add("bvis");
+  const elements = {
+    modal: {
+      element: document.querySelector(".modal"),
+      hideClass: "bhide",
+      showClass: "bvis",
+      baseClass: "base",
+    },
+    form: {
+      element: document.querySelector(".modal__form"),
+      hideClass: "modal_hide",
+      showClass: "modal_open",
+      baseClass: "modal_base",
+    },
+  };
+
+  const { modal, form } = elements;
+
+  if (modal.element.classList.contains(modal.baseClass)) {
+    modal.element.classList.replace(modal.baseClass, modal.showClass);
+    form.element.classList.replace(form.baseClass, form.showClass);
+    return;
   }
+
+  const isHidden = modal.element.classList.contains(modal.hideClass);
+  [modal, form].forEach((item) => {
+    item.element.classList.toggle(item.hideClass, !isHidden);
+    item.element.classList.toggle(item.showClass, isHidden);
+  });
+}
+
+function modalClose() {
+  const elements = {
+    modal: {
+      element: document.querySelector(".modal"),
+      hideClass: "bhide",
+      showClass: "bvis",
+    },
+    form: {
+      element: document.querySelector(".modal__form"),
+      hideClass: "modal_hide",
+      showClass: "modal_open",
+    },
+  };
+
+  Object.values(elements).forEach(({ element, hideClass, showClass }) => {
+    element.classList.add(hideClass);
+    element.classList.remove(showClass);
+  });
 }
 
 //Функция получание данных о всех пользователях
@@ -94,9 +158,27 @@ async function getFullData() {
       if (!(user.login === localStorage.getItem("login"))) return;
       localStorage.setItem("name", user.name);
       localStorage.setItem("admin", user.admin);
+      localStorage.setItem("password", user.password);
     });
   } catch (error) {
     console.log(error);
+  }
+}
+
+async function updateOrders(userId) {
+  const orders = localStorage.getItem("orders");
+  const newOrders = Number(orders) + 1;
+  try {
+    await fetch(USERS_URL + "users/" + userId, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ orders: newOrders }),
+    });
+    localStorage.setItem("orders", newOrders);
+  } catch (error) {
+    console.error("Произошла ошибка:", error);
   }
 }
 

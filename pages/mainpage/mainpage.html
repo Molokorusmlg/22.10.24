@@ -27,7 +27,7 @@
           </div>
           <div class="header__buttons">
             <div onclick="modalMeny()" class="header__button">
-              <a class="header__button-link" href="#">Свзяться с нами</a>
+              <a class="header__button-link" href="#">Купить экскурсию</a>
             </div>
             <a onclick="setShowBurgerMenu()" href="#" class="header__burger">
               <img
@@ -95,30 +95,41 @@
         </div>
       </div>
     </section>
-    <section class="modal base">
-      <div class="modal__form">
+    <div class="error error__close">
+      <p class="error__text">Ошибка</p>
+    </div>
+    <div class="sucsess sucsess__close">
+      <p class="sucsess__text">Успешно</p>
+    </div>
+    <section class="modal__form modal_base">
+      <p class="modal__form-title">Купить</p>
+      <form class="modal__form-form" action="">
+        <input
+          class="modal__form-input modal__input_login"
+          type="text"
+          placeholder="Логин"
+        />
+        <input
+          class="modal__form-input modal__input_password"
+          type="password"
+          placeholder="Пароль"
+        />
+      </form>
+      <div class="modal__form-button__box">
+        <button onclick="newOrder()" class="modal__form-button">
+          <p class="modal__form-button-text">Купить</p>
+        </button>
+      </div>
+      <div class="modal_arrow-img-block">
         <img
           src="../../assets/img/arrowBack.svg"
           alt="arrow"
           class="modal_arrow-img"
           onclick="modalMeny()"
         />
-        <p class="modal__form-title">Купить</p>
-        <form class="modal__form-form" action="">
-          <input class="modal__form-input" type="email" placeholder="email" />
-          <input
-            class="modal__form-input"
-            type="password"
-            placeholder="password"
-          />
-        </form>
-        <div class="modal__form-button__box">
-          <button onclick="modalMeny()" class="modal__form-button">
-            <p class="modal__form-button-text">Купить</p>
-          </button>
-        </div>
       </div>
     </section>
+    <div class="modal base" onclick="modalClose()"></div>
     <footer class="footer" id="footer">
       <div class="footer__company">
         <h4 class="footer__company-title">ООО Урал</h4>
@@ -171,7 +182,7 @@
           <a class="burger__meny_block_list-link" href="../redline/redLine.html"
             >Линия</a
           >
-          <a class="burger__meny_block_list-link" href="#footer">О нас</a>
+          <a class="burger__meny_block_list-link" href="#">О нас</a>
         </div>
       </div>
     </div>
