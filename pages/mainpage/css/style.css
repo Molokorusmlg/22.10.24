@@ -250,6 +250,11 @@
   transform: translate(-9px);
 }
 
+.show_modal {
+  width: 100px;
+  height: 100px;
+}
+
 .modal {
   display: flex;
   flex-direction: row;
@@ -272,6 +277,10 @@
   padding: 2rem;
   width: 350px;
   height: 320px;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  right: 0%;
 }
 .modal__form-title {
   font-size: 30px;
@@ -675,12 +684,12 @@
 }
 
 .bvis {
-  animation: burger-meny 0.7s ease-in-out;
+  animation: modal-open 0.3s ease-in-out;
   animation-fill-mode: forwards;
 }
 
 .bhide {
-  animation: burger-meny-hide 0.7s ease-in-out;
+  animation: burger-meny-hide 0.3s ease-in-out;
   animation-fill-mode: forwards;
 }
 
@@ -781,6 +790,21 @@
   }
   100% {
     display: flex;
+    opacity: 1;
+  }
+}
+@keyframes modal-open {
+  0% {
+    display: none;
+  }
+  1% {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+  }
+  100% {
+    display: flex;
+    flex-direction: column;
     opacity: 1;
   }
 }

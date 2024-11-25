@@ -68,18 +68,35 @@ function hideText() {
 // Модальное окно
 function modalMeny() {
   const modal = document.querySelector(".modal");
+  const modalForm = document.querySelector(".modal__form");
   if (!modal.classList.contains("base")) {
     if (modal.classList.contains("bhide")) {
       modal.classList.remove("bhide");
       modal.classList.add("bvis");
+      modalForm.classList.remove("bhide");
+      modalForm.classList.add("bvis");
     } else {
       modal.classList.add("bhide");
       modal.classList.remove("bvis");
+      modalForm.classList.add("bhide");
+      modalForm.classList.remove("bvis");
     }
   } else {
     modal.classList.remove("base");
     modal.classList.add("bvis");
+    modalForm.classList.remove("base");
+    modalForm.classList.add("bvis");
   }
+}
+
+function modalClose() {
+  const modal = document.querySelector(".modal");
+  const modalForm = document.querySelector(".modal__form");
+
+  modal.classList.add("bhide");
+  modal.classList.remove("bvis");
+  modalForm.classList.add("bhide");
+  modalForm.classList.remove("bvis");
 }
 
 //Функция получание данных о всех пользователях
