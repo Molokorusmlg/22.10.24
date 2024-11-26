@@ -102,15 +102,11 @@ async function updateOrders(userId) {
     await fetch(USERS_URL + "users/" + userId, {
       method: "PUT",
       headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "PATCH",
-        "Access-Control-Allow-Headers": "Content-Type",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ orders: newOrders }),
     });
     localStorage.setItem("orders", newOrders);
-    location.reload();
   } catch (error) {
     console.error("Произошла ошибка:", error);
   }
@@ -139,7 +135,6 @@ const mobileFilterFunction = () => {
     { element: filterBlock, className: "mobile__animation" },
     { element: filterArrow, className: "arrow__animation" },
     { element: shadowBlock, className: "mobile__shadow" },
-    { element: bodyBlock, className: "scroll__lock" },
   ];
 
   toggleClasses.forEach(({ element, className }) => {
@@ -164,18 +159,23 @@ function pagination(page) {
 }
 
 function setShowBurgerMenu() {
-  if (!burgerMenu.classList.contains("base")) {
-    if (burgerMenu.classList.contains("bhide")) {
-      burgerMenu.classList.remove("bhide");
-      burgerMenu.classList.add("bvis");
-    } else {
-      burgerMenu.classList.add("bhide");
-      burgerMenu.classList.remove("bvis");
-    }
-  } else {
-    burgerMenu.classList.remove("base");
-    burgerMenu.classList.add("bvis");
+  const burger = document.querySelector(".burger__meny");
+  const states = {
+    base: "base",
+    hidden: "bhide",
+    visible: "bvis",
+  };
+
+  if (burger.classList.contains(states.base)) {
+    burger.classList.replace(states.base, states.visible);
+    return;
   }
+
+  const isHidden = burger.classList.contains(states.hidden);
+  burger.classList.replace(
+    isHidden ? states.hidden : states.visible,
+    isHidden ? states.visible : states.hidden
+  );
 }
 
 function showCheckbox(type) {
@@ -214,6 +214,35 @@ function viewElement(elList, localItem) {
     if (!isLocalItem) return el.classList.remove("hidePage");
     el.classList.add("hidePage");
   });
+}
+
+async function newOrder() {
+  userLogin = localStorage.getItem("login");
+  userPassword = localStorage.getItem("password");
+
+  inputLogin = document.querySelector(".modal__input_login").value;
+  inputPassword = document.querySelector(".modal__input_password").value;
+
+  if (userLogin === inputLogin && userPassword === inputPassword) {
+    await updateOrders(localStorage.getItem("userId"));
+
+    const sucsessBlock = document.querySelector(".sucsess");
+    sucsessBlock.classList.replace("sucsess__close", "sucsess__open");
+
+    setTimeout(function () {
+      sucsessBlock.classList.replace("sucsess__open", "sucsess__close");
+    }, 3000);
+
+    return;
+  }
+
+  const errorBlock = document.querySelector(".error");
+
+  errorBlock.classList.replace("error__close", "error__open");
+
+  setTimeout(function () {
+    errorBlock.classList.replace("error__open", "error__close");
+  }, 3000);
 }
 
 function viewElements() {
@@ -298,21 +327,54 @@ function showCard(index) {
 }
 
 function modalMeny() {
-  if (!modalForm.classList.contains("base")) {
-    if (modalForm.classList.contains("bhide")) {
-      modalForm.classList.remove("bhide");
-      modalForm.classList.add("bvis");
-      return;
-    }
-    modalForm.classList.add("bhide");
-    modalForm.classList.remove("bvis");
-    inputsModal.forEach(function (input) {
-      input.value = "";
-    });
+  const elements = {
+    modal: {
+      element: document.querySelector(".modal"),
+      hideClass: "bhide",
+      showClass: "bvis",
+      baseClass: "base",
+    },
+    form: {
+      element: document.querySelector(".modal__form"),
+      hideClass: "modal_hide",
+      showClass: "modal_open",
+      baseClass: "modal_base",
+    },
+  };
+
+  const { modal, form } = elements;
+
+  if (modal.element.classList.contains(modal.baseClass)) {
+    modal.element.classList.replace(modal.baseClass, modal.showClass);
+    form.element.classList.replace(form.baseClass, form.showClass);
     return;
   }
-  modalForm.classList.remove("base");
-  modalForm.classList.add("bvis");
+
+  const isHidden = modal.element.classList.contains(modal.hideClass);
+  [modal, form].forEach((item) => {
+    item.element.classList.toggle(item.hideClass, !isHidden);
+    item.element.classList.toggle(item.showClass, isHidden);
+  });
+}
+
+function modalClose() {
+  const elements = {
+    modal: {
+      element: document.querySelector(".modal"),
+      hideClass: "bhide",
+      showClass: "bvis",
+    },
+    form: {
+      element: document.querySelector(".modal__form"),
+      hideClass: "modal_hide",
+      showClass: "modal_open",
+    },
+  };
+
+  Object.values(elements).forEach(({ element, hideClass, showClass }) => {
+    element.classList.add(hideClass);
+    element.classList.remove(showClass);
+  });
 }
 
 async function getCards() {

@@ -124,30 +124,41 @@
         </a>
       </div>
     </section>
-    <section class="modal base">
-      <div class="modal__form">
+    <section class="modal__form modal_base">
+      <p class="modal__form-title">Купить</p>
+      <form class="modal__form-form" action="">
+        <input
+          class="modal__form-input modal__input_login"
+          type="text"
+          placeholder="Логин"
+        />
+        <input
+          class="modal__form-input modal__input_password"
+          type="password"
+          placeholder="Пароль"
+        />
+      </form>
+      <div class="modal__form-button__box">
+        <button onclick="newOrder()" class="modal__form-button">
+          <p class="modal__form-button-text">Купить</p>
+        </button>
+      </div>
+      <div class="modal_arrow-img-block">
         <img
           src="../../assets/img/arrowBack.svg"
           alt="arrow"
           class="modal_arrow-img"
           onclick="modalMeny()"
         />
-        <p class="modal__form-title">Купить</p>
-        <form class="modal__form-form" action="">
-          <input class="modal__form-input" type="email" placeholder="email" />
-          <input
-            class="modal__form-input"
-            type="password"
-            placeholder="password"
-          />
-        </form>
-        <div class="modal__form-button__box">
-          <button onclick="modalMeny()" class="modal__form-button">
-            <p class="modal__form-button-text">Купить</p>
-          </button>
-        </div>
       </div>
     </section>
+    <div class="modal base" onclick="modalClose()"></div>
+    <div class="error error__close">
+      <p class="error__text">Ошибка</p>
+    </div>
+    <div class="sucsess sucsess__close">
+      <p class="sucsess__text">Успешно</p>
+    </div>
     <div class="burger" onclick="setShowBurgerMenu()">
       <img src="../../assets/img/black_burger.svg" alt="" />
     </div>
@@ -172,7 +183,7 @@
         </div>
       </div>
       <div class="footer__button" onclick="modalMeny()">
-        <a href="#">Свзяться с нами</a>
+        <a href="#">Купить</a>
       </div>
       <div class="footer__logo">
         <a href="../mainPage/mainpage.html"
