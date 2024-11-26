@@ -133,6 +133,11 @@
     width: 40%;
   }
 }
+@media (max-width: 467px) {
+  .block_to_next__card-text {
+    font-size: 10px;
+  }
+}
 .block_to_next__card-photo {
   width: 25px;
   height: 25px;

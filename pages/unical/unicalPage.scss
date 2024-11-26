@@ -111,6 +111,10 @@
         font-size: 15px;
         width: 40%;
       }
+
+      @include adaptive("mobile") {
+        font-size: 10px;
+      }
     }
 
     &-photo {
