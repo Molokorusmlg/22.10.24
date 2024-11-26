@@ -25,18 +25,6 @@ function createInfo(name, login, password) {
                 Ваши покупки:
               </p>
               <div class="profile__block_information_orders_list">
-                <p class="profile__block_information_orders_text">
-                  Гид-экскурсия по Екатеринбургу
-                </p>
-                <p class="profile__block_information_orders_text">
-                  Гид-экскурсия по Екатеринбургу
-                </p>
-                <p class="profile__block_information_orders_text">
-                  Гид-экскурсия по Екатеринбургу
-                </p>
-                <p class="profile__block_information_orders_text">
-                  Гид-экскурсия по Екатеринбургу
-                </p>
               </div>
             </div>`;
 }
@@ -46,7 +34,7 @@ function innerOrders(orders) {
     ".profile__block_information_orders_list"
   );
   let orderBlock = ``;
-  for (let step = 0; step <= orders; step++) {
+  for (let step = 0; step < orders; step++) {
     orderBlock += `<p class="profile__block_information_orders_text">
                   Гид-экскурсия по Екатеринбургу
                 </p>`;
