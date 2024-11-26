@@ -30,7 +30,7 @@
   height: 100vh;
 
   @include adaptive(table) {
-    height: 150vh;
+    height: 1200px;
     padding-right: 0px;
     @include flex(row, center, 0);
   }
@@ -559,6 +559,10 @@
   margin-top: 50px;
   transition: 0.7s ease-in-out;
 
+  @media (max-height: 700px) {
+    margin-top: 170px;
+  }
+
   &:hover {
     background-color: #e12424;
     color: $true-white;
@@ -595,6 +599,10 @@
     position: absolute;
     top: 0px;
     right: 0px;
+
+    @media (max-height: 700px) {
+      height: 500px;
+    }
 
     @include adaptive(mobile) {
       width: 50%;
@@ -819,7 +827,7 @@
 
   @include adaptive("table") {
     display: flex;
-    height: 150vh;
+    height: 1200px;
   }
 }
 

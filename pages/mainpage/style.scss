@@ -478,6 +478,10 @@
   background-color: #161a1dc5;
   opacity: 0;
 
+  @media (max-height: 700px) {
+    height: 700px;
+  }
+
   &_block {
     @include flex(column, 0, center);
     width: 20%;

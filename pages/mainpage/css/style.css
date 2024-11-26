@@ -525,6 +525,11 @@
   background-color: rgba(22, 26, 29, 0.7725490196);
   opacity: 0;
 }
+@media (max-height: 700px) {
+  .burger__meny {
+    height: 700px;
+  }
+}
 .burger__meny_block {
   display: flex;
   flex-direction: column;

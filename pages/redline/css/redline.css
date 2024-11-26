@@ -41,7 +41,7 @@
 }
 @media (max-width: 768px) {
   .red-line {
-    height: 150vh;
+    height: 1200px;
     padding-right: 0px;
     display: flex;
     flex-direction: row;
@@ -609,6 +609,11 @@
   margin-top: 50px;
   transition: 0.7s ease-in-out;
 }
+@media (max-height: 700px) {
+  .tour {
+    margin-top: 170px;
+  }
+}
 .tour:hover {
   background-color: #e12424;
   color: #fff;
@@ -645,6 +650,11 @@
   position: absolute;
   top: 0px;
   right: 0px;
+}
+@media (max-height: 700px) {
+  .burger__meny_block {
+    height: 500px;
+  }
 }
 @media (max-width: 467px) {
   .burger__meny_block {
@@ -870,7 +880,7 @@
 @media (max-width: 768px) {
   .mobile__shadow {
     display: flex;
-    height: 150vh;
+    height: 1200px;
   }
 }
 
