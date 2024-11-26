@@ -3,21 +3,21 @@ function createInfo(name, login, password) {
               <input
                 class="profile__block_information_name_input profile__input"
                 type="text"
-                placeholder="${name}"
+                placeholder="Фио: ${name}"
               />
             </div>
             <div class="profile__block_information_login">
               <input
                 class="profile__block_information_login_input profile__input"
                 type="text"
-                placeholder="${login}"
+                placeholder="Логин: ${login}"
               />
             </div>
             <div class="profile__block_information_password">
               <input
                 class="profile__block_information_password_input profile__input"
                 type="text"
-                placeholder="${password}"
+                placeholder="Пароль: ${password}"
               />
             </div>
             <div class="profile__block_information_orders">
