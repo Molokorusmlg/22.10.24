@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Pt;
+  font-weight: 800;
+  cursor: default;
+  scroll-behavior: smooth;
+  list-style-type: none;
+}
+
+.burger__meny {
+  transition: 0.7s ease-in-out;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  z-index: 5;
+  background-color: rgba(22, 26, 29, 0.7725490196);
+  opacity: 0;
+}
+@media (max-height: 700px) {
+  .burger__meny {
+    height: 700px;
+  }
+}
+.burger__meny_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: 0;
+  align-items: center;
+  width: 20%;
+  height: 60%;
+  background-color: #fff;
+  border-left: 5px solid #d00000;
+  border-radius: 5px 0px 0px 5px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+@media (max-width: 467px) {
+  .burger__meny_block {
+    width: 50%;
+  }
+}
+.burger__meny_block_header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.burger__meny_block_header-title {
+  margin-left: 10px;
+  font-size: 30px;
+  letter-spacing: 3px;
+  font-family: "Pt";
+  font-weight: 800;
+  color: #d00000;
+}
+.burger__meny_block_header-img_second {
+  width: 25%;
+  height: 25%;
+}
+.burger__meny_block_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: 0;
+  align-items: center;
+  margin-top: 30%;
+  gap: 15%;
+  height: 80%;
+}
+.burger__meny_block_list-link {
+  font-size: 30px;
+  letter-spacing: 3px;
+  font-family: "Pt";
+  font-weight: 800;
+  text-decoration: none;
+  color: #803939;
+  font-size: 25px;
+  transition: 0.4s ease-in-out;
+}
+.burger__meny_block_list-link:hover {
+  color: #d00000;
+}
+
+.base {
+  display: none;
+}
+
+.bvis {
+  animation: burger-open 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.bhide {
+  animation: burger-meny-hide 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.burger {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+@keyframes burger-meny {
+  0% {
+    display: none;
+  }
+  1% {
+    opacity: 0;
+  }
+  100% {
+    display: flex;
+    opacity: 1;
+  }
+}
+@keyframes burger-open {
+  0% {
+    display: none;
+  }
+  1% {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+  }
+  100% {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+  }
+}
+@keyframes burger-meny-hide {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    display: none;
+  }
+}

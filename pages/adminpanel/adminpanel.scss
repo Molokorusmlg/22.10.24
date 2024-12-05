@@ -1,4 +1,6 @@
 @import "../../global.scss";
+@import "../../components_styles/redline_styles/redline.scss";
+@import "../../components_styles/loading_styles/loading_styles.scss";
 
 @font-face {
   font-family: Pt;
@@ -119,100 +121,6 @@
   }
 }
 
-.red-line {
-  @include container(0px, 10px, 0, padding);
-  @include flex(row, 0, 0);
-  height: 100vh;
-
-  @include adaptive(table) {
-    height: 150vh;
-  }
-
-  &__marshruts {
-    @include flex(column, 0, center);
-    max-width: 80vw;
-    width: 100%;
-
-    &__card-box {
-      @include flex(column, 0, 0);
-      gap: 100px;
-      width: 100%;
-      height: 50vh;
-      margin-top: 50px;
-      object-fit: contain;
-
-      &_small-card-box {
-        width: 100%;
-        height: 50vh;
-        position: relative;
-      }
-
-      &_card {
-        width: 100%;
-        padding: 40px;
-        @include flex(row, 0, 0);
-        gap: 30px;
-        border-radius: 10px;
-        transition: 0.6s ease-in-out;
-
-        &:hover {
-          background-color: #fc5757a8;
-        }
-
-        @include adaptive(table) {
-          @include flex(row, center, center);
-        }
-
-        @include adaptive(mobile) {
-          @include flex(column, center, center);
-        }
-
-        &:hover {
-          background-color: #949494a8;
-        }
-
-        &.active {
-          animation: card_visible 0.7s ease-in-out;
-          opacity: 1;
-        }
-
-        &-columnbox {
-          width: 200px;
-        }
-
-        &-map {
-          margin-bottom: 16px;
-        }
-
-        &-description {
-          border-radius: 5px;
-          width: 200px;
-          height: 132px;
-          color: $light-red;
-          font-size: 15px;
-          letter-spacing: 1px;
-        }
-
-        &-img {
-          border-radius: 5px;
-          overflow: hidden;
-          width: 300px;
-          height: 300px;
-          @include adaptive(table) {
-            width: 200px;
-            height: 200px;
-          }
-
-          img {
-            display: block;
-            height: 100%;
-          }
-        }
-      }
-    }
-  }
-}
-
 .drop-container {
   position: relative;
   display: flex;
@@ -272,70 +180,4 @@
       }
     }
   }
-}
-
-.active__loading {
-  @include flex(row, center, center);
-}
-
-@keyframes loading-complete-animation {
-  0% {
-    opacity: 1;
-    @include flex(row, center, center);
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    display: none;
-  }
-}
-.loading-complete {
-  animation: loading-complete-animation 0.7s ease-in-out;
-  display: none;
-}
-
-.loading {
-  overflow-x: hidden;
-  background-color: $true-white;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  overflow: hidden;
-
-  &__circle {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    animation: loading-active 0.7s ease-in-out infinite;
-  }
-}
-
-@keyframes loading-active {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.cube {
-  width: 25px;
-  height: 25px;
-  border-radius: 50px;
-}
-
-.first,
-.four {
-  background-color: $light-red;
-}
-
-.second,
-.third {
-  background-color: $true-white;
 }

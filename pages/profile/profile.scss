@@ -1,4 +1,5 @@
 @import "../../global.scss";
+@import "../../components_styles/loading_styles/loading_styles.scss";
 
 @font-face {
   font-family: Pt;
@@ -241,75 +242,5 @@
       color: $red;
     }
     border: 1px solid #e124243f;
-  }
-}
-
-.active__loading {
-  @include flex(row, center, center);
-}
-
-.loading-complete {
-  animation: loading-complete-animation 0.7s ease-in-out;
-  display: none;
-}
-
-.loading {
-  background-color: $true-white;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  overflow: hidden;
-
-  &__circle {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    animation: loading-active 0.7s ease-in-out infinite;
-  }
-}
-
-.cube {
-  width: 25px;
-  height: 25px;
-  border-radius: 50px;
-}
-
-.first,
-.four {
-  background-color: $light-red;
-}
-
-.second,
-.third {
-  background-color: $true-white;
-}
-
-.visible {
-  opacity: 1;
-}
-
-@keyframes loading-complete-animation {
-  0% {
-    @include flex(row, center, center);
-    opacity: 1;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    display: none;
-  }
-}
-
-@keyframes loading-active {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }

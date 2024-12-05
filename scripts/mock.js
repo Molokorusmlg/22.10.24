@@ -56,7 +56,7 @@ const titleEkb = document.querySelector(".about__city__title");
 const textEkb = document.querySelector(".about__city__text");
 
 // Элементы для изменения карты на главной странице
-const arrowMap = document.querySelector(".arrow__map_hiden");
+const arrowMap = document.querySelector(".arrow__map");
 const mapText = document.querySelector(".big_map__text");
 const mapEkb = document.querySelector(".map_small");
 
@@ -64,7 +64,7 @@ const mapEkb = document.querySelector(".map_small");
 
 // URL для api
 const CARDS_URL = "https://67275558302d03037e70ad42.mockapi.io/api/";
-const USERS_URL = "https://6737c61b4eb22e24fca622b9.mockapi.io/";
+const USERS_URL = "https://6750125869dc1669ec198aa9.mockapi.io/";
 
 const BASE_URL = "../pages/";
 

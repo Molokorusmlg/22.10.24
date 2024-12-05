@@ -1,0 +1,137 @@
+@import "../../global.scss";
+
+.footer {
+  @include container(2%, 2%, 0, padding);
+  @include flex(row, space-between, center);
+  background-color: #161a1d;
+  height: 200px;
+  gap: 15rem;
+  color: $true-white;
+
+  @include adaptive("medium-pc") {
+    gap: 10%;
+  }
+
+  a {
+    text-decoration: none;
+    color: $true-white;
+
+    @include adaptive("mobile") {
+      font-size: 10px;
+    }
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+
+    @include adaptive("mobile") {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &__logo {
+    img {
+      width: 150px;
+      height: 60px;
+
+      @include adaptive(table) {
+        display: none;
+      }
+    }
+  }
+
+  &__company {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &-title {
+      font-size: 25px;
+
+      @include adaptive(table) {
+        font-size: 15px;
+      }
+    }
+
+    &-text {
+      font-size: 20px;
+
+      @include adaptive(table) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  &__contacts {
+    @include flex(column, center, center);
+    gap: 30px;
+  }
+
+  &__button {
+    padding: 20px;
+    transition: 0.7s ease-in-out;
+    background-color: $red-white;
+    border-radius: 5px;
+
+    @include adaptive("mobile") {
+      padding: 5px;
+      @include flex(row, center, center);
+    }
+
+    a {
+      color: black;
+    }
+
+    &:hover {
+      background-color: black;
+      a {
+        color: $red-white;
+      }
+    }
+  }
+}
+.telegram {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Vk {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.telephone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tour {
+  border: solid rgb(235, 235, 235) 1px;
+  border-radius: 10px;
+  padding: 24px 100px;
+  color: $light-red;
+  background-color: #fdfdfd;
+  box-shadow: 4px 5px 0px rgba(34, 60, 80, 0.2);
+  margin-top: 50px;
+  transition: 0.7s ease-in-out;
+
+  &:hover {
+    background-color: #e12424;
+    color: $true-white;
+  }
+
+  &-text {
+    font-size: 20px;
+
+    &-link {
+      @include adaptive(table) {
+        margin-top: 250px;
+      }
+    }
+  }
+}
