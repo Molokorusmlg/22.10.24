@@ -1,0 +1,85 @@
+@import "../../global.scss";
+
+@font-face {
+  font-family: Pt;
+  src: url("../../../assets/fonts/PTSans-Regular.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Pt;
+  src: url("../../../assets/fonts/PTSans-Bold.ttf");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: Pt;
+  src: url("../../../assets/fonts/PTSans-Bold.ttf");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("../../../assets/fonts/MontserratAlternates-ExtraBold.ttf");
+  font-weight: 800;
+}
+
+.attractions {
+  &__navigate {
+    @include flex(row, space-between, center);
+    padding: 1%;
+    background-color: $light-red;
+    color: #fff;
+
+    &__sort {
+      @include flex(column, center, center);
+      gap: 10px;
+
+      &__likes {
+        @include flex(row, space-between, center);
+        gap: 10px;
+        width: 220px;
+
+        &_icon {
+          width: 30px;
+          height: 30px;
+        }
+
+        &_arrow {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      &__views {
+        @include flex(row, space-between, center);
+        gap: 10px;
+        width: 220px;
+
+        &_icon {
+          width: 30px;
+          height: 30px;
+        }
+
+        &_arrow {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+    &__logo {
+      @include flex(row, none, center);
+      gap: 15px;
+
+      &_text {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.attractions__navigate__search__box_icon {
+  width: 20px;
+  height: 20px;
+}

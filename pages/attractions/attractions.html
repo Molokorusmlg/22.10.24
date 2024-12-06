@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/attractions.css" />
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico" />
+    <title>Достопремечательности</title>
+  </head>
+  <body>
+    <div class="attractions">
+      <div class="attractions__navigate">
+        <div class="attractions__navigate__logo">
+          <img
+            src="../../assets/img/favicon.ico"
+            alt="logo"
+            class="attractions__navigate__logo_svg"
+          />
+          <p class="attractions__navigate__logo_text">Город Бесов</p>
+        </div>
+
+        <div class="attractions__navigate__sort">
+          <h1 class="attractions__navigate__sort_title">Сортировка</h1>
+
+          <div class="attractions__navigate__sort__likes">
+            <img
+              src="../../assets/img/Heart.svg"
+              alt=""
+              class="attractions__navigate__sort__likes_icon"
+            />
+            <p class="attractions__navigate__sort__likes_text">По лайкам</p>
+            <img
+              src="../../assets/img/sort_arrow.svg"
+              alt="arrow sort"
+              class="attractions__navigate__sort__likes_arrow"
+            />
+          </div>
+
+          <div class="attractions__navigate__sort__views">
+            <img
+              src="../../assets/img/Eye.svg"
+              alt=""
+              class="attractions__navigate__sort__views_icon"
+            />
+            <p class="attractions__navigate__sort__views_text">
+              По популярности
+            </p>
+            <img
+              src="../../assets/img/sort_arrow.svg"
+              alt="arrow sort"
+              class="attractions__navigate__sort__views_arrow"
+            />
+          </div>
+        </div>
+
+        <div class="attractions__navigate__search">
+          <label for="search_input"> Поиск </label>
+          <div class="attractions__navigate__search__box">
+            <input
+              type="text"
+              id="search_input"
+              class="attractions__navigate__search__box_input"
+            />
+            <img
+              src="../../assets/img/searchicon.svg"
+              alt="search icon"
+              class="attractions__navigate__search__box_icon"
+            />
+          </div>
+        </div>
+
+        <div class="attractions__navigate__filters">
+          <div class="attractions__navigate__filters__block">
+            <label
+              for="buildings-attractions"
+              class="attractions__navigate__filters__block__building-label"
+              >Здания</label
+            >
+            <input
+              id="buildings-attractions"
+              type="checkbox"
+              class="attractions__navigate__filters__block__building-input"
+            />
+          </div>
+
+          <div class="attractions__navigate__filters__block">
+            <label
+              for="parks-attractions"
+              class="attractions__navigate__filters__block__parks-label"
+              >Парки</label
+            >
+            <input
+              id="parks-attractions"
+              type="checkbox"
+              class="attractions__navigate__filters__block__parks-input"
+            />
+          </div>
+
+          <div class="attractions__navigate__filters__block">
+            <label
+              for="museums-attractions"
+              class="attractions__navigate__filters__block__museums-label"
+              >Музеи</label
+            >
+            <input
+              id="museums-attractions"
+              type="checkbox"
+              class="attractions__navigate__filters__block__museums-input"
+            />
+          </div>
+
+          <div class="attractions__navigate__filters__block">
+            <label
+              for="temple-attractions"
+              class="attractions__navigate__filters__block__temple-label"
+              >Храмы</label
+            >
+            <input
+              id="temple-attractions"
+              type="checkbox"
+              class="attractions__navigate__filters__block__temple-input"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="attractions__list">
+        <div class="attractions__card">
+          <div class="attractions__card__img">
+            <img
+              src="../../assets/img/1905year.jpg"
+              alt=""
+              class="attractions__card__img_photo"
+            />
+          </div>
+          <div class="attractions__card__text">
+            <h1 class="attractions__card__text_title">Площадь 1905 года</h1>
+            <p class="attractions__card__text_paragraph">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex,
+              quibusdam?
+            </p>
+          </div>
+          <div class="attractions__card__likes">
+            <img
+              src="../../assets/img/no-likes.svg"
+              alt=""
+              class="attractions__card__likes_photo"
+            />
+            <p class="attractions__card__likes_counter">10</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
