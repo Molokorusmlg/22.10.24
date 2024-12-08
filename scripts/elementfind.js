@@ -179,17 +179,3 @@ async function loadingPage() {
 }
 
 loadingPage();
-
-/* 
-git add
-git commit -m ""
-git push
-git pull 
-git pull --all 
-git fetch
-git fetch --all
-new branch
-git branch -m / branch -f 
-git reset HEAD~
-микро макро 
-*/

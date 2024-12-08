@@ -1,4 +1,5 @@
 @import "../../global.scss";
+@import "../../components_styles/loading_styles/loading_styles.scss";
 
 @font-face {
   font-family: Pt;
@@ -25,11 +26,134 @@
 }
 
 .attractions {
+  &__list {
+    @include flex(column, none, none);
+    gap: 10px;
+    padding: 40px;
+    background-color: #eee;
+    min-height: 85vh;
+
+    &__cards_block {
+      @include flex(column, none, none);
+      gap: 10px;
+    }
+
+    &_title {
+      background-color: $red;
+      padding: 10px;
+      border-radius: 7px;
+      color: #fff;
+
+      &_box {
+        @include flex(row, center, center);
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__card {
+    @include flex(row, space-between, center);
+    background-color: #fff;
+    padding: 10px 40px 10px 10px;
+    border-radius: 7px;
+    transform: scale(0.99);
+    transition: 0.4s ease-in-out;
+    box-shadow: 0px 4px 9.9px -5px #0000006e;
+
+    &:hover {
+      transform: scale(1);
+    }
+
+    &__likes {
+      @include flex(row, center, center);
+      gap: 10px;
+
+      &_photo {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &__text {
+      @include flex(column, none, none);
+      gap: 10px;
+      max-width: 600px;
+
+      &_title {
+        color: $light-red;
+      }
+
+      &_paragraph {
+        color: $red;
+      }
+    }
+
+    &__img {
+      width: 300px;
+      height: 200px;
+
+      &_photo {
+        width: 300px;
+        height: 200px;
+        border-radius: 7px;
+      }
+    }
+  }
+
   &__navigate {
     @include flex(row, space-between, center);
-    padding: 1%;
+    padding: 10px;
     background-color: $light-red;
     color: #fff;
+    min-height: 15vh;
+
+    &__filters {
+      @include flex(column, center, center);
+      gap: 10px;
+      width: 200px;
+
+      &__block {
+        @include flex(row, space-between, center);
+        width: 70px;
+      }
+
+      &__checkboxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+    }
+
+    &__search {
+      @include flex(column, center, center);
+      gap: 5px;
+
+      &__label {
+        color: #fff;
+        font-size: 20px;
+      }
+
+      &__box {
+        @include flex(row, space-between, center);
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 7px;
+        width: 200px;
+        height: 30px;
+
+        &_icon {
+          width: 20px;
+          height: 20px;
+        }
+
+        &_input {
+          border: none;
+          outline: none;
+        }
+      }
+    }
 
     &__sort {
       @include flex(column, center, center);
@@ -41,13 +165,13 @@
         width: 220px;
 
         &_icon {
-          width: 30px;
-          height: 30px;
+          width: 20px;
+          height: 20px;
         }
 
         &_arrow {
-          width: 30px;
-          height: 30px;
+          width: 20px;
+          height: 20px;
         }
       }
 
@@ -57,13 +181,13 @@
         width: 220px;
 
         &_icon {
-          width: 30px;
-          height: 30px;
+          width: 20px;
+          height: 20px;
         }
 
         &_arrow {
-          width: 30px;
-          height: 30px;
+          width: 20px;
+          height: 20px;
         }
       }
     }
@@ -79,7 +203,42 @@
   }
 }
 
-.attractions__navigate__search__box_icon {
-  width: 20px;
-  height: 20px;
+.exit {
+  @include flex(row, space-between, center);
+  position: absolute;
+  top: 16vh;
+  left: 10px;
+  width: 80px;
+  transition: 0.4s ease-in-out;
+
+  &:hover {
+    transform: translate(-10px);
+  }
+
+  &__text {
+    color: $light-red;
+  }
+
+  &__img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.pagination {
+  @include flex(row, center, center);
+  gap: 20px;
+}
+
+.pagination__page-a {
+  color: $light-red;
+  font-size: 20px;
+}
+
+.views_selected {
+  transform: rotate(180deg);
+}
+
+.likes_selected {
+  transform: rotate(180deg);
 }

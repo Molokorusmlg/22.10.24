@@ -20,9 +20,12 @@
         </div>
 
         <div class="attractions__navigate__sort">
-          <h1 class="attractions__navigate__sort_title">Сортировка</h1>
+          <h3 class="attractions__navigate__sort_title">Сортировка</h3>
 
-          <div class="attractions__navigate__sort__likes">
+          <div
+            class="attractions__navigate__sort__likes"
+            onclick="likeChange()"
+          >
             <img
               src="../../assets/img/Heart.svg"
               alt=""
@@ -32,11 +35,14 @@
             <img
               src="../../assets/img/sort_arrow.svg"
               alt="arrow sort"
-              class="attractions__navigate__sort__likes_arrow"
+              class="attractions__navigate__sort__likes_arrow likes_selected"
             />
           </div>
 
-          <div class="attractions__navigate__sort__views">
+          <div
+            class="attractions__navigate__sort__views"
+            onclick="viewsChange()"
+          >
             <img
               src="../../assets/img/Eye.svg"
               alt=""
@@ -48,18 +54,24 @@
             <img
               src="../../assets/img/sort_arrow.svg"
               alt="arrow sort"
-              class="attractions__navigate__sort__views_arrow"
+              class="attractions__navigate__sort__views_arrow views_selected"
             />
           </div>
         </div>
 
         <div class="attractions__navigate__search">
-          <label for="search_input"> Поиск </label>
+          <label
+            class="attractions__navigate__search__label"
+            for="search_input"
+          >
+            Поиск
+          </label>
           <div class="attractions__navigate__search__box">
             <input
               type="text"
               id="search_input"
               class="attractions__navigate__search__box_input"
+              onchange="getCards()"
             />
             <img
               src="../../assets/img/searchicon.svg"
@@ -70,85 +82,95 @@
         </div>
 
         <div class="attractions__navigate__filters">
-          <div class="attractions__navigate__filters__block">
-            <label
-              for="buildings-attractions"
-              class="attractions__navigate__filters__block__building-label"
-              >Здания</label
-            >
-            <input
-              id="buildings-attractions"
-              type="checkbox"
-              class="attractions__navigate__filters__block__building-input"
-            />
-          </div>
+          <h3>Филтры</h3>
+          <div class="attractions__navigate__filters__checkboxes">
+            <div class="attractions__navigate__filters__block">
+              <label
+                for="buildings-attractions"
+                class="attractions__navigate__filters__block__building-label"
+                >Здания</label
+              >
+              <input
+                id="buildings-attractions"
+                type="checkbox"
+                class="attractions__navigate__filters__block__building-input"
+                onchange="getCards()"
+              />
+            </div>
 
-          <div class="attractions__navigate__filters__block">
-            <label
-              for="parks-attractions"
-              class="attractions__navigate__filters__block__parks-label"
-              >Парки</label
-            >
-            <input
-              id="parks-attractions"
-              type="checkbox"
-              class="attractions__navigate__filters__block__parks-input"
-            />
-          </div>
+            <div class="attractions__navigate__filters__block">
+              <label
+                for="parks-attractions"
+                class="attractions__navigate__filters__block__parks-label"
+                >Парки</label
+              >
+              <input
+                id="parks-attractions"
+                type="checkbox"
+                class="attractions__navigate__filters__block__parks-input"
+                onchange="getCards()"
+              />
+            </div>
 
-          <div class="attractions__navigate__filters__block">
-            <label
-              for="museums-attractions"
-              class="attractions__navigate__filters__block__museums-label"
-              >Музеи</label
-            >
-            <input
-              id="museums-attractions"
-              type="checkbox"
-              class="attractions__navigate__filters__block__museums-input"
-            />
-          </div>
+            <div class="attractions__navigate__filters__block">
+              <label
+                for="museums-attractions"
+                class="attractions__navigate__filters__block__museums-label"
+                >Музеи</label
+              >
+              <input
+                id="museums-attractions"
+                type="checkbox"
+                class="attractions__navigate__filters__block__museums-input"
+                onchange="getCards()"
+              />
+            </div>
 
-          <div class="attractions__navigate__filters__block">
-            <label
-              for="temple-attractions"
-              class="attractions__navigate__filters__block__temple-label"
-              >Храмы</label
-            >
-            <input
-              id="temple-attractions"
-              type="checkbox"
-              class="attractions__navigate__filters__block__temple-input"
-            />
+            <div class="attractions__navigate__filters__block">
+              <label
+                for="temple-attractions"
+                class="attractions__navigate__filters__block__temple-label"
+                >Храмы</label
+              >
+              <input
+                id="temple-attractions"
+                type="checkbox"
+                class="attractions__navigate__filters__block__temple-input"
+                onchange="getCards()"
+              />
+            </div>
           </div>
         </div>
       </div>
       <div class="attractions__list">
-        <div class="attractions__card">
-          <div class="attractions__card__img">
-            <img
-              src="../../assets/img/1905year.jpg"
-              alt=""
-              class="attractions__card__img_photo"
-            />
-          </div>
-          <div class="attractions__card__text">
-            <h1 class="attractions__card__text_title">Площадь 1905 года</h1>
-            <p class="attractions__card__text_paragraph">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex,
-              quibusdam?
-            </p>
-          </div>
-          <div class="attractions__card__likes">
-            <img
-              src="../../assets/img/no-likes.svg"
-              alt=""
-              class="attractions__card__likes_photo"
-            />
-            <p class="attractions__card__likes_counter">10</p>
-          </div>
+        <div class="attractions__list_title_box">
+          <h1 class="attractions__list_title">Достопремечательности</h1>
+        </div>
+        <div class="attractions__list__cards_block"></div>
+        <div class="pagination"></div>
+      </div>
+    </div>
+    <div class="exit" onclick="goToLine()">
+      <img class="exit__img" src="../../assets/img/arrowBack.svg" alt="" />
+      <p class="exit__text">Линия</p>
+    </div>
+    <div class="loading active__loading">
+      <div class="loading__circle">
+        <div class="cube first">
+          <span></span>
+        </div>
+        <div class="cube second">
+          <span></span>
+        </div>
+        <div class="cube third">
+          <span></span>
+        </div>
+        <div class="cube four">
+          <span></span>
         </div>
       </div>
     </div>
+    <script src="../../scripts/mock.js"></script>
+    <script src="../../scripts/attraction.js"></script>
   </body>
 </html>
