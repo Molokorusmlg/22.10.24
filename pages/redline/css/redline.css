@@ -660,7 +660,7 @@
   background-color: #fff;
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
@@ -1158,6 +1158,29 @@
   max-width: 200px;
   width: 200px;
   background-color: #fff;
+}
+
+.exit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 16vh;
+  right: 40px;
+  width: 210px;
+  transition: 0.4s ease-in-out;
+}
+.exit:hover {
+  transform: translate(10px);
+}
+.exit__text {
+  color: #d00000;
+}
+.exit__img {
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
 }
 
 @keyframes card_visible {

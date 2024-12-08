@@ -161,6 +161,29 @@
   background-color: $true-white;
 }
 
+.exit {
+  @include flex(row, space-between, center);
+  position: absolute;
+  top: 16vh;
+  right: 40px;
+  width: 210px;
+  transition: 0.4s ease-in-out;
+
+  &:hover {
+    transform: translate(10px);
+  }
+
+  &__text {
+    color: $light-red;
+  }
+
+  &__img {
+    width: 20px;
+    height: 20px;
+    transform: rotate(180deg);
+  }
+}
+
 @keyframes card_visible {
   0% {
     opacity: 0;

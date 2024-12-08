@@ -90,6 +90,10 @@ function cardCreate(img, map, text) {
               </div>`;
 }
 
+function goToAttraction() {
+  window.location.href = "../attractions/attractions.html";
+}
+
 function goToNextHTML() {
   localStorage.setItem("CurrentCard", curentCardIndex);
   window.location.href = "../unical/unicalPage.html";

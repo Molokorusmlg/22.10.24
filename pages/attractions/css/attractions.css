@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Pt;
+  font-weight: 800;
+  cursor: default;
+  scroll-behavior: smooth;
+  list-style-type: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Pt;
+  font-weight: 800;
+  cursor: default;
+  scroll-behavior: smooth;
+  list-style-type: none;
+}
+
+.active__loading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes loading-complete-animation {
+  0% {
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+.loading-complete {
+  animation: loading-complete-animation 0.7s ease-in-out;
+  display: none;
+}
+
+.loading {
+  overflow-x: hidden;
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  overflow: hidden;
+}
+.loading__circle {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  animation: loading-active 0.7s ease-in-out infinite;
+}
+
+@keyframes loading-active {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.cube {
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+}
+
+.first,
+.four {
+  background-color: #d00000;
+}
+
+.second,
+.third {
+  background-color: #fff;
+}
+
+@font-face {
+  font-family: Pt;
+  src: url("../../../assets/fonts/PTSans-Regular.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: Pt;
+  src: url("../../../assets/fonts/PTSans-Bold.ttf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: Pt;
+  src: url("../../../assets/fonts/PTSans-Bold.ttf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url("../../../assets/fonts/MontserratAlternates-ExtraBold.ttf");
+  font-weight: 800;
+}
+.attractions__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: none;
+  gap: 10px;
+  padding: 40px;
+  background-color: #eee;
+  min-height: 85vh;
+}
+.attractions__list__cards_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: none;
+  gap: 10px;
+}
+.attractions__list_title {
+  background-color: rgba(225, 36, 36, 0.7254901961);
+  padding: 10px;
+  border-radius: 7px;
+  color: #fff;
+}
+.attractions__list_title_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.attractions__card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 40px 10px 10px;
+  border-radius: 7px;
+  transform: scale(0.99);
+  transition: 0.4s ease-in-out;
+  box-shadow: 0px 4px 9.9px -5px rgba(0, 0, 0, 0.431372549);
+}
+.attractions__card:hover {
+  transform: scale(1);
+}
+.attractions__card__likes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.attractions__card__likes_photo {
+  width: 30px;
+  height: 30px;
+}
+.attractions__card__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: none;
+  gap: 10px;
+  max-width: 600px;
+}
+.attractions__card__text_title {
+  color: #d00000;
+}
+.attractions__card__text_paragraph {
+  color: rgba(225, 36, 36, 0.7254901961);
+}
+.attractions__card__img {
+  width: 300px;
+  height: 200px;
+}
+.attractions__card__img_photo {
+  width: 300px;
+  height: 200px;
+  border-radius: 7px;
+}
+.attractions__navigate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #d00000;
+  color: #fff;
+  min-height: 15vh;
+}
+.attractions__navigate__filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+}
+.attractions__navigate__filters__block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 70px;
+}
+.attractions__navigate__filters__checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.attractions__navigate__search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.attractions__navigate__search__label {
+  color: #fff;
+  font-size: 20px;
+}
+.attractions__navigate__search__box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 7px;
+  width: 200px;
+  height: 30px;
+}
+.attractions__navigate__search__box_icon {
+  width: 20px;
+  height: 20px;
+}
+.attractions__navigate__search__box_input {
+  border: none;
+  outline: none;
+}
+.attractions__navigate__sort {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.attractions__navigate__sort__likes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 220px;
+}
+.attractions__navigate__sort__likes_icon {
+  width: 20px;
+  height: 20px;
+}
+.attractions__navigate__sort__likes_arrow {
+  width: 20px;
+  height: 20px;
+}
+.attractions__navigate__sort__views {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 220px;
+}
+.attractions__navigate__sort__views_icon {
+  width: 20px;
+  height: 20px;
+}
+.attractions__navigate__sort__views_arrow {
+  width: 20px;
+  height: 20px;
+}
+.attractions__navigate__logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: none;
+  align-items: center;
+  gap: 15px;
+}
+.attractions__navigate__logo_text {
+  font-size: 20px;
+}
+
+.exit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 16vh;
+  left: 10px;
+  width: 80px;
+  transition: 0.4s ease-in-out;
+}
+.exit:hover {
+  transform: translate(-10px);
+}
+.exit__text {
+  color: #d00000;
+}
+.exit__img {
+  width: 20px;
+  height: 20px;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.pagination__page-a {
+  color: #d00000;
+  font-size: 20px;
+}
+
+.views_selected {
+  transform: rotate(180deg);
+}
+
+.likes_selected {
+  transform: rotate(180deg);
+}
