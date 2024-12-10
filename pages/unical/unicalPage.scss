@@ -215,6 +215,9 @@
     &_img {
       &-box {
         width: 30%;
+        position: relative;
+        width: 300px;
+        height: 300px;
 
         @include adaptive("small-pc") {
           width: 40%;
@@ -230,6 +233,8 @@
         border-radius: 20px;
         width: 100%;
         height: 100%;
+        position: absolute;
+        top: 0;
       }
     }
 

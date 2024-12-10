@@ -1,5 +1,6 @@
 @import "../../global.scss";
 @import "../../components_styles/loading_styles/loading_styles.scss";
+@import "../unical/unicalPage.scss";
 
 @font-face {
   font-family: Pt;
@@ -241,4 +242,30 @@
 
 .likes_selected {
   transform: rotate(180deg);
+}
+
+.active {
+  opacity: 1;
+}
+
+.nonActive {
+  opacity: 0;
+}
+
+.arrow {
+  position: absolute;
+  top: 150px;
+  right: 10px;
+  z-index: 99;
+  width: 20px;
+  height: 20px;
+}
+
+.arrow-reverse {
+  position: absolute;
+  top: 150px;
+  left: 10px;
+  z-index: 99;
+  width: 20px;
+  height: 20px;
 }

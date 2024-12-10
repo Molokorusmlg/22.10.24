@@ -1,3 +1,318 @@
+let controls = document.querySelector(".controls");
+
+function attractionPage() {
+  return `<div class="attractions__navigate">
+        <div class="attractions__navigate__logo">
+          <img
+            src="../../assets/img/favicon.ico"
+            alt="logo"
+            class="attractions__navigate__logo_svg"
+          />
+          <p class="attractions__navigate__logo_text">Город Бесов</p>
+        </div>
+
+        <div class="attractions__navigate__sort">
+          <h3 class="attractions__navigate__sort_title">Сортировка</h3>
+
+          <div
+            class="attractions__navigate__sort__likes"
+            onclick="likeChange()"
+          >
+            <img
+              src="../../assets/img/Heart.svg"
+              alt=""
+              class="attractions__navigate__sort__likes_icon"
+            />
+            <p class="attractions__navigate__sort__likes_text">По лайкам</p>
+            <img
+              src="../../assets/img/sort_arrow.svg"
+              alt="arrow sort"
+              class="attractions__navigate__sort__likes_arrow likes_selected"
+            />
+          </div>
+
+          <div
+            class="attractions__navigate__sort__views"
+            onclick="viewsChange()"
+          >
+            <img
+              src="../../assets/img/Eye.svg"
+              alt=""
+              class="attractions__navigate__sort__views_icon"
+            />
+            <p class="attractions__navigate__sort__views_text">
+              По популярности
+            </p>
+            <img
+              src="../../assets/img/sort_arrow.svg"
+              alt="arrow sort"
+              class="attractions__navigate__sort__views_arrow views_selected"
+            />
+          </div>
+        </div>
+
+        <div class="attractions__navigate__search">
+          <label
+            class="attractions__navigate__search__label"
+            for="search_input"
+          >
+            Поиск
+          </label>
+          <div class="attractions__navigate__search__box">
+            <input
+              type="text"
+              id="search_input"
+              class="attractions__navigate__search__box_input"
+              onchange="getCards()"
+            />
+            <img
+              src="../../assets/img/searchicon.svg"
+              alt="search icon"
+              class="attractions__navigate__search__box_icon"
+            />
+          </div>
+        </div>
+
+        <div class="attractions__navigate__filters">
+          <h3>Филтры</h3>
+          <div class="attractions__navigate__filters__checkboxes">
+            <div class="attractions__navigate__filters__block">
+              <label
+                for="buildings-attractions"
+                class="attractions__navigate__filters__block__building-label"
+                >Здания</label
+              >
+              <input
+                id="buildings-attractions"
+                type="checkbox"
+                class="attractions__navigate__filters__block__building-input"
+                onchange="getCards()"
+              />
+            </div>
+
+            <div class="attractions__navigate__filters__block">
+              <label
+                for="parks-attractions"
+                class="attractions__navigate__filters__block__parks-label"
+                >Парки</label
+              >
+              <input
+                id="parks-attractions"
+                type="checkbox"
+                class="attractions__navigate__filters__block__parks-input"
+                onchange="getCards()"
+              />
+            </div>
+
+            <div class="attractions__navigate__filters__block">
+              <label
+                for="museums-attractions"
+                class="attractions__navigate__filters__block__museums-label"
+                >Музеи</label
+              >
+              <input
+                id="museums-attractions"
+                type="checkbox"
+                class="attractions__navigate__filters__block__museums-input"
+                onchange="getCards()"
+              />
+            </div>
+
+            <div class="attractions__navigate__filters__block">
+              <label
+                for="temple-attractions"
+                class="attractions__navigate__filters__block__temple-label"
+                >Храмы</label
+              >
+              <input
+                id="temple-attractions"
+                type="checkbox"
+                class="attractions__navigate__filters__block__temple-input"
+                onchange="getCards()"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="attractions__list">
+        <div class="attractions__list_title_box">
+          <h1 class="attractions__list_title">Достопремечательности</h1>
+        </div>
+        <div class="attractions__list__cards_block"></div>
+        <div class="pagination"></div>
+      </div>`;
+}
+// Unical
+
+window.addEventListener("scroll", animationVisible);
+
+function linkCreate(img1, img2, title1, title2) {
+  return (linkBlock = `<div class="block_to_next__firstblock" onclick = "goToPageNext()">
+        <div class="block_to_next__card">
+          <div class="block_to_next__cardsecond__imgBlock">
+            <img
+              class="imgArrow"
+              src=${img1}
+              alt="aaa"
+            />
+          </div>
+          <p class="block_to_next__card-text">${title1}</p>
+
+          <img
+            class="block_to_next__card-photo reverse"
+            src="../../assets/img/arrowBack.svg"
+            alt="arrow"
+          />
+        </div>
+      </div>
+      <div class="block_to_next__secondblock" onclick = "goToPagePrevios()">
+        <div class="block_to_next__cardsecond">
+          <img
+            class="block_to_next__card-photo"
+            src="../../assets/img/arrowBack.svg"
+            alt="arrow"
+          />
+
+          <p class="block_to_next__card-text">${title2}</p>
+          <div class="block_to_next__cardsecond__imgBlock">
+            <img
+              class="imgArrowreverse"
+              src = ${img2}
+              alt="aaa"
+            />
+          </div>
+        </div>
+      </div>`);
+}
+
+function cardCreate(img, map, text, title) {
+  return (cardBlock = `<div class="page__title">
+        <h1 class="page__title-text">${title}</h1>
+      </div>
+      <hr class="page__line" />
+      <div class="page__card">
+        <div class="page__card_img-box">
+        <img src="../../assets/img/arrowBack.svg" alt="" class='controls arrow' />
+        <img
+            src=${img}
+            alt=""
+            class="page__card_img-photo active"
+          />
+          <img
+            src=${img}
+            alt=""
+            class="page__card_img-photo nonActive"
+          />
+          <img
+            src=${img}
+            alt=""
+            class="page__card_img-photo nonActive"
+          />
+          <img
+            src=${img}
+            alt=""
+            class="page__card_img-photo nonActive"
+          />
+          <img src="../../assets/img/arrowBack.svg" alt="" class='controls arrow-reverse' />
+        </div>
+        <div class="page__card__map">
+          <iframe
+            src=${map}
+            ,
+            width="100%"
+            height="100%"
+            style="border: 0; border-radius: 15px"
+            allowfullscreen="true"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="page__card__text">
+          <p class="page__card__text-paragraph">
+            ${text}
+          </p>
+        </div>
+      </div>`);
+}
+
+function showCard(index) {
+  cards = document.querySelectorAll(".page__card_img-photo");
+
+  cards[curentCardIndex].classList.replace("active", "nonActive");
+  cards[index].classList.replace("nonActive", "active");
+}
+
+function iinerLink() {
+  const parentLink = document.querySelector(".block_to_next");
+  const linkCreateated = linkCreate(
+    linksData[0].Img_scr,
+    linksData[1].Img_scr,
+    linksData[0].Title,
+    linksData[1].Title
+  );
+  parentLink.innerHTML = linkCreateated;
+}
+
+function innerCard(cardData) {
+  const parentBlock = document.querySelector(".page");
+  const cardFinal = cardCreate(
+    cardData.Img_scr,
+    cardData.Map_scr,
+    cardData.Text,
+    cardData.Title
+  );
+  parentBlock.innerHTML = cardFinal;
+
+  const attractionPageClass = document.querySelector(".attractions");
+  attractionPageClass.innerHTML = "";
+  controls = document.querySelector(".controls");
+}
+
+function animationVisible() {
+  const elements = document.querySelectorAll(
+    ".block_to_next__card, .block_to_next__cardsecond"
+  );
+
+  elements.forEach((element) => {
+    const ourwindow = element.getBoundingClientRect();
+    const windowHeight =
+      window.innerHeight || document.documentElement.clientHeight;
+    const heightToHide = 100;
+
+    if (
+      ourwindow.top < windowHeight - heightToHide &&
+      ourwindow.bottom > heightToHide
+    ) {
+      element.classList.add("visible");
+    } else {
+      element.classList.remove("visible");
+    }
+  });
+}
+
+function goToPageNext() {
+  const indexThisPage = localStorage.getItem("CurrentCard");
+
+  if (Number(indexThisPage) === baseData.length - 1) {
+    localStorage.setItem("CurrentCard", 0);
+  } else {
+    localStorage.setItem("CurrentCard", Number(indexThisPage) + 1);
+  }
+  window.location.href = "../unical/unicalPage.html";
+}
+
+function goToPagePrevios() {
+  const indexThisPage = localStorage.getItem("CurrentCard");
+
+  if (Number(indexThisPage) === 0) {
+    localStorage.setItem("CurrentCard", baseData.length - 1);
+  } else {
+    localStorage.setItem("CurrentCard", Number(indexThisPage) - 1);
+  }
+  window.location.href = "../unical/unicalPage.html";
+}
+
+// Main
 const url = new URL(CARDS_URL + "redline/cardList/");
 url.searchParams.append("page", 1);
 url.searchParams.append("limit", 10);
@@ -5,9 +320,23 @@ url.searchParams.append("limit", 10);
 let unicalPage = location.hash.substring(1);
 
 function goToLine() {
-  console.log(123);
+  if (unicalPage == "") {
+    window.location.href = "../redline/redLine.html";
+    return;
+  }
+  window.location.hash = "";
+}
 
-  window.location.href = "../redline/redLine.html";
+function attractionPageCreate() {
+  const parentBlockUnicalPage = document.querySelector(".page");
+  parentBlockUnicalPage.innerHTML = "";
+  const parentBlockAttractionPage = document.querySelector(".attractions");
+
+  parentBlockAttractionPage.innerHTML = attractionPage();
+
+  circlePagination();
+
+  getCards();
 }
 
 function goToUnicalPage(index) {
@@ -16,6 +345,11 @@ function goToUnicalPage(index) {
 
 window.addEventListener("hashchange", () => {
   unicalPage = location.hash.substring(1);
+  if (location.hash == "") {
+    attractionPageCreate();
+
+    return;
+  }
   getCards();
 });
 
@@ -77,6 +411,7 @@ function circlePagination() {
         proIndex + 1
       }</a>`;
     }
+
     paginationBlock.forEach((block) => {
       block.appendChild(links);
     });
@@ -113,7 +448,6 @@ function getFulters() {
     request.attractions.push("temples");
   }
 
-  // Преобразуем массив в строку, если это необходимо
   request.attractionsString = request.attractions.join(",");
 
   return request.attractions;
@@ -148,14 +482,18 @@ function viewsChange() {
   getCards();
 }
 
+// Карточка
 async function createUnicalPage() {
   const response = await fetch(CARDS_URL + "redline/cardList/" + unicalPage, {
     method: "GET",
   });
 
-  const data = await response.json();
+  const cardData = await response.json();
 
-  console.log(data);
+  await innerCard(cardData);
+
+  Loading.classList.remove("active__loading");
+  Loading.classList.add("loading-complete");
 }
 
 ///////////
@@ -163,8 +501,6 @@ async function createUnicalPage() {
 async function getCards(page = 1) {
   Loading.classList.remove("loading-complete");
   Loading.classList.add("active__loading");
-
-  console.log(unicalPage);
 
   if (!unicalPage == "") {
     createUnicalPage();
@@ -212,8 +548,7 @@ async function getCards(page = 1) {
 
   cityList = data;
 
-  parentBlock = document.querySelector(".attractions__list__cards_block");
-
+  const parentBlock = document.querySelector(".attractions__list__cards_block");
   parentBlock.innerHTML = "";
 
   cityList.forEach((attraction) => {
@@ -229,6 +564,7 @@ async function getCards(page = 1) {
     card.innerHTML = card_iner;
     parentBlock.appendChild(card);
   });
+
   Loading.classList.remove("active__loading");
   Loading.classList.add("loading-complete");
 }
@@ -244,3 +580,22 @@ async function loading() {
 }
 
 loading();
+
+// Обработчик события нажатия на стрелки (слайдер)
+controls.addEventListener("click", function (event) {
+  console.log(123);
+
+  if (event.target.classList.contains("arrow")) {
+    let index = curentCardIndex - 1;
+    if (index < 0) {
+      index = cards.length - 1;
+    }
+    showCard(index);
+  } else if (event.target.classList.contains("arrow-reverse")) {
+    let index = curentCardIndex + 1;
+    if (index >= cards.length) {
+      index = 0;
+    }
+    showCard(index);
+  }
+});

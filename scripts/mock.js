@@ -119,7 +119,10 @@ document
     updateUser(userId, updatedData);
   });
 
-const attractionPage = `<div class="attractions__navigate">
+const arraowBack = `<img class="exit__img" src="../../assets/img/arrowBack.svg" alt="" />
+      <p class="exit__text">Линия</p>`;
+
+const attractionPage1 = `<div class="attractions__navigate">
         <div class="attractions__navigate__logo">
           <img
             src="../../assets/img/favicon.ico"
