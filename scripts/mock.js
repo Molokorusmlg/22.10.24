@@ -64,7 +64,10 @@ const mapEkb = document.querySelector(".map_small");
 
 // URL для api
 const CARDS_URL = "https://67275558302d03037e70ad42.mockapi.io/api/";
-const USERS_URL = "https://6750125869dc1669ec198aa9.mockapi.io/";
+const USERS_URL = "https://6750125869dc1669ec198aa9.mockapi.io/users/";
+const LINK_URL = "https://6750125869dc1669ec198aa9.mockapi.io/linkList";
+const REVIEWS_URL =
+  "https://67275558302d03037e70ad42.mockapi.io/api/redline/reviews";
 
 const BASE_URL = "../pages/";
 
@@ -86,43 +89,7 @@ let cardsData = []; // elementfind.js
 let linksData = []; // elementfind.js
 let baseData = []; // elementfind.js
 
-// Добавляем обработчик события
-document
-  .querySelector(".profile__block_new_order_button")
-  .addEventListener("click", () => {
-    const userId = localStorage.getItem("userId");
-    updateOrders(userId);
-  });
-
-document.querySelector(".exit").addEventListener("click", () => {
-  window.location.href = BASE_URL + "../register/register.html";
-});
-
-document
-  .querySelector(".profile__block_new_order_save")
-  .addEventListener("click", () => {
-    const userId = localStorage.getItem("userId");
-    const newName = document.querySelector(
-      ".profile__block_information_name_input"
-    ).value;
-    const newLogin = document.querySelector(
-      ".profile__block_information_login_input"
-    ).value;
-    const newPassword = document.querySelector(
-      ".profile__block_information_password_input"
-    ).value;
-    const updatedData = {
-      name: `${newName}`,
-      login: `${newLogin}`,
-      password: `${newPassword}`,
-    };
-    updateUser(userId, updatedData);
-  });
-
-const arraowBack = `<img class="exit__img" src="../../assets/img/arrowBack.svg" alt="" />
-      <p class="exit__text">Линия</p>`;
-
-const attractionPage1 = `<div class="attractions__navigate">
+const attractionPage = `<div class="attractions__navigate">
         <div class="attractions__navigate__logo">
           <img
             src="../../assets/img/favicon.ico"
@@ -262,3 +229,36 @@ const attractionPage1 = `<div class="attractions__navigate">
         <div class="attractions__list__cards_block"></div>
         <div class="pagination"></div>
       </div>`;
+
+// Добавляем обработчик события
+document
+  .querySelector(".profile__block_new_order_button")
+  .addEventListener("click", () => {
+    const userId = localStorage.getItem("userId");
+    updateOrders(userId);
+  });
+
+document.querySelector(".exit").addEventListener("click", () => {
+  window.location.href = BASE_URL + "../register/register.html";
+});
+
+document
+  .querySelector(".profile__block_new_order_save")
+  .addEventListener("click", () => {
+    const userId = localStorage.getItem("userId");
+    const newName = document.querySelector(
+      ".profile__block_information_name_input"
+    ).value;
+    const newLogin = document.querySelector(
+      ".profile__block_information_login_input"
+    ).value;
+    const newPassword = document.querySelector(
+      ".profile__block_information_password_input"
+    ).value;
+    const updatedData = {
+      name: `${newName}`,
+      login: `${newLogin}`,
+      password: `${newPassword}`,
+    };
+    updateUser(userId, updatedData);
+  });

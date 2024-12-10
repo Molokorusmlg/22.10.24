@@ -4,20 +4,8 @@
   @include flex(row, center, center);
 }
 
-@keyframes loading-complete-animation {
-  0% {
-    opacity: 1;
-    @include flex(row, center, center);
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    display: none;
-  }
-}
 .loading-complete {
-  animation: loading-complete-animation 0.7s ease-in-out;
+  animation: loading-complete-animation 0.1s ease-in-out;
   display: none;
 }
 
@@ -64,4 +52,17 @@
 .second,
 .third {
   background-color: $true-white;
+}
+
+@keyframes loading-complete-animation {
+  0% {
+    opacity: 1;
+    @include flex(row, center, center);
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
 }

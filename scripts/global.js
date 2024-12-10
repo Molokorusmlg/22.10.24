@@ -21,13 +21,6 @@ document.querySelector(".controls").addEventListener("click", function (event) {
   }
 });
 
-const typesCheckBox = {
-  p: ["parks", parks],
-  b: ["buildings", buildings],
-  m: ["museums", museums],
-  h: ["hrams", hrams],
-};
-
 // Создание пагинации
 function circlePagination() {
   for (index = 0; index < Math.ceil(linkList.length / 10); ++index) {
@@ -133,19 +126,6 @@ function cardInnerParent() {
   });
 }
 
-// Открытие филтров при мобильном разрешении
-const mobileFilterFunction = () => {
-  const toggleClasses = [
-    { element: filterBlock, className: "mobile__animation" },
-    { element: filterArrow, className: "arrow__animation" },
-    { element: shadowBlock, className: "mobile__shadow" },
-  ];
-
-  toggleClasses.forEach(({ element, className }) => {
-    element.classList.toggle(className);
-  });
-};
-
 // Обработка пагинации
 function pagination(page) {
   const allLinks = document.querySelectorAll(".cardLink");
@@ -182,44 +162,6 @@ function setShowBurgerMenu() {
   );
 }
 
-function showCheckbox(type) {
-  const linksCard = document.querySelectorAll(".mini-link");
-  const linksCardextra = document.querySelectorAll(".cardLink");
-  let valueCheckbox = 0;
-  checkBox.forEach((checkbox) => {
-    if (checkbox.checked === false) valueCheckbox += 1;
-  });
-
-  if (valueCheckbox === 4) {
-    linksCard.forEach((link) => {
-      link.classList.remove("hidePage");
-    });
-    linksCardextra.forEach((elink) => {
-      elink.classList.remove("hidePage");
-    });
-  }
-
-  checkBox.forEach((checkbox) => {
-    if (!checkbox.checked) return;
-    if (!typesCheckBox[type]) return;
-    localStorage.setItem(
-      typesCheckBox[type][0],
-      typesCheckBox[type][1].checked
-    );
-    viewElements();
-  });
-}
-
-// Фильтры
-function viewElement(elList, localItem) {
-  const isLocalItem = !localItem || localItem === "true";
-
-  elList.forEach((el) => {
-    if (!isLocalItem) return el.classList.remove("hidePage");
-    el.classList.add("hidePage");
-  });
-}
-
 async function newOrder() {
   userLogin = localStorage.getItem("login");
   userPassword = localStorage.getItem("password");
@@ -247,74 +189,6 @@ async function newOrder() {
   setTimeout(function () {
     errorBlock.classList.replace("error__open", "error__close");
   }, 3000);
-}
-
-function viewElements() {
-  const states = {
-    buildings: localStorage.getItem("buildings"),
-    parks: localStorage.getItem("parks"),
-    museums: localStorage.getItem("museums"),
-    hrams: localStorage.getItem("hrams"),
-  };
-
-  const elements = {
-    buildings: Buildings,
-    parks: Parks,
-    museums: Museums,
-    hrams: Hrams,
-  };
-
-  Object.entries(states).forEach(([key, state]) => {
-    viewElement(elements[key], state);
-  });
-
-  if (!Object.values(states).every((state) => state === "false")) return;
-
-  Object.values(elements).forEach((element) => {
-    viewElement(element, true);
-  });
-}
-
-function reset() {
-  radioBlock.forEach((el) => (el.checked = false));
-
-  localStorage.setItem("buildings", false);
-  localStorage.setItem("hrams", false);
-  localStorage.setItem("museums", false);
-  localStorage.setItem("parks", false);
-
-  viewElements();
-}
-
-function findCitiesByTitle(searchString) {
-  const lowerCaseSearchString = searchString.toLowerCase();
-
-  return cityList
-    .filter((city) => city.Title.toLowerCase().includes(lowerCaseSearchString))
-    .map((city) => city.indexObj);
-}
-
-function seeSearch() {
-  const blocks = document.querySelectorAll(".red-line__big__text-input");
-  blocks.forEach((input) => {
-    request = input.value;
-    console.log(request);
-    if (request === "") return;
-
-    const searchList = findCitiesByTitle(request);
-    const linksCard = document.querySelectorAll(".mini-link");
-
-    linksCard.forEach((link) => {
-      const indexStr = link.getAttribute("data-index");
-      const index = indexStr !== null ? Number(indexStr) : NaN;
-
-      if (!isNaN(index) && !searchList.includes(index)) {
-        return link.classList.add("hidePage");
-      }
-
-      link.classList.remove("hidePage");
-    });
-  });
 }
 
 function showCard(index) {
@@ -395,7 +269,7 @@ async function getCards() {
 
 async function getLinks() {
   try {
-    const response = await fetch(CARDS_URL + "redline/linkList", {
+    const response = await fetch(LINK_URL, {
       method: "GET",
     });
     const data = await response.json();
