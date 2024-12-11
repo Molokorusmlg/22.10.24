@@ -1,3 +1,5 @@
+const user = new User();
+
 // Бургер меню
 function setShowBurgerMenu() {
   const burger = document.querySelector(".burger__meny");
@@ -43,35 +45,6 @@ function showAdminPanel() {
   const parentLinks = document.querySelector(".admin__panel__link");
   const adminPanelLink = `<a class = "header__link" href="../adminpanel/adminpanel.html">Админ-панель</a>`;
   parentLinks.innerHTML = adminPanelLink;
-}
-
-async function newOrder() {
-  userLogin = localStorage.getItem("login");
-  userPassword = localStorage.getItem("password");
-
-  inputLogin = document.querySelector(".modal__input_login").value;
-  inputPassword = document.querySelector(".modal__input_password").value;
-
-  if (userLogin === inputLogin && userPassword === inputPassword) {
-    await updateOrders(localStorage.getItem("userId"));
-
-    const sucsessBlock = document.querySelector(".sucsess");
-    sucsessBlock.classList.replace("sucsess__close", "sucsess__open");
-
-    setTimeout(function () {
-      sucsessBlock.classList.replace("sucsess__open", "sucsess__close");
-    }, 3000);
-
-    return;
-  }
-
-  const errorBlock = document.querySelector(".error");
-
-  errorBlock.classList.replace("error__close", "error__open");
-
-  setTimeout(function () {
-    errorBlock.classList.replace("error__open", "error__close");
-  }, 3000);
 }
 
 // Убираем текст, открываем полностью карту города
@@ -162,23 +135,6 @@ async function getFullData() {
     });
   } catch (error) {
     console.log(error);
-  }
-}
-
-async function updateOrders(userId) {
-  const orders = localStorage.getItem("orders");
-  const newOrders = Number(orders) + 1;
-  try {
-    await fetch(USERS_URL + "users/" + userId, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ orders: newOrders }),
-    });
-    localStorage.setItem("orders", newOrders);
-  } catch (error) {
-    console.error("Произошла ошибка:", error);
   }
 }
 

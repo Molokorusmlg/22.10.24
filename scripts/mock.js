@@ -64,7 +64,7 @@ const mapEkb = document.querySelector(".map_small");
 
 // URL для api
 const CARDS_URL = "https://67275558302d03037e70ad42.mockapi.io/api/";
-const USERS_URL = "https://6750125869dc1669ec198aa9.mockapi.io/users/";
+const USERS_URL = "https://6750125869dc1669ec198aa9.mockapi.io/";
 const LINK_URL = "https://6750125869dc1669ec198aa9.mockapi.io/linkList";
 const REVIEWS_URL =
   "https://67275558302d03037e70ad42.mockapi.io/api/redline/reviews";
@@ -89,6 +89,12 @@ let cardsData = []; // elementfind.js
 let linksData = []; // elementfind.js
 let baseData = []; // elementfind.js
 
+const pageNotFound = `<h1 class="not_error">404</h1>
+    <h1 class="not_tile">Упс, такой страницы не существует</h1>
+    <a href="../../pages/mainpage/mainpage.html" class="not_link"
+      >Перейдите на главную страницу</a
+    >`;
+
 const attractionPage = `<div class="attractions__navigate">
         <div class="attractions__navigate__logo">
           <img
@@ -104,7 +110,7 @@ const attractionPage = `<div class="attractions__navigate">
 
           <div
             class="attractions__navigate__sort__likes"
-            onclick="likeChange()"
+            onclick="card.likeChange()"
           >
             <img
               src="../../assets/img/Heart.svg"
@@ -121,7 +127,7 @@ const attractionPage = `<div class="attractions__navigate">
 
           <div
             class="attractions__navigate__sort__views"
-            onclick="viewsChange()"
+            onclick="card.viewsChange()"
           >
             <img
               src="../../assets/img/Eye.svg"
@@ -151,7 +157,7 @@ const attractionPage = `<div class="attractions__navigate">
               type="text"
               id="search_input"
               class="attractions__navigate__search__box_input"
-              onchange="getCards()"
+              onchange="card.getCardsAttraction()"
             />
             <img
               src="../../assets/img/searchicon.svg"
@@ -174,7 +180,7 @@ const attractionPage = `<div class="attractions__navigate">
                 id="buildings-attractions"
                 type="checkbox"
                 class="attractions__navigate__filters__block__building-input"
-                onchange="getCards()"
+                onchange="card.getCardsAttraction()"
               />
             </div>
 
@@ -188,7 +194,7 @@ const attractionPage = `<div class="attractions__navigate">
                 id="parks-attractions"
                 type="checkbox"
                 class="attractions__navigate__filters__block__parks-input"
-                onchange="getCards()"
+                onchange="card.getCardsAttraction()"
               />
             </div>
 
@@ -202,7 +208,7 @@ const attractionPage = `<div class="attractions__navigate">
                 id="museums-attractions"
                 type="checkbox"
                 class="attractions__navigate__filters__block__museums-input"
-                onchange="getCards()"
+                onchange="card.getCardsAttraction()"
               />
             </div>
 
@@ -216,7 +222,7 @@ const attractionPage = `<div class="attractions__navigate">
                 id="temple-attractions"
                 type="checkbox"
                 class="attractions__navigate__filters__block__temple-input"
-                onchange="getCards()"
+                onchange="card.getCardsAttraction()"
               />
             </div>
           </div>
@@ -242,6 +248,8 @@ document.querySelector(".exit").addEventListener("click", () => {
   window.location.href = BASE_URL + "../register/register.html";
 });
 
+user = new User();
+
 document
   .querySelector(".profile__block_new_order_save")
   .addEventListener("click", () => {
@@ -260,5 +268,5 @@ document
       login: `${newLogin}`,
       password: `${newPassword}`,
     };
-    updateUser(userId, updatedData);
+    user.updateUser(userId, updatedData);
   });

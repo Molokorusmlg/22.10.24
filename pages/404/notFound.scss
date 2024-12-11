@@ -24,12 +24,13 @@
   font-weight: 800;
 }
 
-body {
+.body {
   @include flex(column, center, center);
   gap: 30px;
   height: 100vh;
   background-color: #232323;
   color: #fff;
+  border-radius: 7px;
 }
 
 .not {

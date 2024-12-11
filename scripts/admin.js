@@ -1,3 +1,5 @@
+const user = new User();
+
 function cardCreate(img, map, text, index) {
   return `<div class = "red-line__marshruts__card-box_card" onclick = "deleteCard(${index})">
     <div class="red-line__marshruts__card-box_card-img">
@@ -120,18 +122,6 @@ async function getCards() {
   }
 }
 
-async function getUsers() {
-  try {
-    const response = await fetch(USERS_URL + "users", {
-      method: "GET",
-    });
-    const data = await response.json();
-    userList = data;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
 async function loadingPage() {
   const isAdmin = localStorage.getItem("admin");
   if (isAdmin == "false") {
@@ -140,7 +130,7 @@ async function loadingPage() {
     return;
   }
   await getCards();
-  await getUsers();
+  await user.getUsers();
   await createAllCards();
   await createUsers();
   Loading.classList.remove("active__loading");

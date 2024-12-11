@@ -1,3 +1,5 @@
+const user = new User();
+
 function createInfo(name, login, password) {
   return `<div class="profile__block_information_name">
               <input
@@ -53,41 +55,6 @@ function innerInfo(name, login, password) {
 const backToMainPage = () => {
   window.location.href = "../mainpage/mainpage.html";
 };
-
-async function updateUser(userId, updatedData) {
-  try {
-    await fetch(USERS_URL + "users/" + userId, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedData),
-    });
-    localStorage.setItem("login", updatedData.login);
-    await getUsers();
-    innerOrders(localStorage.getItem("orders"));
-  } catch (error) {
-    console.error("Произошла ошибка:", error);
-  }
-}
-
-async function updateOrders(userId) {
-  const orders = localStorage.getItem("orders");
-  const newOrders = Number(orders) + 1;
-  try {
-    await fetch(USERS_URL + "users/" + userId, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ orders: newOrders }),
-    });
-    await getUsers();
-    innerOrders(localStorage.getItem("orders"));
-  } catch (error) {
-    console.error("Произошла ошибка:", error);
-  }
-}
 
 async function getUsers() {
   try {

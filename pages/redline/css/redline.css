@@ -636,7 +636,7 @@
 }
 
 .loading-complete {
-  animation: loading-complete-animation 0.7s ease-in-out;
+  animation: loading-complete-animation 0.1s ease-in-out;
   display: none;
 }
 

@@ -68,7 +68,7 @@
         />
       </form>
       <div class="modal__form-button__box">
-        <button onclick="newOrder()" class="modal__form-button">
+        <button onclick="user.newOrder()" class="modal__form-button">
           <p class="modal__form-button-text">Купить</p>
         </button>
       </div>
@@ -144,91 +144,6 @@
         </div>
       </div>
     </div>
-    <div class="mobile__block">
-      <div class="red-line__big__text mobile">
-        <h1 class="red-line__big__text-title">Красная Линия</h1>
-        <div class="red-line__big__text-search__box">
-          <input
-            class="red-line__big__text-input red-line__big__text-input"
-            oninput="seeSearch()"
-            id="search-mobile"
-            type="text"
-            placeholder="Найти по слову"
-          />
-        </div>
-        <div class="red-line__big__text_inputbox">
-          <div class="red-line__big__text_colum__ceck__buttons">
-            <div class="red-line__big__text_check__button__box">
-              <label class="red-line__big__text-label" for="parks-mobile"
-                >Парки</label
-              >
-              <input
-                onclick="showCheckbox('p')"
-                class="check"
-                id="parks-mobile"
-                type="checkbox"
-                value="парки"
-              />
-            </div>
-
-            <div class="red-line__big__text_check__button__box">
-              <label class="red-line__big__text-label" for="buildings-mobile"
-                >здания</label
-              >
-              <input
-                onclick="showCheckbox('b')"
-                class="check"
-                id="buildings-mobile"
-                type="checkbox"
-                value="здания"
-              />
-            </div>
-          </div>
-
-          <div class="red-line__big__text_colum__ceck__buttons">
-            <div class="red-line__big__text_check__button__box">
-              <label class="red-line__big__text-label" for="museums-mobile"
-                >музеи</label
-              >
-              <input
-                onclick="showCheckbox('m')"
-                class="check"
-                id="museums-mobile"
-                type="checkbox"
-                value="музеи"
-              />
-            </div>
-
-            <div class="red-line__big__text_check__button__box">
-              <label class="red-line__big__text-label" for="hrams-mobile"
-                >храмы</label
-              >
-              <input
-                onclick="showCheckbox('h')"
-                class="check"
-                id="hrams-mobile"
-                type="checkbox"
-                value="храмы"
-              />
-            </div>
-          </div>
-        </div>
-        <button class="red-line__big__text_button" onclick="reset()">
-          <p>Сбросить</p>
-        </button>
-        <div class="pagination"></div>
-        <hr class="red-line__big__text-line" />
-        <div class="red-line__big__text-text"></div>
-      </div>
-    </div>
-    <div class="mobile__arrow" onclick="mobileFilterFunction()">
-      <img
-        class="mobile__arrow__img"
-        src="../../assets/img/arrowBack.svg"
-        alt=""
-      />
-    </div>
-    <div class="mobile__shadow__hide"><span></span></div>
     <div class="exit" onclick="goToAttraction()">
       <p class="exit__text">Достопремечательности</p>
       <img class="exit__img" src="../../assets/img/arrowBack.svg" alt="" />
@@ -250,6 +165,8 @@
       </div>
     </div>
     <script src="../../scripts/mock.js"></script>
+    <script src="../../scripts/cards.js"></script>
+    <script src="../../scripts/user.js"></script>
     <script src="../../scripts/global.js"></script>
   </body>
 </html>
