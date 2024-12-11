@@ -143,4 +143,34 @@ class User {
       console.log(error);
     }
   }
+
+  // Создание карточек с данными пользователя
+  createUsers() {
+    const parentUsers = document.querySelector(".users");
+    userList.forEach((user) => {
+      const userBlock = document.createElement("div");
+      userBlock.classList.add("users__block");
+      const user_final = this.adminUsersCreate(
+        user.name,
+        user.login,
+        user.password
+      );
+      userBlock.innerHTML = user_final;
+      parentUsers.appendChild(userBlock);
+    });
+  }
+
+  // Шаблон карточки админа
+  adminUsersCreate(name, login, password) {
+    return `<div class = 'users__field_block'>
+              <p class = "users__name">Name: ${name}</p>
+            </div>
+            <div class = 'users__field_block'>
+              <p class = "users__login">Login: ${login}</p>
+            </div>
+            <div class = 'users__field_block'>
+              <p class = "users__password">Password: ${password}</p>
+            </div>
+          `;
+  }
 }
