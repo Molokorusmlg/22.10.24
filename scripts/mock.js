@@ -89,12 +89,14 @@ let cardsData = []; // elementfind.js
 let linksData = []; // elementfind.js
 let baseData = []; // elementfind.js
 
+// Данные не найдены
 const pageNotFound = `<h1 class="not_error">404</h1>
     <h1 class="not_tile">Упс, такой страницы не существует</h1>
     <a href="../../pages/mainpage/mainpage.html" class="not_link"
       >Перейдите на главную страницу</a
     >`;
 
+// Страница достопремечательносей
 const attractionPage = `<div class="attractions__navigate">
         <div class="attractions__navigate__logo">
           <img
@@ -241,7 +243,7 @@ document
   .querySelector(".profile__block_new_order_button")
   .addEventListener("click", () => {
     const userId = localStorage.getItem("userId");
-    updateOrders(userId);
+    user.updateOrders(userId);
   });
 
 document.querySelector(".exit").addEventListener("click", () => {

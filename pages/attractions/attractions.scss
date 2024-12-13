@@ -55,7 +55,7 @@
   }
 
   &__card {
-    @include flex(row, space-between, center);
+    @include flex(row, space-between, none);
     background-color: #fff;
     padding: 10px 40px 10px 10px;
     border-radius: 7px;
@@ -68,7 +68,8 @@
     }
 
     &__likes {
-      @include flex(row, center, center);
+      @include flex(row, space-around, center);
+      width: 100px;
       gap: 10px;
 
       &_photo {
@@ -78,7 +79,7 @@
     }
 
     &__text {
-      @include flex(column, none, none);
+      @include flex(column, center, none);
       gap: 10px;
       max-width: 600px;
 

@@ -19,6 +19,7 @@ class Modal {
     );
   }
 
+  // Открвтие модального окна
   modalMeny() {
     const elements = {
       modal: {
@@ -50,6 +51,7 @@ class Modal {
     });
   }
 
+  // Закрытие модального окна
   modalClose() {
     const elements = {
       modal: {

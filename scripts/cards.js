@@ -79,7 +79,8 @@ class Card {
           attraction.Img_scr,
           attraction.Title,
           attraction.Text,
-          attraction.likes
+          attraction.likes,
+          attraction.id
         );
         card.innerHTML = card_iner;
         parentBlock.appendChild(card);
@@ -329,7 +330,7 @@ class Card {
   }
 
   // шаблонизатор карточки на странице с достопремичательностями
-  attractionCreateCard(img, title, text, likes) {
+  attractionCreateCard(img, title, text, likes, id) {
     return `
           <div class="attractions__card__img">
             <img
@@ -344,7 +345,7 @@ class Card {
               ${text}
             </p>
           </div>
-          <div class="attractions__card__likes">
+          <div class="attractions__card__likes" onclick='sendLikes(${id})'>
             <img
               src="../../assets/img/no-likes.svg"
               alt=""

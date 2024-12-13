@@ -9,20 +9,21 @@ class User {
       const users = data;
       const loginValue = document.querySelector(".login__signin").value;
       const passwordValue = document.querySelector(".password__signin").value;
-      let matches = 0;
-      users.forEach((user) => {
-        if (user.password === passwordValue && user.login === loginValue) {
-          localStorage.setItem("login", loginValue);
-          matches = 1;
-          window.location.href = "../mainpage/mainpage.html";
-        }
+
+      const user = await users.find((user) => {
+        return user.password === passwordValue && user.login === loginValue;
       });
-      if (matches === 0) {
-        errorBlock.classList.add("animation");
-        setTimeout(function () {
-          errorBlock.classList.remove("animation");
-        }, 3000);
+
+      if (user) {
+        localStorage.setItem("login", loginValue);
+        window.location.href = "../mainpage/mainpage.html";
+        return;
       }
+
+      errorBlock.classList.add("animation");
+      setTimeout(function () {
+        errorBlock.classList.remove("animation");
+      }, 3000);
     } catch (error) {
       console.log(error);
     }
@@ -70,6 +71,8 @@ class User {
 
   // Обновление данных пользователя
   async updateUser(userId, updatedData) {
+    Loading.classList.add("active__loading");
+    Loading.classList.remove("loading-complete");
     try {
       await fetch(USERS_URL + "users/" + userId, {
         method: "PUT",
@@ -79,8 +82,11 @@ class User {
         body: JSON.stringify(updatedData),
       });
       localStorage.setItem("login", updatedData.login);
-      await getUsers();
+      await this.setUpUserDataInLocalStorage();
+
       innerOrders(localStorage.getItem("orders"));
+      Loading.classList.remove("active__loading");
+      Loading.classList.add("loading-complete");
     } catch (error) {
       console.error("Произошла ошибка:", error);
     }
@@ -88,11 +94,13 @@ class User {
 
   // Новый заказ у пользователя
   async newOrder() {
-    userLogin = localStorage.getItem("login");
-    userPassword = localStorage.getItem("password");
+    const userLogin = localStorage.getItem("login");
+    const userPassword = localStorage.getItem("password");
 
-    inputLogin = document.querySelector(".modal__input_login").value;
-    inputPassword = document.querySelector(".modal__input_password").value;
+    const inputLogin = document.querySelector(".modal__input_login").value;
+    const inputPassword = document.querySelector(
+      ".modal__input_password"
+    ).value;
 
     if (userLogin === inputLogin && userPassword === inputPassword) {
       await updateOrders(localStorage.getItem("userId"));
@@ -115,8 +123,12 @@ class User {
 
   // Обновляем данные на клиенте пользователдя, а так же отправляем запрос на изменеия данных серверу
   async updateOrders(userId) {
+    Loading.classList.add("active__loading");
+    Loading.classList.remove("loading-complete");
     const orders = localStorage.getItem("orders");
     const newOrders = Number(orders) + 1;
+    Loading.classList.add("active__loading");
+    Loading.classList.remove("loading-complete");
     try {
       await fetch(USERS_URL + "users/" + userId, {
         method: "PUT",
@@ -126,6 +138,15 @@ class User {
         body: JSON.stringify({ orders: newOrders }),
       });
       localStorage.setItem("orders", newOrders);
+
+      const parentBlock = document.querySelector(
+        ".profile__block_information_orders_list"
+      );
+
+      parentBlock.innerHTML = "";
+      await innerOrders(localStorage.getItem("orders"));
+      Loading.classList.remove("active__loading");
+      Loading.classList.add("loading-complete");
     } catch (error) {
       console.error("Произошла ошибка:", error);
     }
@@ -158,6 +179,48 @@ class User {
       userBlock.innerHTML = user_final;
       parentUsers.appendChild(userBlock);
     });
+  }
+
+  // Находим нашего пользоваетля по введденным данным
+  async findUser() {
+    try {
+      const response = await fetch(USERS_URL + "users", {
+        method: "GET",
+      });
+      const data = await response.json();
+      userList = data;
+      const currentUser = await userList.find(({ login }) => {
+        return login === localStorage.getItem("login");
+      });
+
+      if (!currentUser) return;
+      const { name, login, password, orders, id } = currentUser;
+
+      innerInfo(name, login, password);
+      localStorage.setItem("orders", orders);
+      localStorage.setItem("userId", id);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  // Получаем данные всех пользователей и записываем в локал стродж нашего зареганного пользователя
+  async setUpUserDataInLocalStorage() {
+    try {
+      const response = await fetch(USERS_URL + "users", {
+        method: "GET",
+      });
+      const data = await response.json();
+      const userList = data;
+      userList.forEach((user) => {
+        if (!(user.login === localStorage.getItem("login"))) return;
+        localStorage.setItem("name", user.name);
+        localStorage.setItem("admin", user.admin);
+        localStorage.setItem("password", user.password);
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   // Шаблон карточки админа

@@ -94,14 +94,30 @@ async function sendComents() {
   }
 }
 
-function gallery() {
-  const imgBlock = document.querySelector(".page__card_img-box");
-  const arrow = document.querySelector(".arrow");
-  const arrowReverse = document.querySelector(".arrow-reverse");
+async function sendLikes(cardId) {
+  const response = await fetch(CARDS_URL + "redline/cardList/" + cardId, {
+    method: "GET",
+  });
+  const data = await response.json();
+  cardLikes = data.likes;
+  cardLikes += 1;
+  data.likes = cardLikes;
 
-  imgBlock.classList.toggle("gallery");
-  arrow.classList.toggle("gallery-arrow");
-  arrowReverse.classList.toggle("gallery-arrow-reverse");
+  await fetch(CARDS_URL + "redline/cardList/" + cardId, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+}
+
+function gallery() {
+  document.querySelector(".page__card_img-box").classList.toggle("gallery");
+  document.querySelector(".arrow").classList.toggle("gallery-arrow");
+  document
+    .querySelector(".arrow-reverse")
+    .classList.toggle("gallery-arrow-reverse");
 }
 
 // Карточка

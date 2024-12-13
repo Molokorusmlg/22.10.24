@@ -6,6 +6,7 @@ function createInfo(name, login, password) {
                 class="profile__block_information_name_input profile__input"
                 type="text"
                 placeholder="Фио: ${name}"
+                value = '${name}'
               />
             </div>
             <div class="profile__block_information_login">
@@ -13,6 +14,7 @@ function createInfo(name, login, password) {
                 class="profile__block_information_login_input profile__input"
                 type="text"
                 placeholder="Логин: ${login}"
+                value = '${login}'
               />
             </div>
             <div class="profile__block_information_password">
@@ -20,6 +22,7 @@ function createInfo(name, login, password) {
                 class="profile__block_information_password_input profile__input"
                 type="text"
                 placeholder="Пароль: ${password}"
+                value = '${password}'
               />
             </div>
             <div class="profile__block_information_orders">
@@ -56,30 +59,8 @@ const backToMainPage = () => {
   window.location.href = "../mainpage/mainpage.html";
 };
 
-async function getUsers() {
-  try {
-    const response = await fetch(USERS_URL + "users", {
-      method: "GET",
-    });
-    const data = await response.json();
-    userList = data;
-    const currentUser = await userList.find(({ login }) => {
-      return login === localStorage.getItem("login");
-    });
-
-    if (!currentUser) return;
-    const { name, login, password, orders, id } = currentUser;
-
-    innerInfo(name, login, password);
-    localStorage.setItem("orders", orders);
-    localStorage.setItem("userId", id);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
 async function loadingPage() {
-  await getUsers();
+  await user.findUser();
   await innerOrders(localStorage.getItem("orders"));
   Loading.classList.remove("active__loading");
   Loading.classList.add("loading-complete");
