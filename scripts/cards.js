@@ -200,6 +200,7 @@ class Card {
     }
   }
 
+  // Вставляем карточки в админ панельку
   adminCreateAllCards() {
     const parentCards = document.querySelector(".cards");
     cityList.forEach((city) => {
@@ -257,6 +258,7 @@ class Card {
     }
   }
 
+  // шаблонизатор карточки в админ панелеи
   adminCardCreate(img, map, text, index) {
     return `<div class = "red-line__marshruts__card-box_card" onclick = "deleteCard(${index})">
     <div class="red-line__marshruts__card-box_card-img">
@@ -326,6 +328,7 @@ class Card {
               </div>`;
   }
 
+  // шаблонизатор карточки на странице с достопремичательностями
   attractionCreateCard(img, title, text, likes) {
     return `
           <div class="attractions__card__img">
@@ -351,7 +354,7 @@ class Card {
           </div>
     `;
   }
-
+  // Подсталяем данные для "уникалььноц" страницы
   unicalInnerCard(cardData) {
     const parentBlock = document.querySelector(".page");
     const cardFinal = this.unicalCardCreate(
@@ -366,6 +369,7 @@ class Card {
     attractionPageClass.innerHTML = "";
   }
 
+  // шаблонизатор карточки на "уникальной" стрницы
   unicalCardCreate(img, map, text, title) {
     return `<div class="page__title">
         <h1 class="page__title-text">${title}</h1>

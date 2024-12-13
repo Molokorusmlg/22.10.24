@@ -1,6 +1,7 @@
 const user = new User();
 const card = new Card();
 const slider = new Slider();
+const modal = new Modal();
 
 // Переключение фильтров, запись в локалстроедж
 document.querySelectorAll(".check").forEach((el) => {
