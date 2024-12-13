@@ -9,8 +9,7 @@ function reviewsCreate(userName, text) {
 }
 
 function openForm() {
-  const form = document.querySelector(".form__hide_block");
-  form.classList.toggle("close__form");
+  document.querySelector(".form__hide_block").classList.toggle("close__form");
 }
 
 // Main
