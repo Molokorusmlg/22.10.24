@@ -1,3 +1,5 @@
+@import "../../global.scss";
+
 .red-line {
   @include container(0px, 10px, 0, padding);
   @include flex(row, 0, 0);
@@ -158,7 +160,6 @@
 
   &__marshruts {
     @include flex(column, 0, center);
-    max-width: 80vw;
     width: 100%;
 
     &_container {

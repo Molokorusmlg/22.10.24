@@ -363,6 +363,11 @@
 .page__card__text {
   width: 50%;
 }
+@media (max-width: 768px) {
+  .page__card__text {
+    width: 90%;
+  }
+}
 .page__card__text-paragraph {
   text-align: center;
   font-family: Montserrat;

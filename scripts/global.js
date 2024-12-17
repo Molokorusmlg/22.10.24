@@ -32,7 +32,7 @@ function goToAttraction() {
 
 function goToNextHTML() {
   localStorage.setItem("CurrentCard", curentCardIndex);
-  window.location.href = "../unical/unicalPage.html";
+  window.location.href = "../attractions/attractions.html";
 }
 
 document.querySelector(".modal__form-button").addEventListener("click", () => {

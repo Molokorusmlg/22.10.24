@@ -455,6 +455,11 @@
 .page__card__text {
   width: 50%;
 }
+@media (max-width: 768px) {
+  .page__card__text {
+    width: 90%;
+  }
+}
 .page__card__text-paragraph {
   text-align: center;
   font-family: Montserrat;
@@ -565,6 +570,9 @@
   src: url("../../../assets/fonts/MontserratAlternates-ExtraBold.ttf");
   font-weight: 800;
 }
+.attractions {
+  background-color: #eee;
+}
 .attractions__list {
   display: flex;
   flex-direction: column;
@@ -574,6 +582,35 @@
   padding: 40px;
   background-color: #eee;
   min-height: 85vh;
+}
+@media (max-width: 1080px) {
+  .attractions__list {
+    padding: 10px;
+  }
+}
+.attractions__list__arrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: 0.3s ease-in-out;
+  display: none;
+}
+@media (max-width: 768px) {
+  .attractions__list__arrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.attractions__list__arrow_img {
+  width: 30px;
+  height: 30px;
+  rotate: 90deg;
 }
 .attractions__list__cards_block {
   display: flex;
@@ -587,6 +624,11 @@
   padding: 10px;
   border-radius: 7px;
   color: #fff;
+}
+@media (max-width: 768px) {
+  .attractions__list_title {
+    font-size: 15px;
+  }
 }
 .attractions__list_title_box {
   display: flex;
@@ -631,20 +673,47 @@
   gap: 10px;
   max-width: 600px;
 }
+@media (max-width: 1080px) {
+  .attractions__card__text {
+    max-width: 300px;
+  }
+}
 .attractions__card__text_title {
   color: #d00000;
 }
+@media (max-width: 768px) {
+  .attractions__card__text_title {
+    font-size: 15px;
+  }
+}
 .attractions__card__text_paragraph {
   color: rgba(225, 36, 36, 0.7254901961);
+}
+@media (max-width: 768px) {
+  .attractions__card__text_paragraph {
+    font-size: 13px;
+  }
 }
 .attractions__card__img {
   width: 300px;
   height: 200px;
 }
+@media (max-width: 768px) {
+  .attractions__card__img {
+    width: 200px;
+    height: 100px;
+  }
+}
 .attractions__card__img_photo {
   width: 300px;
   height: 200px;
   border-radius: 7px;
+}
+@media (max-width: 768px) {
+  .attractions__card__img_photo {
+    width: 200px;
+    height: 100px;
+  }
 }
 .attractions__navigate {
   display: flex;
@@ -655,6 +724,19 @@
   background-color: #d00000;
   color: #fff;
   min-height: 15vh;
+  position: relative;
+  top: 0px;
+  transition: 0.4s ease-in-out;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .attractions__navigate {
+    display: flex;
+    flex-direction: column;
+    justify-content: 0;
+    align-items: center;
+    gap: 15px;
+  }
 }
 .attractions__navigate__filters {
   display: flex;
@@ -791,10 +873,15 @@
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  top: 16vh;
+  top: 20vh;
   left: 10px;
   width: 80px;
   transition: 0.4s ease-in-out;
+}
+@media (max-width: 467px) {
+  .exit {
+    top: 40px;
+  }
 }
 .exit:hover {
   transform: translate(-10px);
@@ -981,6 +1068,15 @@
 
 .close__form {
   transform: translateY(-615px);
+}
+
+.close_nav {
+  position: relative;
+  top: -350px;
+}
+
+.close_arrow {
+  rotate: -180deg;
 }
 
 @keyframes card_visible {

@@ -69,6 +69,8 @@ const LINK_URL = "https://6750125869dc1669ec198aa9.mockapi.io/linkList";
 const REVIEWS_URL =
   "https://67275558302d03037e70ad42.mockapi.io/api/redline/reviews";
 
+const FULL_CARDS_URL = "https://675ebc5f1f7ad24269967ed4.mockapi.io/Crads/";
+
 const BASE_URL = "../pages/";
 
 // admin.js
@@ -88,6 +90,11 @@ let userList = []; // admin.js
 let cardsData = []; // elementfind.js
 let linksData = []; // elementfind.js
 let baseData = []; // elementfind.js
+
+// Админ панель блоки для заполнения
+const cardBlock = document.querySelector(".cards");
+const usersBlock = document.querySelector(".users");
+const reviewsBlock = document.querySelector(".reviews");
 
 // Данные не найдены
 const pageNotFound = `<h1 class="not_error">404</h1>

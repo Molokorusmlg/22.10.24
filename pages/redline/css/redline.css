@@ -9,6 +9,17 @@
   list-style-type: none;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Pt;
+  font-weight: 800;
+  cursor: default;
+  scroll-behavior: smooth;
+  list-style-type: none;
+}
+
 .red-line {
   padding-left: 0px;
   padding-right: 10px;
@@ -195,7 +206,6 @@
   flex-direction: column;
   justify-content: 0;
   align-items: center;
-  max-width: 80vw;
   width: 100%;
 }
 .red-line__marshruts_container {

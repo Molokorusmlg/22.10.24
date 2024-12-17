@@ -253,6 +253,10 @@
 
     &__text {
       width: 50%;
+
+      @include adaptive("table") {
+        width: 90%;
+      }
       &-paragraph {
         text-align: center;
         font-family: Montserrat;

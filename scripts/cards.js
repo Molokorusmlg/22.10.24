@@ -195,9 +195,7 @@ class Card {
         }</a>`;
       }
 
-      paginationBlock.forEach((block) => {
-        block.appendChild(links);
-      });
+      document.querySelector(".pagination").appendChild(links);
     }
   }
 
@@ -359,9 +357,11 @@ class Card {
   unicalInnerCard(cardData) {
     const parentBlock = document.querySelector(".page");
     const cardFinal = this.unicalCardCreate(
-      cardData.Img_scr,
-      cardData.Map_scr,
-      cardData.Text,
+      cardData.img1,
+      cardData.img2,
+      cardData.img3,
+      cardData.map,
+      cardData.text,
       cardData.Title
     );
     parentBlock.innerHTML = cardFinal;
@@ -371,7 +371,8 @@ class Card {
   }
 
   // шаблонизатор карточки на "уникальной" стрницы
-  unicalCardCreate(img, map, text, title) {
+  unicalCardCreate(img, img2, img3, map, text, title) {
+    const userLogin = localStorage.getItem("name");
     return `<div class="page__title">
         <h1 class="page__title-text">${title}</h1>
       </div>
@@ -386,20 +387,16 @@ class Card {
             class="page__card_img-photo active"
           />
           <img
-            src=${img}
+            src=${img2}
             alt=""
             class="page__card_img-photo nonActive"
           />
           <img
-            src=${img}
+            src=${img3}
             alt=""
             class="page__card_img-photo nonActive"
           />
-          <img
-            src=${img}
-            alt=""
-            class="page__card_img-photo nonActive"
-          />
+        
           
         </div>
         <img onclick='slider.goPreviosImg()' src="../../assets/img/arrowBack.svg" alt="" class='controls arrow-reverse' />
@@ -435,7 +432,7 @@ class Card {
             </div>
               <div class='form__input__block'>
                 <label class='form__input__label' for='nameInput'>Имя</label>
-                <input required  id='nameInput' type='text' class='form__input' placeholder="Имя"/>
+                <input required  id='nameInput' type='text' class='form__input' placeholder="Имя" value='${userLogin}'/>
               </div>
               <div class='form__input__block'>
                 <label class='form__input__label' for='nameInput'>Текст</label>

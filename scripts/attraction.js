@@ -38,8 +38,7 @@ function attractionPageCreate() {
   const parentBlockAttractionPage = document.querySelector(".attractions");
   parentBlockAttractionPage.innerHTML = attractionPage;
 
-  card.circlePagination();
-  card.getCardsAttraction();
+  loading();
 }
 
 function goToUnicalPage(index) {
@@ -119,13 +118,23 @@ function gallery() {
     .classList.toggle("gallery-arrow-reverse");
 }
 
+function filtersMeny() {
+  document
+    .querySelector(".attractions__navigate")
+    .classList.toggle("close_nav");
+  document
+    .querySelector(".attractions__list__arrow")
+    .classList.toggle("close_arrow");
+}
+
 // Карточка
 async function createUnicalPage() {
-  const response = await fetch(CARDS_URL + "redline/cardList/" + unicalPage, {
+  const response = await fetch(FULL_CARDS_URL + unicalPage, {
     method: "GET",
   });
 
   const cardData = await response.json();
+  console.log(cardData);
 
   await card.unicalInnerCard(cardData);
   await getReviews(unicalPage);
