@@ -92,6 +92,10 @@
     transition: 0.4s ease-in-out;
     box-shadow: 0px 4px 9.9px -5px #0000006e;
 
+    @include adaptive("mobile") {
+      padding: 0;
+    }
+
     &:hover {
       transform: scale(1);
     }
@@ -101,9 +105,19 @@
       width: 100px;
       gap: 10px;
 
+      @include adaptive("mobile") {
+        width: 50px;
+      }
+
+      &_counter {
+        @include adaptive("mobile") {
+          font-size: 10px;
+        }
+      }
+
       &_photo {
-        width: 30px;
-        height: 30px;
+        width: 10px;
+        height: 10px;
       }
     }
 
@@ -114,6 +128,10 @@
 
       @include adaptive("small-pc") {
         max-width: 300px;
+      }
+
+      @include adaptive("mobile") {
+        max-width: 150px;
       }
 
       &_title {
@@ -129,6 +147,8 @@
 
         @include adaptive("table") {
           font-size: 13px;
+          max-height: 52px;
+          overflow: scroll;
         }
       }
     }
@@ -148,7 +168,7 @@
         border-radius: 7px;
 
         @include adaptive("table") {
-          width: 200px;
+          width: 170px;
           height: 100px;
         }
       }
@@ -303,7 +323,7 @@
   transition: 0.4s ease-in-out;
 
   @include adaptive("mobile") {
-    top: 40px;
+    top: 125px;
   }
 
   &:hover {
