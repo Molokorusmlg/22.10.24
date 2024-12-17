@@ -235,6 +235,13 @@ const attractionPage = `<div class="attractions__navigate">
               />
             </div>
           </div>
+          <div class="attractions__list__arrow" onclick="filtersMeny()">
+            <img
+              src="../../assets/img/arrowBackWhite.svg"
+              alt="close_filters_panel"
+              class="attractions__list__arrow_img"
+            />
+          </div>
         </div>
       </div>
       <div class="attractions__list">
