@@ -16,23 +16,8 @@
   align-items: center;
 }
 
-@keyframes loading-complete-animation {
-  0% {
-    opacity: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    display: none;
-  }
-}
 .loading-complete {
-  animation: loading-complete-animation 0.7s ease-in-out;
+  animation: loading-complete-animation 0.1s ease-in-out;
   display: none;
 }
 
@@ -77,4 +62,20 @@
 .second,
 .third {
   background-color: #fff;
+}
+
+@keyframes loading-complete-animation {
+  0% {
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
 }

@@ -1,5 +1,7 @@
 @import "../../global.scss";
 @import "../../components_styles/loading_styles/loading_styles.scss";
+@import "../unical/unicalPage.scss";
+@import "../404/notFound.scss";
 
 @font-face {
   font-family: Pt;
@@ -26,12 +28,37 @@
 }
 
 .attractions {
+  background-color: #eee;
+
   &__list {
     @include flex(column, none, none);
     gap: 10px;
     padding: 40px;
     background-color: #eee;
     min-height: 85vh;
+
+    @include adaptive("small-pc") {
+      padding: 10px;
+    }
+
+    &__arrow {
+      @include flex(row, center, center);
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      transition: 0.3s ease-in-out;
+      display: none;
+
+      @include adaptive("table") {
+        @include flex(row, center, center);
+      }
+
+      &_img {
+        width: 30px;
+        height: 30px;
+        rotate: 90deg;
+      }
+    }
 
     &__cards_block {
       @include flex(column, none, none);
@@ -44,6 +71,10 @@
       border-radius: 7px;
       color: #fff;
 
+      @include adaptive("table") {
+        font-size: 15px;
+      }
+
       &_box {
         @include flex(row, center, center);
         width: 100%;
@@ -53,7 +84,7 @@
   }
 
   &__card {
-    @include flex(row, space-between, center);
+    @include flex(row, space-between, none);
     background-color: #fff;
     padding: 10px 40px 10px 10px;
     border-radius: 7px;
@@ -66,7 +97,8 @@
     }
 
     &__likes {
-      @include flex(row, center, center);
+      @include flex(row, space-around, center);
+      width: 100px;
       gap: 10px;
 
       &_photo {
@@ -76,16 +108,28 @@
     }
 
     &__text {
-      @include flex(column, none, none);
+      @include flex(column, center, none);
       gap: 10px;
       max-width: 600px;
 
+      @include adaptive("small-pc") {
+        max-width: 300px;
+      }
+
       &_title {
         color: $light-red;
+
+        @include adaptive("table") {
+          font-size: 15px;
+        }
       }
 
       &_paragraph {
         color: $red;
+
+        @include adaptive("table") {
+          font-size: 13px;
+        }
       }
     }
 
@@ -93,10 +137,20 @@
       width: 300px;
       height: 200px;
 
+      @include adaptive("table") {
+        width: 200px;
+        height: 100px;
+      }
+
       &_photo {
         width: 300px;
         height: 200px;
         border-radius: 7px;
+
+        @include adaptive("table") {
+          width: 200px;
+          height: 100px;
+        }
       }
     }
   }
@@ -107,6 +161,15 @@
     background-color: $light-red;
     color: #fff;
     min-height: 15vh;
+    position: relative;
+    top: 0px;
+    transition: 0.4s ease-in-out;
+    width: 100%;
+
+    @include adaptive("table") {
+      @include flex(column, 0, center);
+      gap: 15px;
+    }
 
     &__filters {
       @include flex(column, center, center);
@@ -203,13 +266,45 @@
   }
 }
 
+.reviews {
+  padding: 30px;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__card {
+    @include flex(row, space-between, center);
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 9.9px -5px #0000004f;
+
+    &_username {
+      color: $light-red;
+      font-size: 20px;
+    }
+
+    &_text {
+      font-size: 15px;
+      max-width: 70%;
+    }
+  }
+}
+
 .exit {
   @include flex(row, space-between, center);
   position: absolute;
-  top: 16vh;
+  top: 20vh;
   left: 10px;
   width: 80px;
   transition: 0.4s ease-in-out;
+
+  @include adaptive("mobile") {
+    top: 40px;
+  }
 
   &:hover {
     transform: translate(-10px);
@@ -241,4 +336,190 @@
 
 .likes_selected {
   transform: rotate(180deg);
+}
+
+.active {
+  animation: card_visible 0.7s ease-in-out;
+}
+
+.nonActive {
+  animation: card_hide 0.7s ease-in-out;
+  display: none;
+}
+
+.arrow {
+  z-index: 99;
+  width: 20px;
+  height: 20px;
+}
+
+.arrow-reverse {
+  z-index: 99;
+  width: 20px;
+  height: 20px;
+  rotate: 180deg;
+}
+
+.hidePage {
+  display: none;
+}
+
+.gallery {
+  z-index: 9;
+  position: absolute;
+  width: 90vw;
+  height: 90vh;
+
+  &-arrow {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 50px;
+    height: 50px;
+
+    &-reverse {
+      position: absolute;
+      top: 50%;
+      right: 0px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.form {
+  @include flex(column, none, center);
+  gap: 40px;
+  padding: 40px;
+  background-color: black;
+  border-radius: 7px;
+  width: 100%;
+  height: 400px;
+  box-shadow: 0px 4px 9.9px -5px #00000098;
+
+  &__hide_block {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    transition: 0.6s ease-in-out;
+  }
+
+  &__textarea {
+    width: 300px;
+    height: 100px;
+    background-color: #fff;
+    padding: 5px;
+    border: none;
+    border-radius: 7px;
+    font-size: 17px;
+    outline: none;
+    word-wrap: break-word;
+  }
+
+  &__logo {
+    @include flex(row, space-between, center);
+    width: 200px;
+    color: #fff;
+
+    &_text {
+      font-size: 20px;
+    }
+  }
+
+  &__input {
+    background-color: #fff;
+    padding: 5px;
+    border: none;
+    width: 300px;
+    height: 40px;
+    border-radius: 7px;
+    font-size: 17px;
+    outline: none;
+
+    &__block {
+      @include flex(column, center, flex-start);
+      gap: 5px;
+    }
+
+    &__label {
+      color: #fff;
+    }
+  }
+
+  &__block {
+    @include flex(column, center, center);
+    gap: 30px;
+    width: 100%;
+    padding: 50px;
+    overflow: hidden;
+  }
+
+  &__button {
+    @include flex(row, center, center);
+    padding: 15px;
+    background-color: black;
+    color: #fff;
+    border-radius: 7px;
+    border: 1px solid black;
+    min-width: 160px;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      background-color: #fff;
+      color: black;
+    }
+
+    &_center {
+      @include flex(row, center, center);
+    }
+  }
+}
+
+.mini {
+  width: 50%;
+
+  &:hover {
+    background-color: #fff;
+    color: black;
+  }
+}
+
+.close__form {
+  transform: translateY(-615px);
+}
+
+.close_nav {
+  position: relative;
+  top: -350px;
+}
+
+.close_arrow {
+  rotate: -180deg;
+}
+
+@keyframes card_visible {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes card_hide {
+  0% {
+    display: flex;
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 0;
+  }
+
+  100% {
+    display: none;
+    opacity: 0;
+  }
 }

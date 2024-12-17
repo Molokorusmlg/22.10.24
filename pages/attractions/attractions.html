@@ -8,6 +8,9 @@
     <title>Достопремечательности</title>
   </head>
   <body>
+    <div class="page"></div>
+    <div class="reviews hidePage"></div>
+    <div class="arrowBack"></div>
     <div class="attractions">
       <div class="attractions__navigate">
         <div class="attractions__navigate__logo">
@@ -24,7 +27,7 @@
 
           <div
             class="attractions__navigate__sort__likes"
-            onclick="likeChange()"
+            onclick="card.likeChange()"
           >
             <img
               src="../../assets/img/Heart.svg"
@@ -41,7 +44,7 @@
 
           <div
             class="attractions__navigate__sort__views"
-            onclick="viewsChange()"
+            onclick="card.viewsChange()"
           >
             <img
               src="../../assets/img/Eye.svg"
@@ -71,7 +74,7 @@
               type="text"
               id="search_input"
               class="attractions__navigate__search__box_input"
-              onchange="getCards()"
+              onchange="card.getCardsAttraction()"
             />
             <img
               src="../../assets/img/searchicon.svg"
@@ -94,7 +97,7 @@
                 id="buildings-attractions"
                 type="checkbox"
                 class="attractions__navigate__filters__block__building-input"
-                onchange="getCards()"
+                onchange="card.getCardsAttraction()"
               />
             </div>
 
@@ -108,7 +111,7 @@
                 id="parks-attractions"
                 type="checkbox"
                 class="attractions__navigate__filters__block__parks-input"
-                onchange="getCards()"
+                onchange="card.getCardsAttraction()"
               />
             </div>
 
@@ -122,7 +125,7 @@
                 id="museums-attractions"
                 type="checkbox"
                 class="attractions__navigate__filters__block__museums-input"
-                onchange="getCards()"
+                onchange="card.getCardsAttraction()"
               />
             </div>
 
@@ -136,9 +139,16 @@
                 id="temple-attractions"
                 type="checkbox"
                 class="attractions__navigate__filters__block__temple-input"
-                onchange="getCards()"
+                onchange="card.getCardsAttraction()"
               />
             </div>
+          </div>
+          <div class="attractions__list__arrow" onclick="filtersMeny()">
+            <img
+              src="../../assets/img/arrowBackWhite.svg"
+              alt="close_filters_panel"
+              class="attractions__list__arrow_img"
+            />
           </div>
         </div>
       </div>
@@ -171,6 +181,9 @@
       </div>
     </div>
     <script src="../../scripts/mock.js"></script>
+    <script src="../../scripts/cards.js"></script>
+    <script src="../../scripts/slider.js"></script>
+    <script src="../../scripts/modal.js"></script>
     <script src="../../scripts/attraction.js"></script>
   </body>
 </html>

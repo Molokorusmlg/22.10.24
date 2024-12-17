@@ -26,10 +26,14 @@
             </div>
           </div>
           <div class="header__buttons">
-            <div onclick="modalMeny()" class="header__button">
+            <div onclick="modal.modalMeny()" class="header__button">
               <a class="header__button-link" href="#">Купить экскурсию</a>
             </div>
-            <a onclick="setShowBurgerMenu()" href="#" class="header__burger">
+            <a
+              onclick="modal.setShowBurgerMenu()"
+              href="#"
+              class="header__burger"
+            >
               <img
                 class="header__burger-img"
                 src="../../assets/img/Burger.svg"
@@ -116,7 +120,7 @@
         />
       </form>
       <div class="modal__form-button__box">
-        <button onclick="newOrder()" class="modal__form-button">
+        <button onclick="user.newOrder()" class="modal__form-button">
           <p class="modal__form-button-text">Купить</p>
         </button>
       </div>
@@ -125,11 +129,11 @@
           src="../../assets/img/arrowBack.svg"
           alt="arrow"
           class="modal_arrow-img"
-          onclick="modalMeny()"
+          onclick="modal.modalMeny()"
         />
       </div>
     </section>
-    <div class="modal base" onclick="modalClose()"></div>
+    <div class="modal base" onclick="modal.modalClose()"></div>
     <footer class="footer" id="footer">
       <div class="footer__company">
         <h4 class="footer__company-title">ООО Урал</h4>
@@ -150,7 +154,7 @@
           <a>+89961800116</a>
         </div>
       </div>
-      <div class="footer__button" onclick="modalMeny()">
+      <div class="footer__button" onclick="modal.modalMeny()">
         <a href="#">Свзяться</a>
       </div>
       <div class="footer__logo">
@@ -164,7 +168,7 @@
             Екат<br />ерин<br />бург
           </p>
           <img
-            onclick="setShowBurgerMenu()"
+            onclick="modal.setShowBurgerMenu()"
             class="burger__meny_block_header-img_second"
             src="../../assets/img/close_burder_red.svg"
             alt=""
@@ -202,6 +206,8 @@
         </div>
       </div>
     </div>
+    <script src="../../scripts/user.js"></script>
+    <script src="../../scripts/modal.js"></script>
     <script src="../../scripts/mock.js"></script>
     <script src="../../scripts/index.js"></script>
   </body>

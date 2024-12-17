@@ -9,6 +9,17 @@
   list-style-type: none;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Pt;
+  font-weight: 800;
+  cursor: default;
+  scroll-behavior: smooth;
+  list-style-type: none;
+}
+
 .red-line {
   padding-left: 0px;
   padding-right: 10px;
@@ -195,7 +206,6 @@
   flex-direction: column;
   justify-content: 0;
   align-items: center;
-  max-width: 80vw;
   width: 100%;
 }
 .red-line__marshruts_container {
@@ -635,23 +645,8 @@
   align-items: center;
 }
 
-@keyframes loading-complete-animation {
-  0% {
-    opacity: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    display: none;
-  }
-}
 .loading-complete {
-  animation: loading-complete-animation 0.7s ease-in-out;
+  animation: loading-complete-animation 0.1s ease-in-out;
   display: none;
 }
 
@@ -698,6 +693,21 @@
   background-color: #fff;
 }
 
+@keyframes loading-complete-animation {
+  0% {
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
 * {
   margin: 0;
   padding: 0;

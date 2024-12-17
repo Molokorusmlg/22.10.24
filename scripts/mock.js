@@ -65,6 +65,11 @@ const mapEkb = document.querySelector(".map_small");
 // URL для api
 const CARDS_URL = "https://67275558302d03037e70ad42.mockapi.io/api/";
 const USERS_URL = "https://6750125869dc1669ec198aa9.mockapi.io/";
+const LINK_URL = "https://6750125869dc1669ec198aa9.mockapi.io/linkList";
+const REVIEWS_URL =
+  "https://67275558302d03037e70ad42.mockapi.io/api/redline/reviews";
+
+const FULL_CARDS_URL = "https://675ebc5f1f7ad24269967ed4.mockapi.io/Crads/";
 
 const BASE_URL = "../pages/";
 
@@ -86,39 +91,19 @@ let cardsData = []; // elementfind.js
 let linksData = []; // elementfind.js
 let baseData = []; // elementfind.js
 
-// Добавляем обработчик события
-document
-  .querySelector(".profile__block_new_order_button")
-  .addEventListener("click", () => {
-    const userId = localStorage.getItem("userId");
-    updateOrders(userId);
-  });
+// Админ панель блоки для заполнения
+const cardBlock = document.querySelector(".cards");
+const usersBlock = document.querySelector(".users");
+const reviewsBlock = document.querySelector(".reviews");
 
-document.querySelector(".exit").addEventListener("click", () => {
-  window.location.href = BASE_URL + "../register/register.html";
-});
+// Данные не найдены
+const pageNotFound = `<h1 class="not_error">404</h1>
+    <h1 class="not_tile">Упс, такой страницы не существует</h1>
+    <a href="../../pages/mainpage/mainpage.html" class="not_link"
+      >Перейдите на главную страницу</a
+    >`;
 
-document
-  .querySelector(".profile__block_new_order_save")
-  .addEventListener("click", () => {
-    const userId = localStorage.getItem("userId");
-    const newName = document.querySelector(
-      ".profile__block_information_name_input"
-    ).value;
-    const newLogin = document.querySelector(
-      ".profile__block_information_login_input"
-    ).value;
-    const newPassword = document.querySelector(
-      ".profile__block_information_password_input"
-    ).value;
-    const updatedData = {
-      name: `${newName}`,
-      login: `${newLogin}`,
-      password: `${newPassword}`,
-    };
-    updateUser(userId, updatedData);
-  });
-
+// Страница достопремечательносей
 const attractionPage = `<div class="attractions__navigate">
         <div class="attractions__navigate__logo">
           <img
@@ -134,7 +119,7 @@ const attractionPage = `<div class="attractions__navigate">
 
           <div
             class="attractions__navigate__sort__likes"
-            onclick="likeChange()"
+            onclick="card.likeChange()"
           >
             <img
               src="../../assets/img/Heart.svg"
@@ -151,7 +136,7 @@ const attractionPage = `<div class="attractions__navigate">
 
           <div
             class="attractions__navigate__sort__views"
-            onclick="viewsChange()"
+            onclick="card.viewsChange()"
           >
             <img
               src="../../assets/img/Eye.svg"
@@ -181,7 +166,7 @@ const attractionPage = `<div class="attractions__navigate">
               type="text"
               id="search_input"
               class="attractions__navigate__search__box_input"
-              onchange="getCards()"
+              onchange="card.getCardsAttraction()"
             />
             <img
               src="../../assets/img/searchicon.svg"
@@ -204,7 +189,7 @@ const attractionPage = `<div class="attractions__navigate">
                 id="buildings-attractions"
                 type="checkbox"
                 class="attractions__navigate__filters__block__building-input"
-                onchange="getCards()"
+                onchange="card.getCardsAttraction()"
               />
             </div>
 
@@ -218,7 +203,7 @@ const attractionPage = `<div class="attractions__navigate">
                 id="parks-attractions"
                 type="checkbox"
                 class="attractions__navigate__filters__block__parks-input"
-                onchange="getCards()"
+                onchange="card.getCardsAttraction()"
               />
             </div>
 
@@ -232,7 +217,7 @@ const attractionPage = `<div class="attractions__navigate">
                 id="museums-attractions"
                 type="checkbox"
                 class="attractions__navigate__filters__block__museums-input"
-                onchange="getCards()"
+                onchange="card.getCardsAttraction()"
               />
             </div>
 
@@ -246,7 +231,7 @@ const attractionPage = `<div class="attractions__navigate">
                 id="temple-attractions"
                 type="checkbox"
                 class="attractions__navigate__filters__block__temple-input"
-                onchange="getCards()"
+                onchange="card.getCardsAttraction()"
               />
             </div>
           </div>
@@ -259,3 +244,38 @@ const attractionPage = `<div class="attractions__navigate">
         <div class="attractions__list__cards_block"></div>
         <div class="pagination"></div>
       </div>`;
+
+// Добавляем обработчик события
+document
+  .querySelector(".profile__block_new_order_button")
+  .addEventListener("click", () => {
+    const userId = localStorage.getItem("userId");
+    user.updateOrders(userId);
+  });
+
+document.querySelector(".exit").addEventListener("click", () => {
+  window.location.href = BASE_URL + "../register/register.html";
+});
+
+user = new User();
+
+document
+  .querySelector(".profile__block_new_order_save")
+  .addEventListener("click", () => {
+    const userId = localStorage.getItem("userId");
+    const newName = document.querySelector(
+      ".profile__block_information_name_input"
+    ).value;
+    const newLogin = document.querySelector(
+      ".profile__block_information_login_input"
+    ).value;
+    const newPassword = document.querySelector(
+      ".profile__block_information_password_input"
+    ).value;
+    const updatedData = {
+      name: `${newName}`,
+      login: `${newLogin}`,
+      password: `${newPassword}`,
+    };
+    user.updateUser(userId, updatedData);
+  });

@@ -1,3 +1,5 @@
+const card = new Card();
+
 window.addEventListener("scroll", animationVisible);
 
 function linkCreate(img1, img2, title1, title2) {
@@ -74,7 +76,7 @@ function cardCreate(img, map, text, title) {
 
 function iinerLink() {
   const parentLink = document.querySelector(".block_to_next");
-  const linkCreateated = linkCreate(
+  const linkCreateated = slinkCreate(
     linksData[0].Img_scr,
     linksData[1].Img_scr,
     linksData[0].Title,
@@ -85,7 +87,7 @@ function iinerLink() {
 
 function innerCard() {
   const parentBlock = document.querySelector(".page");
-  const cardFinal = cardCreate(
+  const cardFinal = card.cardCreate(
     cardData.Img_scr,
     cardData.Map_scr,
     cardData.Text,
@@ -168,8 +170,6 @@ async function loadingPage() {
     }
 
     cardData = cardsData[curentCardInexNew];
-    await innerCard();
-    await iinerLink();
   } catch (e) {
     console.error(e);
   } finally {

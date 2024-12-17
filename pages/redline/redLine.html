@@ -9,77 +9,6 @@
   </head>
   <body class="scroll">
     <section class="red-line" id="line">
-      <div class="red-line__big__text desctop">
-        <h1 class="red-line__big__text-title">Красная Линия</h1>
-        <div class="red-line__big__text-search__box">
-          <input
-            class="red-line__big__text-input red-line__big__text-input-search"
-            oninput="seeSearch()"
-            id="search"
-            type="text"
-            placeholder="Найти по слову"
-          />
-        </div>
-        <div class="red-line__big__text_inputbox">
-          <div class="red-line__big__text_colum__ceck__buttons">
-            <div class="red-line__big__text_check__button__box">
-              <label class="red-line__big__text-label" for="parks">Парки</label>
-              <input
-                onclick="showCheckbox('p')"
-                class="check"
-                id="parks"
-                type="checkbox"
-                value="парки"
-              />
-            </div>
-
-            <div class="red-line__big__text_check__button__box">
-              <label class="red-line__big__text-label" for="buildings"
-                >здания</label
-              >
-              <input
-                onclick="showCheckbox('b')"
-                class="check"
-                id="buildings"
-                type="checkbox"
-                value="здания"
-              />
-            </div>
-          </div>
-
-          <div class="red-line__big__text_colum__ceck__buttons">
-            <div class="red-line__big__text_check__button__box">
-              <label class="red-line__big__text-label" for="museums"
-                >музеи</label
-              >
-              <input
-                onclick="showCheckbox('m')"
-                class="check"
-                id="museums"
-                type="checkbox"
-                value="музеи"
-              />
-            </div>
-
-            <div class="red-line__big__text_check__button__box">
-              <label class="red-line__big__text-label" for="hrams">храмы</label>
-              <input
-                onclick="showCheckbox('h')"
-                class="check"
-                id="hrams"
-                type="checkbox"
-                value="храмы"
-              />
-            </div>
-          </div>
-        </div>
-        <button class="red-line__big__text_button" onclick="reset()">
-          <p>Сбросить</p>
-        </button>
-        <div class="pagination"></div>
-        <hr class="red-line__big__text-line" />
-        <div class="red-line__big__text-text"></div>
-      </div>
       <div class="red-line__marshruts">
         <div class="red-line__marshruts_container">
           <div class="red-line__marshruts-title">
@@ -117,7 +46,7 @@
             </div>
           </div>
         </div>
-        <a href="#" onclick="modalMeny()" class="tour-text-link">
+        <a href="#" onclick="modal.modalMeny()" class="tour-text-link">
           <button class="tour">
             <p class="tour-text">Купить</p>
           </button>
@@ -139,7 +68,7 @@
         />
       </form>
       <div class="modal__form-button__box">
-        <button onclick="newOrder()" class="modal__form-button">
+        <button onclick="user.newOrder()" class="modal__form-button">
           <p class="modal__form-button-text">Купить</p>
         </button>
       </div>
@@ -148,18 +77,18 @@
           src="../../assets/img/arrowBack.svg"
           alt="arrow"
           class="modal_arrow-img"
-          onclick="modalMeny()"
+          onclick="modal.modalMeny()"
         />
       </div>
     </section>
-    <div class="modal base" onclick="modalClose()"></div>
+    <div class="modal base" onclick="modal.modalClose()"></div>
     <div class="error error__close">
       <p class="error__text">Ошибка</p>
     </div>
     <div class="sucsess sucsess__close">
       <p class="sucsess__text">Успешно</p>
     </div>
-    <div class="burger" onclick="setShowBurgerMenu()">
+    <div class="burger" onclick="modal.setShowBurgerMenu()">
       <img src="../../assets/img/black_burger.svg" alt="" />
     </div>
     <footer class="footer" id="foot">
@@ -182,7 +111,7 @@
           <a>+89961800116</a>
         </div>
       </div>
-      <div class="footer__button" onclick="modalMeny()">
+      <div class="footer__button" onclick="modal.modalMeny()">
         <a href="#">Купить</a>
       </div>
       <div class="footer__logo">
@@ -196,7 +125,7 @@
         <div class="burger__meny_block_header">
           <p class="burger__meny_block_header-title">Красная линия</p>
           <img
-            onclick="setShowBurgerMenu()"
+            onclick="modal.setShowBurgerMenu()"
             class="burger__meny_block_header-img_second"
             src="../../assets/img/close_burder_red.svg"
             alt=""
@@ -215,91 +144,6 @@
         </div>
       </div>
     </div>
-    <div class="mobile__block">
-      <div class="red-line__big__text mobile">
-        <h1 class="red-line__big__text-title">Красная Линия</h1>
-        <div class="red-line__big__text-search__box">
-          <input
-            class="red-line__big__text-input red-line__big__text-input"
-            oninput="seeSearch()"
-            id="search-mobile"
-            type="text"
-            placeholder="Найти по слову"
-          />
-        </div>
-        <div class="red-line__big__text_inputbox">
-          <div class="red-line__big__text_colum__ceck__buttons">
-            <div class="red-line__big__text_check__button__box">
-              <label class="red-line__big__text-label" for="parks-mobile"
-                >Парки</label
-              >
-              <input
-                onclick="showCheckbox('p')"
-                class="check"
-                id="parks-mobile"
-                type="checkbox"
-                value="парки"
-              />
-            </div>
-
-            <div class="red-line__big__text_check__button__box">
-              <label class="red-line__big__text-label" for="buildings-mobile"
-                >здания</label
-              >
-              <input
-                onclick="showCheckbox('b')"
-                class="check"
-                id="buildings-mobile"
-                type="checkbox"
-                value="здания"
-              />
-            </div>
-          </div>
-
-          <div class="red-line__big__text_colum__ceck__buttons">
-            <div class="red-line__big__text_check__button__box">
-              <label class="red-line__big__text-label" for="museums-mobile"
-                >музеи</label
-              >
-              <input
-                onclick="showCheckbox('m')"
-                class="check"
-                id="museums-mobile"
-                type="checkbox"
-                value="музеи"
-              />
-            </div>
-
-            <div class="red-line__big__text_check__button__box">
-              <label class="red-line__big__text-label" for="hrams-mobile"
-                >храмы</label
-              >
-              <input
-                onclick="showCheckbox('h')"
-                class="check"
-                id="hrams-mobile"
-                type="checkbox"
-                value="храмы"
-              />
-            </div>
-          </div>
-        </div>
-        <button class="red-line__big__text_button" onclick="reset()">
-          <p>Сбросить</p>
-        </button>
-        <div class="pagination"></div>
-        <hr class="red-line__big__text-line" />
-        <div class="red-line__big__text-text"></div>
-      </div>
-    </div>
-    <div class="mobile__arrow" onclick="mobileFilterFunction()">
-      <img
-        class="mobile__arrow__img"
-        src="../../assets/img/arrowBack.svg"
-        alt=""
-      />
-    </div>
-    <div class="mobile__shadow__hide"><span></span></div>
     <div class="exit" onclick="goToAttraction()">
       <p class="exit__text">Достопремечательности</p>
       <img class="exit__img" src="../../assets/img/arrowBack.svg" alt="" />
@@ -321,6 +165,10 @@
       </div>
     </div>
     <script src="../../scripts/mock.js"></script>
+    <script src="../../scripts/cards.js"></script>
+    <script src="../../scripts/user.js"></script>
+    <script src="../../scripts/slider.js"></script>
+    <script src="../../scripts/modal.js"></script>
     <script src="../../scripts/global.js"></script>
   </body>
 </html>
